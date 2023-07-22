@@ -124,6 +124,10 @@
     transform: scale(1.2);
 }
 
+#Experience{
+    background-color: #1F1F1F;
+}
+
 /* education */
 #education{
     background-color: #1F1F1F;
@@ -230,4 +234,26 @@
 .projectdoc:hover{
     transform: scale(3);
 }
+.world{
+    border-radius: 50%;
+}
+.soliton{
+    height: 130px;
+    width: 160px;
+    border-radius: 20px;
+}
+.edureka{
+    height: 70px;
+    width: 150px;
+    border-radius: 20px;
+}
+.vtps{
+    height:130px;
+    width: 200px;
+    border-radius: 10px;
+}
+
+/* .scart:hover{
+    transform: scale(1.5);
+} */
   
