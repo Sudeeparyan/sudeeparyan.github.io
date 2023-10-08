@@ -78,6 +78,14 @@ const Dashbord = () => {
             </li>
             <li>
               <a
+                href="#certifications"
+                style={{ color: "black", fontFamily: "Georgia" }}
+              >
+                Certifications
+              </a>
+            </li>
+            <li>
+              <a
                 href="#contact"
                 style={{ color: "black", fontFamily: "Georgia" }}
               >
@@ -122,13 +130,8 @@ const Dashbord = () => {
               <span style={{ fontSize: "60px", fontFamily: "Papyrus" }}>
                 About me !
               </span>
-              <p style={{ fontSize: "22px", fontFamily: "Lucida Console" }}>
-                Seeking opportunity as an entry-level engineer, in a challenging
-                environment that builds up an excellent career, while
-                shouldering higher responsibilities and by utilising acquired
-                skills so as to contribute to the value of the organisation by
-                focusing on Machine Learning, Devops and Web Development related
-                areas.
+              <p style={{ fontSize: "18px", fontFamily: "Lucida Console" }}>
+              With 1.4 years of experience spanning Machine Learning, DevOps, and web development. I'm a tech enthusiast who enjoys tackling diverse challenges. My journey involves building Machine Learning models, and optimizing processes through DevOps. My reputation lies in adaptability, creative problem-solving, and an unwavering commitment to staying at the forefront of these ever-evolving domains. I'm poised to contribute effectively to dynamic teams and organizations, driven by a passion for continuous innovation.
               </p>
             </div>
             <div className="col-md-6 bar">
@@ -156,12 +159,7 @@ const Dashbord = () => {
             <div className="col-md-6 work-right">
               <span className="glyphicon glyphicon-education"></span>
               <h5>Soliton Technology</h5>
-              <p>Project Engineer.</p>
-              <p>Trained as an DevOps Engineer.</p>
-              <p>
-                Currently Working on Training a model that automates tests and
-                analysis the test data using Machine Learning.
-              </p>
+              <p>Working as Project Engineer in Soliton Technology.Trained on Machine Learning, DevOps and Web Developement</p>
             </div>
           </div>
           <div className="row work-info">
@@ -171,8 +169,8 @@ const Dashbord = () => {
             <div className="col-md-6 work-right">
               <span className="glyphicon glyphicon-education"></span>
               <h5>Edureka</h5>
-              <p>Web Developer.</p>
-              <p>Eight months Internship on Full-Stack Web Development.</p>
+              <p>Full-Stack Web Developer.</p>
+              <p>Eight months Internship on Full-Stack Web Development with React Front-end and NodeJs Backend.</p>
             </div>
           </div>
           <div className="row work-info">
@@ -334,6 +332,16 @@ const Dashbord = () => {
               border="0"
             />
           </div>
+          <div className="col-md-2 bar">
+            <img
+              src="https://i.ibb.co/vY99LTC/polymer.png"
+              className="skillimage"
+              alt="Polymer"
+              height={100}
+              width={100}
+              border="0"
+            />
+          </div>
         </div>
       </div>
 
@@ -394,6 +402,7 @@ const Dashbord = () => {
               data-slide-to="0"
               className="active"
             ></li>
+            <li data-target="#myCarousel" data-slide-to="0"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
             <li data-target="#myCarousel" data-slide-to="3"></li>
@@ -405,15 +414,9 @@ const Dashbord = () => {
             <div className="item" data-interval="false">
               <div>
                 <p className="projectname">
-                  SD-Cart (A Prototype of E commerce website)
+                  S-Cart (A Prototype of E commerce website)
                 </p>
                 {/* <p className='projectobjective'>• </p> */}
-                <p className="projecttools">
-                  • Tools or techniques used: React, HTML, CSS, Bootstrap,
-                  JavaScript,Material UI , Nodejs, MongoDB, Express, Git,
-                  Docker, Kubernetes, Prometheus.
-                </p>
-                {/* <p className='projectoutcome'>• Outcome: Designed a E-commerce web page.</p> */}
                 <iframe
                   title="project"
                   className="scart"
@@ -422,6 +425,18 @@ const Dashbord = () => {
                   height="370px"
                   allowfullscreen
                 ></iframe>
+                <h4>
+                  HTML, CSS, Bootstrap, JavaScript, React, Nodejs, MongoDB, Express, Heroku, Docker, Kubernites, Prometheus are the tools used in the project 
+                </h4>
+                <h4>Created an e-commerce web page that incorporates all the concepts and skills I acquired during my internship.</h4>
+                {/* <p className='projectoutcome'>• Outcome: Designed a E-commerce web page.</p> */}
+                
+                
+                <h3>
+                  <a href="https://sudeeparyan.github.io/SudeepCart/" target="_blank" rel="noopener noreferrer">
+                    Click here to go to Scart
+                  </a>
+                </h3>
                 {/* <img alt="scart" src={scart} /> */}
                 {/* <iframe id="Scart" width="1000px" height="370px"  src="https://sudeeparyan.github.io/SudeepCart/" title="SudeepCart" frameborder="0" allow="accelerometer;autoplay;clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  */}
               </div>
@@ -429,33 +444,29 @@ const Dashbord = () => {
 
             <div className="item" data-interval="false">
               <div>
-                <p className="projectname">Devison Vision ’23 - Jun ’23</p>
+                <p className="projectname">Devison Vision - Soliton (Jan'23 - Present)</p>
                 <p className="projectobjective">
-                  • Objective: 9*9 Sudoku Solver using Back Tracking Algorithm.
+                • Customer Intel asked to develop Data analyzing and Visualization tool for Validation Enginners. 
                 </p>
                 <p className="projecttools">
-                  • Tools or techniques used: HTML, CSS, JavaScript, Back
-                  Tracking Algorithm.
+                • Front-End: React(Advanced Redux Tool kit-RTKQuery), Back-End: Python, Machine Learning: Regression, MLOPS and DevOps Tools.
                 </p>
                 <p className="projectoutcome">
-                  • Outcome:- Solves partial 9*9 sudoku using back tracking
-                  algoritham .
+                • Tool that Visualization and Analyzing data which is given by Validation Engineer so that they can easily train any data and Predict the values which is beyond the range of his collected data.
+                  algoritham.
                 </p>
               </div>
             </div>
 
             <div className="item active" data-interval="false">
               <div>
-                <p className="projectname">Self-Driving Rover Jul </p>
+                <p className="projectname">Self-Driving Rover Amrita(Aug'22-Jun'23) </p>
                 {/* <iframe id="youtubeVideo" width="200px" height="300px" src="https://youtube.com/embed/4L4pG72sfLM" title="YouTube video player" frameborder="0" allow="accelerometer;autoplay;clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
                 <p className="projectobjective">
-                  • Objective: Implementation of self driving rover with
-                  Raspberry pi,which is able to detect its path and also able to
-                  move in the given lane.
+                  Implementation of self driving rover using ML(Reinforcement learning) with Raspberry pi,which is able to detect and avoid obstacles in its path and also able to move in the given lane.
                 </p>
                 <p className="projecttools">
-                  • Tools or techniques used : Raspberry Pi 3b+,NVIDIA’s CNN
-                  model, Ultrasonic sensor,Pi camera,DC motors.
+                Raspberry Pi 3b+,NVIDIA's CNN model, Ultra-sonic sensor,Pi camera,Servo motor,DC motors.
                 </p>
                 <img alt="Rover" src={rover} height="300px" width="400px" />
               </div>
@@ -480,7 +491,7 @@ const Dashbord = () => {
               </div>
             </div>
 
-            <div className="item" data-interval="false">
+            {/* <div className="item" data-interval="false">
               <div>
                 <p className="projectname">Sudoku Solver May </p>
                 <p className="projectobjective">
@@ -495,7 +506,7 @@ const Dashbord = () => {
                   algoritham .
                 </p>
               </div>
-            </div>
+            </div> */}
 
             {/* <div className="item" data-interval="false">
                             <div>
@@ -535,6 +546,44 @@ const Dashbord = () => {
             <span className="glyphicon glyphicon-chevron-right"></span>
             <span className="sr-only">Next</span>
           </a>
+        </div>
+      </div>
+
+
+            
+      <div id="certifications">
+        <h1 className="headline">Certifications</h1>
+        <div className="row" style={{ lineHeight: "150px" }}>
+          <h3>
+            <a href="https://coursera.org/share/7c18ea3335bf72b4c18c9c3d4f738ce8" target="_blank" rel="noopener noreferrer">
+              Machine Learning
+            </a>
+          </h3>
+          <h3>
+            <a href="https://coursera.org/share/fcb4031aa63c0af7e4b748f3048b5cc6" target="_blank" rel="noopener noreferrer">
+            Neural Networks and Deep Learning
+            </a>
+          </h3>
+          <h3>
+            <a href="https://www.edureka.co/certificates/mycertificate/3a96f454fcc70b6179e000e39acb12db" target="_blank" rel="noopener noreferrer">
+            Full Stack Web Development
+            </a>
+          </h3>
+          <h3>
+            <a href="https://coursera.org/share/7c18ea3335bf72b4c18c9c3d4f738ce8" target="_blank" rel="noopener noreferrer">
+            Data structures and Algorithms
+            </a>
+          </h3>
+          <h3>
+            <a href="https://coursera.org/share/6df1859e3ed67b74db0b2fcd49b0e245" target="_blank" rel="noopener noreferrer">
+            Google Professional Workspace Administrator
+            </a>
+          </h3>
+          {/* 1: \href{https://coursera.org/share/7c18ea3335bf72b4c18c9c3d4f738ce8}{Machine Learning }\\
+        2: \href{https://coursera.org/share/fcb4031aa63c0af7e4b748f3048b5cc6}{Neural Networks and Deep Learning}  \\        
+        3: \href{https://www.edureka.co/certificates/mycertificate/3a96f454fcc70b6179e000e39acb12db}{Full Stack Web Development}\\
+        4: Data structures and Algorithms\\
+        5: \href{https://coursera.org/share/6df1859e3ed67b74db0b2fcd49b0e245}{Google Professional Workspace Administrator} */}
         </div>
       </div>
       <div id="contact">
