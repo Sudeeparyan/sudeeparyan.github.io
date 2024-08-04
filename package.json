@@ -12,12 +12,13 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d out"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@azure/openai": "^1.0.0-beta.12",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@google/generative-ai": "^0.16.0",
     "@mui/material": "^5.14.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -27,9 +28,12 @@
     "p5": "^1.9.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-markdown": "^9.0.1",
     "react-router-dom": "^6.25.1",
     "react-scripts": "^3.0.1",
     "react-scrollspy": "^3.4.3",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.0",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {

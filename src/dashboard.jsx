@@ -33,57 +33,14 @@ import ollama from "./Images/skills/ollama.png"
 import openai from "./Images/skills/openai.png"
 import P5logo from "./p5logo";
 import './globals.css'
+import Chatbot from './chatbot.jsx'
+
 export default function Dashboard() {
-  // const [menuOpen, setMenuOpen] = useState(false);
-  const [ messageInput, setMessageInput ] = useState('');
 
-  const [messages, setMessages] = useState([
-		{
-			role: 'assistant',
-			content: 'How can i help you?'
-		}
-  ]);
-
-  const submitForm = async (e) => {
-    e.preventDefault();
-    let newMessages = [...messages, { role: 'user', content: messageInput }]
-    setMessages(newMessages);
-    setMessageInput('');
-    const apiMessage = await fetch(
-      '/api',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ messages: newMessages })
-      }
-    ).then(res => res.json());
-    setMessages([...newMessages, { role: 'assistant', content: apiMessage.message }]);
-  }
   const [isMenuActive, setIsMenuActive] = useState(false);
   const toggleMobileMenu = () => {
     setIsMenuActive(!isMenuActive);
   };
-
-  // const [theme,setTheme]=useState("light");
-  // const [mobilemenu,setMobilemenu]=useState(false);
-  // useEffect(()=>{
-  //   if(theme==="dark"){
-  //     document.body.style.setProperty("--text-color","#ffffff");
-  //     document.body.style.setProperty("--background-color","#000000");
-  //     document.body.style.setProperty("--hover-color","#ffff00");
-  //   }
-  // else{ 
-  //   document.body.style.setProperty("--text-color","#000000");
-  //   document.body.style.setProperty("--background-color","#ffffff");
-  //   document.body.style.setProperty("--hover-color","#ff0000");
-  // }
-  
-  // },[theme]);
-
-
-
 
   return (
       <div className="main-body">      
@@ -725,35 +682,7 @@ export default function Dashboard() {
           </div>
         </div>
         <div id="chatBot">
-          <section className="chatbot container">
-              <h2 className="headline ">
-                Chatbot
-              </h2>
-              <div className="chatbot-blue">
-              <div className="chat-info">
-                <h3>Azure AI Chatbot</h3>
-                <p>I have put together a chatbot here which knows all my skills, work experience and has a copy of my CV/Resume. You can use it to ask questions about me to get a better idea of who I am and what I have done.</p>
-                <p>You can also download my resume here if you want to take a look at it. I am currently looking for new opportunities so if you have a project you think I did be a good fit for, please get in touch!</p>
-                <a href="/Sudeep_Aryan_Resume.pdf" className="button black" download>Download Resume</a>
-              </div>
-                <div className="chat-box">
-                  <div className="scroll-area">
-                    <ul id="chat-log">
-                      {messages.map((message, index) => (
-                        <li key={index} className={`${message.role}`}>
-                          <span className={`avatar`}>{message.role === 'user' ? 'You' : 'AI'}</span>
-                          <div className="message">{message.content}</div>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <form onSubmit={submitForm} className="chat-message">
-                    <input type="text" placeholder="Hey Sudeep , what skills are you best at?" value={messageInput} onChange={e => setMessageInput(e.target.value)} />
-                    <button className="button black">Send</button>
-                  </form>
-                </div>
-              </div>
-          </section>
+          <Chatbot/>          
         </div>
         <div className="bottom">
               <h2>&copy; Sudeep Aryan Website</h2>
