@@ -35,7 +35,7 @@ export default function Assistant() {
     {Object.keys(skills).map((skill)=>(
         <div className={skill === selected?'skill-card selected':'skill-card'} key={skill}>
         <img src={connector} className='connector' alt='img' />
-        <h2   onClick={()=>setSelected(skill)}>{skill}</h2>
+        <h2 onClick={()=>setSelected(skill)}>{skill}</h2>
         </div>
     ))}
     <Facesvg/>

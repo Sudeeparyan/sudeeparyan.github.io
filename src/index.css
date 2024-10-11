@@ -66,3 +66,24 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+*::-webkit-scrollbar {
+  width: 2rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #949499;
+  border: 0.75rem solid #ffffff;
+  border-radius: 6.25rem;
+}
+
+@supports (not selector(::-webkit-scrollbar)) {
+  html {
+    scrollbar-width: 2rem;
+    scrollbar-color: #949499 #ffffff;
+  }
+}

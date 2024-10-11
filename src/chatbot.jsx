@@ -1,5 +1,5 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 const aboutme = `
 Sudeep Aryan Gaddameedi is a tech enthusiast with 2 years of experience in DevOps, Machine Learning, Generative AI, and VLSI. As a Project Engineer at Soliton Technologies since June 2023, he has been working on hardware testing, developing chip modules, and creating an AI assistant chatbot for Texas Instruments. Previously, he was a Machine Learning Engineer in the Device Vision Project. He interned at Soliton Technologies from June 2022 to May 2023, where he developed skills in DevOps tools and full-stack development, completing projects like a weather application and Timely. Sudeep's projects include working on a Battery Management System for Texas Instruments, developing a data analysis tool for Intel, and building a quadcopter. He has certifications in Machine Learning, IoT, Neural Networks, Google Workspace Administration, Full Stack Web Development, and AWS. Sudeep holds a Bachelor of Technology from Amrita Vishwa Vidyapeetham with a CGPA of 7.89, and has published an IEEE paper on CNN-based Curved Path Detection and Obstacle Avoidance for an autonomous rover. His technical skills encompass Python, JavaScript, C, C++, AI, DevOps tools, web technologies, cloud platforms, and microcontrollers. Proficient in English, Telugu, Hindi, and Tamil, Sudeep enjoys reading nonfiction, playing kabaddi and volleyball, and going to the gym. He can be reached at sudeeparyang@gmail.com and 8309135484. His portfolio and professional profiles are available on website, GitHub, and LinkedIn.
@@ -25,9 +25,17 @@ export default function Chatbot() {
     }
   ]);
 
+  const chatContainerRef = useRef(null);
+
   // Initialize the Gemini API
   const genAI = new GoogleGenerativeAI(API_KEY);
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+  useEffect(() => {
+    if(chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    }
+  }, [messages]);
 
   const submitForm = async (e) => {
     e.preventDefault();
@@ -36,11 +44,11 @@ export default function Chatbot() {
     setMessageInput('');
 
     // Use the Gemini API to generate a response
-    console.log(newMessages)
-    const result = await model.generateContent(messageInput, { context: newMessages });
+    console.log("Input",newMessages)
+    const result = await model.generateContent(JSON.stringify(newMessages)+messageInput);
     const response = await result.response;
     const apiMessage = await response.text();
-
+    console.log("Output",apiMessage);
     setMessages([...newMessages, { role: 'assistant', content: apiMessage }]);
   };
 
@@ -58,8 +66,8 @@ export default function Chatbot() {
             <a href="/Sudeep_Aryan_Resume.pdf" className="button black" download>Download Resume</a>
           </div>
           <div className="chat-box">
-            <div className="scroll-area">
-              <ul id="chat-log">
+            <div className="scroll-area" ref={chatContainerRef}>
+              <ul id="chat-log" className="chat-messages">
                 {messages.filter((message,index)=>message.role!='system').map((message, index) => (
                   <li key={index} className={`${message.role}`}>
                     <span className={`avatar`}>{message.role === 'user' ? 'You' : 'AI'}</span>
