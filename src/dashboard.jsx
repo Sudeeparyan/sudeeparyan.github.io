@@ -534,7 +534,16 @@ export default function Dashboard() {
         </div>
         <div id="certifications">
           <h1 className="headline">Certifications</h1>
-          <div className="row" style={{ lineHeight: "150px" }}>
+          <div className="row certificates" style={{ lineHeight: "150px" }}>
+            <h3>
+              <a
+                href="https://learn.microsoft.com/en-us/users/gaddameedisudeeparyan-0368/credentials/ae910c93a6319ac3"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Microsoft Azure Cloud Computing
+              </a>
+            </h3>            
             <h3>
               <a
                 href="https://coursera.org/share/7c18ea3335bf72b4c18c9c3d4f738ce8"
@@ -579,6 +588,42 @@ export default function Dashboard() {
               >
                 Google Professional Workspace Administrator
               </a>
+            </h3>            
+            <h3>
+              <a
+                href="https://learn.deeplearning.ai/accomplishments/2f77cd4e-0b44-4781-8326-22c620e64886?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Prompt Engineering
+              </a>
+            </h3>
+            <h3>
+              <a
+                href="https://learn.deeplearning.ai/accomplishments/2f2020ba-f867-4db9-b564-7ae394d50541?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Large Language Model
+              </a>
+            </h3>
+            <h3>
+              <a
+                href="https://learn.deeplearning.ai/accomplishments/6c2f4b32-a3d5-4dad-bd92-2be4aa8f8a7c?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Fine Tuning
+              </a>
+            </h3>
+            <h3>
+              <a
+                href="https://academy.langchain.com/certificates/oax3vhmzud"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Agents - Lang Graph Agents
+              </a>
             </h3>
             <h3>
               <a
@@ -586,7 +631,7 @@ export default function Dashboard() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                International IEEE Conference Paper
+                IEEE Conference Paper on Deep Learning
               </a>
             </h3>
             {/* 1: \href{https://coursera.org/share/7c18ea3335bf72b4c18c9c3d4f738ce8}{Machine Learning }\\
@@ -611,42 +656,7 @@ export default function Dashboard() {
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
               </div>
-              <div className="col-md-6">
-                <div>
-                  <p style={{ fontSize: "20px", color: "white" }}>
-                    AF-107, R.T.P.P, V.V.Reddy Nagar, Yerraguntla(MDL),
-                    Kadapa(district) AndhraPradesh(St), India. PIN CODE : 516312
-                  </p>
-                  <p>
-                    <span style={{ fontSize: "20px", color: "white" }}>
-                      Mobile : +91 8309135484
-                    </span>
-                    &nbsp;&nbsp;&nbsp;
-                    <span style={{ fontSize: "20px", color: "white" }}>
-                      E-mail :{" "}
-                      <a
-                        href="sudeeparyang@gmail.com"
-                        target="_blank"
-                        style={{
-                          fontFamily: "Roboto Condensed",
-                          fontSize: "20px",
-                          color: "white",
-                        }}
-                      >
-                        sudeeparyang@gmail.com
-                      </a>
-                    </span>
-                  </p>
-                </div>
-                <div id="socialnetwork" style={{ marginTop: "-6px" }}>
-                  <a href="https://github.com/Sudeeparyan" target="_blank">
-                  <img src="https://i.postimg.cc/D0jsHk21/Github.png"
-                      height="30px"
-                      width="30px"
-                      alt="Github"/>
-                  </a>
-                  &nbsp;&nbsp;&nbsp;&nbsp;
-                </div>
+              <div className="col-md-6">                
                 <div className="contactform" style={{ marginTop: "12px" }}>
                   <form>
                     <input
@@ -676,6 +686,38 @@ export default function Dashboard() {
                     <input type="submit" value="SUBMIT"></input>
                   </form>
                 </div>
+                <div id="socialnetwork" style={{ marginTop: "20px" }}>
+                  <a href="https://github.com/Sudeeparyan" target="_blank">
+                  <img src="https://i.postimg.cc/D0jsHk21/Github.png"
+                      height="30px"
+                      width="30px"
+                      alt="Github"/>
+                  </a>
+                  {/* &nbsp;&nbsp;&nbsp;&nbsp; */}
+                </div>
+                <div>                  
+                  <p>
+                    <span style={{ fontSize: "20px", color: "white" }}>
+                      Mobile : +91 8309135484
+                    </span>
+                    &nbsp;&nbsp;&nbsp;
+                    <span style={{ fontSize: "20px", color: "white" }}>
+                      E-mail :{" "}
+                      <a
+                        href="sudeeparyang@gmail.com"
+                        target="_blank"
+                        style={{
+                          fontFamily: "Roboto Condensed",
+                          fontSize: "20px",
+                          color: "white",
+                        }}
+                      >
+                        sudeeparyang@gmail.com
+                      </a>
+                    </span>
+                  </p>
+                </div>
+                
               </div>
             </div>
             

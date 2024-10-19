@@ -57,6 +57,11 @@ svg g {
 .face {
   position: relative;
 }
+
+.certificates{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
 .main {
   position: relative;
   top: 3em;

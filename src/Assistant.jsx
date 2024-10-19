@@ -8,24 +8,24 @@ export default function Assistant() {
     const [selected, setSelected] = useState(null);
     const skills = {
         "AI App Developer": {
-            "Prompting": [],
             "RAG": [],
-            "Lang Chain":[],
+            "Agents": [],
+            "Fine Tuning":[],
         },
-        "Full-Stack Web Developer": {
-            "FrontEnd": ["React"],
-            "BackEnd": ["FastAPI"],
-        },        
+        "Cloud Engineer": {
+            "Devops Tools": [],
+            "Microsoft Azure": [],
+            "AWS": [],
+        },                
         "Validation Engineer": {
             "Hardware Testing": [],
             "Equipment Monitoring": [],
             "Troubleshoot":[],
             "Developing test protocols":[],
         },
-        "DevOps Engineer": {
-            "Docker": [],
-            "Kubernetes": [],
-            "CI/CD": [],
+        "Full-Stack Web Developer": {
+            "FrontEnd": ["React"],
+            "BackEnd": ["Python"],
         },
     };
 
