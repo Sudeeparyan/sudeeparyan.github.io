@@ -1,21 +1,4 @@
-#Myphoto {
-  /* background-color: red; */
-  height: 40rem;
-  width: 30rem;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-}
-.logo {
-  height: 50px;
-  width: 120px;
-  margin-top: -10px;
-}
-.main-body {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
+/* Base Variables */
 :root {
   --base: #555;
   --base-100: #f1f1f1;
@@ -30,29 +13,14 @@
   --blue-400: #61dafb;
   --blue-800: #0a61ae;
 }
-.Level {
-  margin-left: -70%;
-}
 
-.textAboutme {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto;
-}
-
-.div-block-4 {
-  position: absolute;
-  z-index: 1000;
-  display: inline-block;
-  width: 35px;
-  height: 35px;
-  margin-top: 6px;
-  padding-top: 0;
-  background-image: url(https://i.ibb.co/V37j9kh/60baff5fcc93ec0fda8a19ba-s-logo-copy-3.png);
-  background-position: 0 0;
-  background-size: contain;
-  -webkit-transition: 175ms;
-  transition: 175ms;
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow-y: auto;
 }
 
 .headline {
@@ -64,77 +32,86 @@
   border-bottom: 4px double;
   text-align: center;
 }
-#carousel-project-content-text {
-  position: relative;
+
+/* Section Layouts */
+#intro, #aboutme, #experience, #home {
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#home { min-height: 70vh; }
+#aboutme { height: 680px; }
+
+#Experience {
+  background-color: #1f1f1f;
+  color: white;
+  text-align: center;
+}
+
+#projects { text-align: center; }
+#myCarousel { height: 625px; }
+
+/* Main Content Styles */
+.main-body {
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  width: 70%;
-}
-#myCarousel {
-  height: 625px;
 }
 
-#aboutme {
-  height: 680px;
+/* Profile Photo */
+#Myphoto {
+  height: 40rem;
+  width: 30rem;
+  margin: 0 auto;
+  display: block;
 }
 
-.skillimage:hover {
-  transform: scale(1.2);
-  height: 100px;
-  width: 100px;
-}
+#Myphoto:hover { transform: scale(1.1); }
 
-#Myphoto:hover {
-  transform: scale(1.1);
-}
-
+/* Contact Section */
 #contact {
   background-color: black;
   height: 705px;
   text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.contactform input[type="text"],
+.email,
+.phone,
+.messages {
+  color: white;
+  background: none;
+  font-size: 1em;
+  padding: 0.8em 1em;
+  border: 1px solid #8c8c8c;
+  display: inline-block;
 }
 
 .contactform input[type="text"] {
   margin-right: 1%;
   width: 49%;
-  color: white;
-  background: none;
-  font-size: 1em;
-  padding: 0.8em 1em;
-  border: 1px solid #8c8c8c;
-  display: inline-block;
 }
 
 .email {
   margin-left: 1%;
   width: 49%;
-  color: white;
-  background: none;
-  font-size: 1em;
-  padding: 0.8em 1em;
-  border: 1px solid #8c8c8c;
-  display: inline-block;
 }
 
 .phone {
   margin-top: 2%;
   width: 100%;
-  color: white;
-  background: none;
-  font-size: 1em;
-  padding: 0.8em 1em;
-  border: 1px solid #8c8c8c;
-  display: inline-block;
 }
 
 .messages {
   margin-top: 2%;
   width: 100%;
-  color: white;
-  background: none;
-  font-size: 1em;
-  padding: 0.8em 1em;
-  border: 1px solid #8c8c8c;
-  display: inline-block;
   height: 10em;
 }
 
@@ -149,188 +126,13 @@
   display: inline-block;
 }
 
-.contactform input[type="submit"]:hover {
-  background: none;
-}
+.contactform input[type="submit"]:hover { background: none; }
 
-#socialnetwork a:hover {
-  transform: scale(1.2);
-}
-.Rover {
-  width: 100%;
-  align-items: center;
-  display: flex;
-  height: 100%;
-  justify-content: center;
-}
-.RoverImg {
-  width: 35rem;
-  height: 30rem;
-}
-.droneImg {
-  width: 35rem;
-  height: 30rem;
-}
-#Experience {
-  background-color: #1f1f1f;
-  color: white;
-  text-align: center;
-}
-#certifications {
-  text-align: center;
-}
-#projects {
-  text-align: center;
-}
-#education {
-  background-color: #1f1f1f;
-  text-align: center;
-}
-
-.work-left {
-  text-align: right;
-  padding: 3em 5em 0 0;
-}
-
-.work-info h4 {
-  font-size: 1.2em;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  background: darkcyan;
-  display: inline-block;
-  padding: 0.6em 1.2em;
-  color: #fff;
-  position: relative;
-}
-
-.work-right {
-  text-align: left;
-  border-left: 1px solid #999;
-  padding: 3em 0 2em 6em;
-}
-
-.work-info h5 {
-  font-size: 1.2em;
-  color: #f7e612;
-  border: 1px solid #f7e612;
-  display: inline-block;
-  padding: 0.6em 1.2em;
-}
-
-.work-expreinece-subheading {
-  font-size: 1.2em;
-  color: #f7e612;
-  display: inline-block;
-  padding: 0.6em 1.2em;
-}
-
-.work-right span.glyphicon {
-  font-size: 1.2em;
-  margin-left: -42px;
-  margin-right: -10px;
-  left: -67px;
-  color: whitesmoke;
-  padding: 1em;
-  background: darkcyan;
-  border-radius: 50%;
-}
-
-.work-right span.glyphicon:hover {
-  transform: scale(1.2);
-}
-
-.work-info h4::before {
-  width: 0;
-  height: 0;
-  position: absolute;
-  content: "";
-  top: 9px;
-  right: -14px;
-  border-style: solid;
-  border-width: 10px 0 10px 16px;
-  border-color: transparent transparent transparent rgb(0, 139, 139);
-}
-
-.work-expreinece-innercontent {
-  color: gray;
-  font-weight: 500;
-}
-
-.work-info p {
-  color: gray;
-  font-weight: 500;
-}
-
-.bottom {
-  border-top: 4px double rgba(14, 14, 14, 0.35);
-  margin-top: 40px;
-  text-align: center;
-}
-
-.projectname {
-  font-family: "Overlock", serif;
-  margin-top: 50px;
-  font-size: 40px;
-}
-
-.projectobjective {
-  font-family: "Overlock", serif;
-  margin-top: 0px;
-  font-size: 25px;
-}
-
-.projectmain {
-  width: 68%;
-  margin-left: 16%;
-}
-
-.projecttools {
-  font-family: "Overlock", serif;
-  margin-top: 0px;
-  font-size: 25px;
-}
-
-.projectoutcome {
-  font-family: "Overlock", serif;
-  margin-top: 0px;
-  font-size: 25px;
-}
-
-.projectdoc:hover {
-  transform: scale(3);
-}
-
-.world {
-  border-radius: 50%;
-}
-
-.soliton {
-  height: 130px;
-  width: 160px;
-  border-radius: 20px;
-}
-
-.edureka {
-  height: 70px;
-  width: 150px;
-  border-radius: 20px;
-}
-
-.vtps {
-  height: 130px;
-  width: 200px;
-  border-radius: 10px;
-}
-
+/* Work Experience */
 .work-experience .jobs {
   display: flex;
   gap: 30px;
   padding-bottom: 5rem;
-}
-
-@media (max-width: 1024px) {
-  .work-experience .jobs {
-    flex-direction: column;
-  }
 }
 
 .work-experience .jobs article {
@@ -350,10 +152,6 @@
   margin-bottom: 5px;
 }
 
-.work-experience .jobs article p {
-  margin-bottom: 10px;
-}
-
 .work-experience .jobs article figure {
   width: 100%;
   padding-top: 56.25%;
@@ -367,9 +165,9 @@
   top: 0;
   left: 0;
   height: 100%;
+  width: 100%;
   object-fit: cover;
   transition: ease 3s all;
-  width: 100%;
 }
 
 .work-experience .jobs article figure figcaption {
@@ -391,449 +189,103 @@
   visibility: visible;
 }
 
-.work-experience .jobs article figure:hover img {
-  transform: scale(1.2);
+.work-experience .jobs article figure:hover img { transform: scale(1.2); }
+
+#work-left {
+  text-align: right;
+  padding: 3em 5em 0 0;
 }
 
-.mobile-toggle {
-  display: none;
+#work-right {
+  text-align: left;
+  border-left: 1px solid #999;
+  padding: 3em 0 2em 6em;
 }
 
-@media (max-width: 768px) {
-  .container {
-    padding: 0 10px;
-  }
-
-  .row {
-    flex-direction: column;
-  }
-
-  .col-md-6,
-  .col-md-5 {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .headline {
-    width: 90%;
-    margin-left: 5%;
-    font-size: 35px;
-    text-align: center;
-  }
-
-  .projectname,
-  .projectobjective,
-  .projecttools,
-  .projectoutcome {
-    font-size: 18px;
-    text-align: center;
-  }
-
-  .projectmain {
-    width: 90%;
-    margin-left: 5%;
-  }
-
-  #aboutme,
-  #myCarousel {
-    height: auto;
-  }
-
-  #Myphoto,
-  .skillimage,
-  .projectdoc,
-  .world,
-  .soliton,
-  .edureka,
-  .vtps {
-    width: 100%;
-    height: auto;
-  }
-
-  #contact {
-    height: auto;
-  }
-
-  .contactform input[type="text"],
-  .email,
-  .phone,
-  .message,
-  .contactform input[type="submit"] {
-    width: 100%;
-  }
-  .work-left {
-    text-align: right;
-    padding: 3em 5em 0 0;
-  }
-  .work-right {
-    text-align: left;
-    border-left: 1px solid #999;
-    padding: 3em 0 2em 6em;
-  }
-
-  .work-right span.glyphicon {
-    font-size: 1.2em;
-    margin-left: -42px;
-    margin-right: -10px;
-    left: -67px;
-    color: whitesmoke;
-    padding: 1em;
-    background: darkcyan;
-    border-radius: 50%;
-  }
-}
-
-/* General Adjustments */
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
-/* Ensure sections have a minimum height */
-#intro,
-#aboutme,
-#experience {
-  min-height: 100vh; /* Ensures full viewport height */
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-#intro h1,
-#aboutme h1,
-#experience h1,
-#home {
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-
-/* Fix for the overlapping text issue */
-#intro p,
-#aboutme p,
-#experience p,
-#home p {
+.work-right span.glyphicon {
   font-size: 1.2em;
-  line-height: 1.5;
-  max-width: 600px;
-  margin: 0 auto;
-}
-#home {
-  min-height: 70vh; /* Ensures full viewport height */
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  /* background-color: blue; */
+  margin-left: -42px;
+  margin-right: -10px;
+  left: -67px;
+  color: whitesmoke;
+  padding: 1em;
+  background: darkcyan;
+  border-radius: 50%;
 }
 
-/* Mobile Toggle Button Adjustments */
-.mobile-toggle {
-  display: none;
+.work-right span.glyphicon:hover { transform: scale(1.2); }
+
+/* Project Styles */
+.projectname,
+.projectobjective,
+.projecttools,
+.projectoutcome {
+  font-family: "Overlock", serif;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .container {
-    padding: 0 10px;
-  }
-
-  .row {
-    flex-direction: column;
-  }
-
-  .col-md-6,
-  .col-md-5 {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .headline {
-    width: 90%;
-    margin-left: 5%;
-    font-size: 35px;
-    text-align: center;
-  }
-
-  .projectname,
-  .projectobjective,
-  .projecttools,
-  .projectoutcome {
-    font-size: 18px;
-    text-align: center;
-  }
-
-  .projectmain {
-    width: 90%;
-    margin-left: 5%;
-  }
-
-  #aboutme,
-  #myCarousel {
-    height: auto;
-  }
-
-  #Myphoto,
-  .skillimage,
-  .projectdoc,
-  .world,
-  .soliton,
-  .edureka,
-  .vtps {
-    width: 100%;
-    height: auto;
-  }
-
-  #contact {
-    height: auto;
-  }
-
-  .contactform input[type="text"],
-  .email,
-  .phone,
-  .message,
-  .contactform input[type="submit"] {
-    width: 100%;
-  }
-
-  .work-left {
-    text-align: right;
-    padding: 3em 5em 0 0;
-  }
-  .work-right {
-    text-align: left;
-    border-left: 1px solid #999;
-    padding: 3em 0 2em 6em;
-  }
-
-  .work-right span.glyphicon {
-    font-size: 1.2em;
-    margin-left: -42px;
-    margin-right: -10px;
-    left: -67px;
-    color: whitesmoke;
-    padding: 1em;
-    background: darkcyan;
-    border-radius: 50%;
-  }
+.projectname {
+  margin-top: 50px;
+  font-size: 40px;
 }
 
-/* General Adjustments */
-
-.navbar {
-  background-color: rgb(0, 153, 153);
-  padding: 10px 20px;
+.projectobjective,
+.projecttools,
+.projectoutcome {
+  margin-top: 0;
+  font-size: 25px;
 }
 
-.navbar-brand {
-  font-family: Georgia;
-  color: black;
+.projectmain {
+  width: 68%;
+  margin-left: 16%;
 }
 
-.navbar-brand .div-block-4 {
-  margin-top: -8px;
+.RoverImg, .droneImg {
+  width: 35rem;
+  height: 30rem;
 }
 
-.navbar-nav {
-  display: flex;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.navbar-nav li {
-  margin-right: 20px;
-}
-
-.navbar-nav a {
-  color: black;
-  font-family: Georgia;
-}
-
-.mobile-toggle {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .navbar-nav {
-    display: none;
-    flex-direction: column;
-    width: 100%; /* Ensure it takes full width */
-    padding: 0;
-    margin: 0;
-  }
-
-  .navbar-nav.active {
-    display: flex;
-  }
-
-  .navbar-nav li {
-    width: 100%; /* Ensure each menu item takes full width */
-    text-align: center;
-    margin-right: 0; /* Remove right margin */
-  }
-
-  .mobile-toggle {
-    display: block;
-    background: black;
-    padding: 10px;
-    border-radius: 5px;
-    position: fixed; /* Fix the position */
-    top: 15px;
-    right: 15px;
-    z-index: 1000;
-  }
-
-  .navbar-fixed-bottom {
-    position: relative;
-  }
-}
-
-/* Shared styles for skills section */
-#skills {
-  text-align: center;
-}
-
-.headline {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.skillimage {
-  width: 100px;
-  height: auto;
-  margin: 10px;
-}
-
-.left-column,
-.right-column {
-  width: 50%;
-  display: inline-block;
-  vertical-align: top;
-}
-
-.skills h3 {
-  margin-top: 20px;
-}
-
-/* Responsive adjustments */
-@media only screen and (max-width: 600px) {
-  .skillimage {
-    width: 50%;
-    margin: 10px;
-  }
-
-  .left-column,
-  .right-column {
-    width: 100%;
-    margin: 0;
-  }
-
-  .skills ul {
-    padding-left: 20px;
-  }
-
-  .holder-blue {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .right-column {
-    order: -1;
-  }
-}
-
-/* Styles specific to #skills-innercontent */
-#skills-innercontent {
-  background-color: #eee;
-  border-radius: 30px;
-  padding: 30px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-#skills-innercontent .left-column h3,
-#skills-innercontent .right-column h3 {
-  font-size: 1.5em;
-  margin-bottom: 15px;
-}
-
-#skills-innercontent .left-column ul,
-#skills-innercontent .right-column ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-#skills-innercontent .left-column ul li,
-#skills-innercontent .right-column ul li {
-  display: inline-block;
-  color: black;
-  border: 1px solid #4fc3f7;
-  padding: 10px 20px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-/* Media query for larger screens */
-@media (max-width: 1024px) {
-  #skills-innercontent {
-    flex-direction: column;
-  }
-}
-
-.marquee {
-  width: 100%;
-  overflow: hidden;
-}
-
-.track {
-  white-space: nowrap;
-  animation: marquee 40s linear infinite;
-  display: flex;
-  gap: 10px;
-}
-
-.skillimage {
+/* Skill Images */
+.skillimage:hover {
+  transform: scale(1.2);
   height: 100px;
   width: 100px;
-  /* Add other styles as needed */
 }
 
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+/* Footer */
+.bottom {
+  border-top: 4px double rgba(14, 14, 14, 0.35);
+  margin-top: 40px;
+  text-align: center;
 }
 
-/* Media query for responsiveness */
-@media (max-width: 768px) {
-  .skillimage {
-    height: 60px;
-    width: 60px;
-    /* Adjust other styles for smaller screens */
-  }
+/* Company Logos */
+.soliton {
+  height: 130px;
+  width: 160px;
+  border-radius: 20px;
 }
-#chat-bot-content {
-  background-color: red;
+
+.edureka {
+  height: 70px;
+  width: 150px;
+  border-radius: 20px;
 }
-.chatbot {
-  /* styles for .chatbot */
+
+.vtps {
+  height: 130px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+/* Social Media */
+#socialnetwork a:hover { transform: scale(1.2); }
+
+/* Chatbot */
+#chatBot {
+  position: relative;
+  z-index: 2;
+  margin-top: 2em;
 }
 
 .chatbot .chatbot-blue {
@@ -842,16 +294,6 @@ body {
   padding: 30px;
   gap: 30px;
   display: flex;
-}
-
-@media (max-width: 1024px) {
-  .chatbot .chatbot-blue {
-    flex-direction: column;
-  }
-}
-
-.chatbot .chatbot-blue p {
-  margin-bottom: 30px;
 }
 
 .chatbot .chatbot-blue .chat-info {
@@ -892,9 +334,7 @@ body {
   justify-content: flex-end;
   flex-direction: row-reverse;
 }
-.black {
-  background-color: black;
-}
+
 .chatbot .chatbot-blue .chat-box .scroll-area ul li:nth-child(even) span {
   background-color: var(--yellow);
 }
@@ -909,16 +349,7 @@ body {
   justify-content: center;
 }
 
-@media (max-width: 768px) {
-  .chatbot .chatbot-blue .chat-box .scroll-area ul li span {
-    width: 48px;
-    height: 48px;
-  }
-}
-
-.chatbot .chatbot-blue .chat-box .scroll-area ul li div {
-  flex: 1;
-}
+.chatbot .chatbot-blue .chat-box .scroll-area ul li div { flex: 1; }
 
 .chatbot .chatbot-blue .chat-box .chat-message {
   display: flex;
@@ -946,59 +377,81 @@ body {
   cursor: pointer;
 }
 
-.chat-messages {
-  padding-right: 15px;
-}
-
-.button {
-  display: inline-block;
-  padding: 10px 30px;
-  background-color: var(--blue);
-  color: var(--base-100);
-  border-radius: 10px;
-  transition: ease 0.3s all;
-  &:hover {
-    text-decoration: none;
-    background-color: var(--base-800);
-  }
-  &.white {
-    background-color: white;
-    color: var(--base-800);
-    &:hover {
-      background-color: var(--base-100);
-      color: var(--base);
-    }
-  }
-  &.black {
-    background-color: black;
-    color: white;
-    &:hover {
-      background-color: var(--base);
-      color: var(--base-100);
-    }
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .work-experience .jobs,
+  .chatbot .chatbot-blue {
+    flex-direction: column;
   }
 }
 
-#work-left {
-  text-align: right;
-  padding: 3em 5em 0 0;
-}
-#work-right {
-  text-align: left;
-  border-left: 1px solid #999;
-  padding: 3em 0 2em 6em;
-}
-.work-right span.glyphicon {
-  font-size: 1.2em;
-  margin-left: -42px;
-  margin-right: -10px;
-  left: -67px;
-  color: whitesmoke;
-  padding: 1em;
-  background: darkcyan;
-  border-radius: 50%;
+@media (max-width: 768px) {
+  .container { padding: 0 10px; }
+  
+  .row { flex-direction: column; }
+  
+  .col-md-6, .col-md-5 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .headline {
+    width: 90%;
+    margin-left: 5%;
+    font-size: 35px;
+  }
+  
+  .projectname, .projectobjective, .projecttools, .projectoutcome {
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  .projectmain {
+    width: 90%;
+    margin-left: 5%;
+  }
+  
+  #aboutme, #myCarousel { height: auto; }
+  
+  #Myphoto, .skillimage, .soliton, .edureka, .vtps {
+    width: 100%;
+    height: auto;
+  }
+  
+  #contact { height: auto; }
+  
+  .contactform input[type="text"], .email, .phone, .messages, 
+  .contactform input[type="submit"] {
+    width: 100%;
+    margin: 0.5em 0;
+  }
+  
+  .mobile-toggle {
+    display: block;
+    background: black;
+    padding: 10px;
+    border-radius: 5px;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+  }
+  
+  .chatbot .chatbot-blue .chat-box .scroll-area ul li span {
+    width: 48px;
+    height: 48px;
+  }
+  
+  body {
+    font-size: 14px;
+    padding: 0;
+  }
 }
 
-.work-right span.glyphicon:hover {
-  transform: scale(1.2);
+@media (max-width: 500px) {
+  .headline { font-size: 1.2em; }
+  
+  #Myphoto { width: 100%; }
+  
+  .contactform input[type="submit"] { font-size: 0.9em; }
 }

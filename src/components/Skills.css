@@ -1,0 +1,138 @@
+@import "../common.css";
+
+/* Moved styles specific to the Skills component */
+#skills {
+  text-align: center;
+}
+
+.headline {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.skillimage {
+  width: 100px;
+  height: auto;
+  margin: 10px;
+}
+
+.left-column,
+.right-column {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.skills h3 {
+  margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 600px) {
+  .skillimage {
+    width: 50%;
+    margin: 10px;
+  }
+
+  .left-column,
+  .right-column {
+    width: 100%;
+    margin: 0;
+  }
+
+  .skills ul {
+    padding-left: 20px;
+  }
+
+  .holder-blue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .right-column {
+    order: -1;
+  }
+}
+
+/* Styles specific to #skills-innercontent */
+#skills-innercontent {
+  background-color: #eee;
+  border-radius: 30px;
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#skills-innercontent .left-column h3,
+#skills-innercontent .right-column h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+#skills-innercontent .left-column ul,
+#skills-innercontent .right-column ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#skills-innercontent .left-column ul li,
+#skills-innercontent .right-column ul li {
+  display: inline-block;
+  color: black;
+  border: 1px solid #4fc3f7;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Media query for larger screens */
+@media (max-width: 1024px) {
+  #skills-innercontent {
+    flex-direction: column;
+  }
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+.track {
+  white-space: nowrap;
+  animation: marquee 40s linear infinite;
+  display: flex;
+  gap: 10px;
+}
+
+.skillimage {
+  height: 100px;
+  width: 100px;
+  /* Add other styles as needed */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .skillimage {
+    height: 60px;
+    width: 60px;
+    /* Adjust other styles for smaller screens */
+  }
+}
+
+/* Removed duplicate styles already present in common.css */

@@ -1,0 +1,80 @@
+@import "../common.css";
+
+/* Moved styles specific to the Education component */
+#education {
+  background-color: #1f1f1f;
+  text-align: center;
+}
+
+.work-left {
+  text-align: right;
+  padding: 3em 5em 0 0;
+}
+
+.work-info h4 {
+  font-size: 1.2em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background: darkcyan;
+  display: inline-block;
+  padding: 0.6em 1.2em;
+  color: #fff;
+  position: relative;
+}
+
+.work-right {
+  text-align: left;
+  border-left: 1px solid #999;
+  padding: 3em 0 2em 6em;
+}
+
+.work-info h5 {
+  font-size: 1.2em;
+  color: #f7e612;
+  border: 1px solid #f7e612;
+  display: inline-block;
+  padding: 0.6em 1.2em;
+}
+
+.work-expreinece-subheading {
+  font-size: 1.2em;
+  color: #f7e612;
+  display: inline-block;
+  padding: 0.6em 1.2em;
+}
+
+.work-right span.glyphicon {
+  font-size: 1.2em;
+  margin-left: -42px;
+  margin-right: -10px;
+  left: -67px;
+  color: whitesmoke;
+  padding: 1em;
+  background: darkcyan;
+  border-radius: 50%;
+}
+
+.work-right span.glyphicon:hover {
+  transform: scale(1.2);
+}
+
+.work-info h4::before {
+  width: 0;
+  height: 0;
+  position: absolute;
+  content: "";
+  top: 9px;
+  right: -14px;
+  border-style: solid;
+  border-width: 10px 0 10px 16px;
+  border-color: transparent transparent transparent rgb(0, 139, 139);
+}
+
+.work-expreinece-innercontent {
+  color: gray;
+  font-weight: 500;
+}
+
+.work-info p {
+  color: gray;
+  font-weight: 500;
+}

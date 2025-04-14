@@ -1,0 +1,26 @@
+/* Moved styles specific to the Certifications component */
+#certifications {
+  text-align: center;
+}
+
+.certificates {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.certificates h3 {
+  font-size: 1.2em;
+  color: #333;
+  text-align: center;
+}
+
+.certificates a {
+  text-decoration: none;
+  color: #008b8b;
+}
+
+.certificates a:hover {
+  text-decoration: underline;
+  color: #005f5f;
+}

@@ -1,4 +1,3 @@
-
 "use client";  // This directive makes this a client component
 
 import { useEffect, useState } from "react";

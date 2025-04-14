@@ -1,3 +1,4 @@
+/* Animations */
 @keyframes blink {
   0%,
   6%,
@@ -8,6 +9,7 @@
     transform: scaleY(0.1);
   }
 }
+
 @keyframes bleye {
   0%,
   6%,
@@ -18,15 +20,19 @@
     transform: translateY(15px);
   }
 }
+
+/* SVG Styling */
 svg .eye {
   transform-origin: center;
   transform-box: fill-box;
   transform: scaleY(1.1);
   animation: blink 5s infinite;
 }
+
 svg g {
   fill: #000000;
 }
+
 .eyeball {
   fill: #ffffff;
   transform-origin: center;
@@ -34,10 +40,7 @@ svg g {
   transform: translateY(0px);
   animation: bleye 5s infinite;
 }
-.bg {
-  filter: drop-shadow(0px 0px 30px #fff);
-}
-.bg,
+
 .eyes {
   width: 100%;
   height: 100%;
@@ -47,21 +50,12 @@ svg g {
   transform: scale(1);
   top: -10%;
 }
-.facebg {
-  fill: #ffffff;
-  transform-origin: center;
-  transform-box: fill-box;
-  transform: scale(10);
-  /* filter: drop-shadow(-1px 80px 100px #FAFAFA); */
-}
+
 .face {
   position: relative;
 }
 
-.certificates{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
+/* Layout */
 .main {
   position: relative;
   top: 3em;
@@ -69,194 +63,18 @@ svg g {
   width: 100vw;
   height: 95vh;
 }
+
 .main .connector {
   position: absolute;
   width: 10vw;
   height: 10vw;
   transition: scale 0.5s;
 }
-.skill-card {
-  position: absolute;
-}
-.skill-card:hover {
-  cursor: pointer;
-  h2 {
-    color: var(--hover-color);
-    border: 2px solid var(--hover-color);
-  }
-  .connector path {
-    fill: var(--hover-color);
-  }
-}
-.skill-card.selected {
-  cursor: pointer;
-  h2 {
-    color: var(--hover-color);
-    border: 2px solid var(--hover-color);
-  }
-  .connector path {
-    fill: var(--hover-color);
-  }
-}
-.skill-card:nth-child(1) {
-  h2 {
-    translate: -100%;
-  }
-  top: 22%;
-  left: 25%;
-}
-.skill-card:nth-child(2) {
-  .connector {
-    translate: -100%;
-    scale: 1 -1;
-  }
-  top: 22%;
-  right: 25%;
-}
-.skill-card:nth-child(3) {
-  h2 {
-    translate: -100% 20%;
-  }
-  .connector {
-    translate: 0 -50%;
-    scale: 1 -1;
-  }
-  bottom: 35%;
-  left: 25%;
-}
-
-.skill-card:nth-child(4) {
-  h2 {
-    translate: 0 20%;
-  }
-  .connector {
-    translate: -100% -50%;
-  }
-  bottom: 35%;
-  right: 25%;
-}
-
-.outer-list {
-  margin: 20px;
-  width: 100%;
-  white-space: nowrap;
-}
-.inner-list {
-  margin-left: 20px;
-}
-
-@media (max-width: 500px) {
-  .main {
-    height: 60vh;
-    top: 7em;
-  }
-
-  .skill-card:nth-child(1) {
-    h2 {
-      font-size: 18px;
-    }
-
-    top: 0;
-    left: 20%;
-  }
-
-  .skill-card:nth-child(2) {
-    h2 {
-      font-size: 18px;
-    }
-
-    top: 0;
-    right: 27%;
-  }
-
-  .skill-card:nth-child(3) {
-    h2 {
-      font-size: 18px;
-    }
-
-    bottom: 60%;
-    left: 20%;
-  }
-
-  .skill-card:nth-child(4) {
-    h2 {
-      font-size: 18px;
-    }
-
-    bottom: 60%;
-    right: 23%;
-  }
-}
-
-/* .selected on desktop */
-/* @media only screen and (min-width: 768px) {
-  .selected .skill-card:nth-child(2) {
-    top: 38%;
-    left: 5%;
-  }
-  .selected .skill-card:nth-child(2) .connector {
-    transform: translate(200%);
-    transform: scale(1);
-  }
-  .selected .skill-card:nth-child(4) {
-    bottom: 51%;
-    left: 5%;
-  }
-  .selected .skill-card:nth-child(4) .connector {
-    transform: translate(200%, -50%);
-    transform: scale(1, -1);
-  }
-} */
-@media only screen and (min-width: 768px) {
-  .selected {
-    .skill-card:nth-child(2) {
-      top: 38%;
-      left: 5%;
-      /* .connector {
-        translate: -163px;
-        scale: 1;
-      } */
-    }
-    .skill-card:nth-child(4) {
-      bottom: 51%;
-      left: 5%;
-      /* .connector {
-        translate: -163px -50%;
-        scale: 1 -1;
-      } */
-    }
-  }
-}
-/* @media only screen and (min-width: 768px) {
-  .selected {
-    .skill-card:nth-child(2) {
-      top: 38%;
-      left: 5%;
-      .connector {
-        translate: 200%;
-        scale: 1;
-      }
-    }
-    .skill-card:nth-child(4) {
-      bottom: 51%;
-      left: 5%;
-      .connector {
-        translate: 200% -50%;
-        scale: 1 -1;
-      }
-    }
-  }
-} */
 
 .main .connector path {
   fill: var(--text-color);
 }
-.side {
-  width: 25%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
+
 .main h2 {
   position: absolute;
   padding: 10px;
@@ -270,14 +88,87 @@ svg g {
   font-size: 1em;
   margin: 0px;
 }
+
 .main .graphics {
   flex-grow: 1;
   width: 70vw;
 }
+
+/* Skill Cards */
+.skill-card {
+  position: absolute;
+}
+
+.skill-card:hover,
+.skill-card.selected {
+  cursor: pointer;
+}
+
+.skill-card:hover h2,
+.skill-card.selected h2 {
+  color: var(--hover-color);
+  border: 2px solid var(--hover-color);
+}
+
+.skill-card:hover .connector path,
+.skill-card.selected .connector path {
+  fill: var(--hover-color);
+}
+
+/* Individual skill card positioning */
+.skill-card:nth-child(1) {
+  top: 22%;
+  left: 25%;
+}
+
+.skill-card:nth-child(1) h2 {
+  translate: -100%;
+}
+
+.skill-card:nth-child(2) {
+  top: 22%;
+  right: 25%;
+}
+
+.skill-card:nth-child(2) .connector {
+  translate: -100%;
+  scale: 1 -1;
+}
+
+.skill-card:nth-child(3) {
+  bottom: 35%;
+  left: 25%;
+}
+
+.skill-card:nth-child(3) h2 {
+  translate: -100% 20%;
+}
+
+.skill-card:nth-child(3) .connector {
+  translate: 0 -50%;
+  scale: 1 -1;
+}
+
+.skill-card:nth-child(4) {
+  bottom: 35%;
+  right: 25%;
+}
+
+.skill-card:nth-child(4) h2 {
+  translate: 0 20%;
+}
+
+.skill-card:nth-child(4) .connector {
+  translate: -100% -50%;
+}
+
+/* Content */
 .Content {
   width: 35%;
   margin-right: 60px;
+  padding-top: 50px;
 }
+
 .main .Content {
   width: 32vw;
   transform: translateX(100%);
@@ -287,18 +178,18 @@ svg g {
   transition: 0.5s;
   margin-top: 2%;
 }
+
 .selected + .Content {
   transform: translateX(0%);
 }
-.Content {
-  padding-top: 50px;
-}
+
 .Content h1 {
   margin: 65px 0px 0px 30px;
   font-family: "Cookie";
   letter-spacing: 0.2em;
   width: 100%;
 }
+
 .Content .container {
   display: flex;
   flex-direction: column;
@@ -306,46 +197,55 @@ svg g {
   row-gap: 1em;
   width: 100%;
 }
-.container label {
-  display: block;
-}
-.container input[type="range"] {
-  -webkit-appearance: none;
-  outline: none;
-  border-radius: 15px;
-  overflow: hidden;
-}
-.container input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: var(--text-color);
-  cursor: pointer;
-  box-shadow: -407px 0 0 400px var(--text-color);
+
+/* Lists */
+.outer-list {
+  margin: 20px;
+  width: 100%;
+  white-space: nowrap;
 }
 
+.inner-list {
+  margin-left: 20px;
+}
+
+/* Responsive Styles */
+@media only screen and (min-width: 768px) {
+  .selected .skill-card:nth-child(2) {
+    top: 38%;
+    left: 5%;
+  }
+
+  .selected .skill-card:nth-child(4) {
+    bottom: 51%;
+    left: 5%;
+  }
+}
+
+/* Responsive Styles */
 @media only screen and (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    height: auto;
+    padding: 1em;
+    transition: 0.5s;
+  }
+
+  .main:has(.selected) {
+    transform: translateY(-20%);
+  }
+
   .main h2 {
     width: 80px;
     height: max-content;
     margin: auto;
   }
+
   .main .connector {
-    position: absolute;
     width: 12vw;
     height: 20vw;
   }
-  .main {
-    flex-direction: column;
-    transition: 0.5s;
-  }
-  .main:has(.selected) {
-    transform: translateY(-20%);
-  }
-  .selected + .Content {
-    transform: translateY(0%);
-  }
+
   .main .Content {
     width: 100%;
     height: 40vh;
@@ -354,20 +254,88 @@ svg g {
     transform: translateY(100%);
     align-items: center;
   }
+
+  .selected + .Content {
+    transform: translateY(0%);
+  }
+
   .Content .container {
     row-gap: 0.1em;
   }
+
   .Content h1 {
     margin-bottom: 10px;
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .skill-card {
+    position: static;
+    margin: 1em auto;
+    text-align: center;
+  }
+
+  .Content {
+    width: 100%;
+    margin: 0;
+    padding: 1em;
+  }
+
+  .outer-list {
+    font-size: 0.9em;
   }
 }
 
 @media only screen and (max-width: 500px) {
+  .main {
+    height: 60vh;
+    top: 7em;
+    padding: 0.5em;
+  }
+
   .main .Content {
     height: 0;
     margin: 0;
     bottom: 300px;
     visibility: hidden;
+  }
+
+  .main:has(.selected) .Content {
+    visibility: visible;
+  }
+
+  .skill-card h2 {
+    font-size: 1em;
+  }
+
+  .skill-card:nth-child(1),
+  .skill-card:nth-child(3) {
+    left: 20%;
+  }
+
+  .skill-card:nth-child(2) {
+    right: 27%;
+  }
+
+  .skill-card:nth-child(4) {
+    right: 23%;
+  }
+
+  .skill-card:nth-child(1),
+  .skill-card:nth-child(2) {
+    top: 0;
+  }
+
+  .skill-card:nth-child(3),
+  .skill-card:nth-child(4) {
+    bottom: 60%;
+  }
+
+  .skill-card:nth-child(1) h2,
+  .skill-card:nth-child(2) h2,
+  .skill-card:nth-child(3) h2,
+  .skill-card:nth-child(4) h2 {
+    font-size: 18px;
   }
 
   .Content h1 {
@@ -381,9 +349,6 @@ svg g {
 
   .outer-list {
     text-align: left;
-  }
-
-  .main:has(.selected) .Content {
-    visibility: visible;
+    font-size: 0.8em;
   }
 }

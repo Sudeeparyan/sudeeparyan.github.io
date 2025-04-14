@@ -1,0 +1,114 @@
+/* Chatbot-specific styles extracted from globals.css */
+.chatbot .chatbot-blue {
+  background-color: #eee;
+  border-radius: 30px;
+  padding: 30px;
+  gap: 30px;
+  display: flex;
+}
+
+@media (max-width: 1024px) {
+  .chatbot .chatbot-blue {
+    flex-direction: column;
+  }
+}
+
+.chatbot .chatbot-blue p {
+  margin-bottom: 30px;
+}
+
+.chatbot .chatbot-blue .chat-info {
+  flex: 3;
+  padding-right: 30px;
+}
+
+.chatbot .chatbot-blue .chat-box {
+  flex: 4;
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatbot .chatbot-blue .chat-box .scroll-area {
+  max-height: 300px;
+  height: 300px;
+  overflow-y: scroll;
+}
+
+.chatbot .chatbot-blue .chat-box .scroll-area ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.chatbot .chatbot-blue .chat-box .scroll-area ul li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.chatbot .chatbot-blue .chat-box .scroll-area ul li:nth-child(even) {
+  text-align: right;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+}
+
+.chatbot .chatbot-blue .chat-box .scroll-area ul li:nth-child(even) span {
+  background-color: var(--yellow);
+}
+
+.chatbot .chatbot-blue .chat-box .scroll-area ul li span {
+  background-color: var(--blue-400);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .chatbot .chatbot-blue .chat-box .scroll-area ul li span {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.chatbot .chatbot-blue .chat-box .scroll-area ul li div {
+  flex: 1;
+}
+
+.chatbot .chatbot-blue .chat-box .chat-message {
+  display: flex;
+  margin-top: 15px;
+  gap: 15px;
+}
+
+.chatbot .chatbot-blue .chat-box .chat-message input {
+  border-radius: 10px;
+  flex: 1;
+  padding: 15px;
+  border: 1px solid transparent;
+  background-color: var(--base-100);
+}
+
+.chatbot .chatbot-blue .chat-box .chat-message input:hover,
+.chatbot .chatbot-blue .chat-box .chat-message input:focus {
+  outline: none;
+  background-color: white;
+  border: 1px solid var(--base-100);
+}
+
+.chatbot .chatbot-blue .chat-box .chat-message button {
+  border: none;
+  cursor: pointer;
+}
+
+.chat-messages {
+  padding-right: 15px;
+}
+
+/* Removed duplicate styles already present in globals.css */
