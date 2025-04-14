@@ -44,7 +44,7 @@ body {
   text-align: center;
 }
 
-#home { min-height: 70vh; }
+#home { min-height: 70vh; background-color: #e6f7ff ; }
 #aboutme { height: 680px; }
 
 #Experience {
@@ -96,12 +96,12 @@ body {
 
 .contactform input[type="text"] {
   margin-right: 1%;
-  width: 49%;
+  /* width: 49%; */
 }
 
 .email {
   margin-left: 1%;
-  width: 49%;
+  /* width: 49%; */
 }
 
 .phone {
@@ -127,93 +127,6 @@ body {
 }
 
 .contactform input[type="submit"]:hover { background: none; }
-
-/* Work Experience */
-.work-experience .jobs {
-  display: flex;
-  gap: 30px;
-  padding-bottom: 5rem;
-}
-
-.work-experience .jobs article {
-  background-color: #393939;
-  padding: 30px;
-  border-radius: 30px;
-  flex: 1;
-}
-
-.work-experience .jobs article h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-.work-experience .jobs article div {
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-
-.work-experience .jobs article figure {
-  width: 100%;
-  padding-top: 56.25%;
-  overflow: hidden;
-  position: relative;
-  border-radius: 15px;
-}
-
-.work-experience .jobs article figure img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  transition: ease 3s all;
-}
-
-.work-experience .jobs article figure figcaption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: var(--base-100);
-  text-align: center;
-  padding: 10px;
-  opacity: 0;
-  visibility: hidden;
-  transition: ease 0.3s all;
-}
-
-.work-experience .jobs article figure:hover figcaption {
-  opacity: 1;
-  visibility: visible;
-}
-
-.work-experience .jobs article figure:hover img { transform: scale(1.2); }
-
-#work-left {
-  text-align: right;
-  padding: 3em 5em 0 0;
-}
-
-#work-right {
-  text-align: left;
-  border-left: 1px solid #999;
-  padding: 3em 0 2em 6em;
-}
-
-.work-right span.glyphicon {
-  font-size: 1.2em;
-  margin-left: -42px;
-  margin-right: -10px;
-  left: -67px;
-  color: whitesmoke;
-  padding: 1em;
-  background: darkcyan;
-  border-radius: 50%;
-}
-
-.work-right span.glyphicon:hover { transform: scale(1.2); }
 
 /* Project Styles */
 .projectname,
@@ -562,12 +475,7 @@ html {
   transform: scale(1.2);
 }
 
-/* ─────────────────────────────────────────────────────────────────────────────
-   Gentle background accents
-──────────────────────────────────────────────────────────────────────────── */
-#aboutme {
-  background: linear-gradient(135deg, var(--blue-100), var(--yellow-100));
-}
+
 #projects {
   background: var(--base-100);
 }
@@ -584,3 +492,4 @@ html {
     padding: 10px;
   }
 }
+

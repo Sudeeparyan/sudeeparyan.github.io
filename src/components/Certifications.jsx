@@ -1,4 +1,5 @@
 import React from 'react';
+import './Certifications.css';
 
 const CertificateLink = ({ href, title }) => (
   <h3>
@@ -11,8 +12,10 @@ const CertificateLink = ({ href, title }) => (
 export default function Certifications({ certificates }) {
   return (
     <div id="certifications">
-      <h1 className="headline">Certifications</h1>
-      <div className="row certificates" style={{ lineHeight: "150px" }}>
+      <div className="heading-container">
+        <h1 className="headline">Certifications</h1>
+      </div>
+      <div className="certificates">
         {certificates.map((cert, index) => (
           <CertificateLink key={index} href={cert.href} title={cert.title} />
         ))}

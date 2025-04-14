@@ -1,80 +1,284 @@
-@import "../common.css";
-
-/* Moved styles specific to the Education component */
+/* Education Component Styles */
 #education {
   background-color: #1f1f1f;
   text-align: center;
+  padding: 60px 0;
+  position: relative;
 }
 
-.work-left {
+/* Heading and underline */
+.heading-container {
+  position: relative;
+  margin-bottom: 60px;
+}
+#education .headline {
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 50px;
+  position: relative;
+  color: #00e5e5;
+  text-shadow: 0 0 10px rgba(0, 229, 229, 0.3);
+  animation: glow 3s infinite alternate;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+
+.heading-container:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 5%;
+  width: 90%;
+  height: 2px;
+  background: #009688;
+  animation: expand 1.5s ease forwards;
+}
+
+@keyframes expand {
+  0% {
+    width: 0;
+    left: 50%;
+  }
+  100% {
+    width: 90%;
+    left: 5%;
+  }
+}
+
+/* Timeline container */
+.education-timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Center line */
+.education-timeline:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #999;
+  transform: translateX(-50%);
+  height: 100%;
+  animation: grow-line 2s ease forwards;
+}
+
+@keyframes grow-line {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+/* Individual education items */
+.education-item {
+  position: relative;
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: fade-in 0.6s ease forwards;
+  animation-delay: calc(var(--item-index, 0) * 0.3s);
+}
+
+.education-item:nth-child(1) {
+  --item-index: 1;
+}
+
+.education-item:nth-child(2) {
+  --item-index: 2;
+}
+
+.education-item:nth-child(3) {
+  --item-index: 3;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Year section */
+.timeline-year {
+  width: 30%;
   text-align: right;
-  padding: 3em 5em 0 0;
+  padding-right: 30px;
 }
 
-.work-info h4 {
+.timeline-year h4 {
   font-size: 1.2em;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  background: darkcyan;
+  background: #009688;
   display: inline-block;
   padding: 0.6em 1.2em;
   color: #fff;
   position: relative;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
-.work-right {
+.timeline-year h4:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-year h4:before {
+  width: 0;
+  height: 0;
+  position: absolute;
+  content: "";
+  top: 50%;
+  right: -14px;
+  transform: translateY(-50%);
+  border-style: solid;
+  border-width: 10px 0 10px 16px;
+  border-color: transparent transparent transparent #009688;
+}
+
+/* Icon section */
+.timeline-icon {
+  width: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.education-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: #009688;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.5em;
+  box-shadow: 0 0 0 4px #1f1f1f, 0 0 0 8px rgba(0, 150, 136, 0.3);
+  transition: all 0.3s ease;
+}
+
+.education-icon:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 4px #1f1f1f, 0 0 0 8px rgba(0, 150, 136, 0.6);
+}
+
+/* Content section */
+.timeline-content {
+  width: 30%;
   text-align: left;
-  border-left: 1px solid #999;
-  padding: 3em 0 2em 6em;
+  padding-left: 30px;
 }
 
-.work-info h5 {
+.timeline-content h5 {
   font-size: 1.2em;
   color: #f7e612;
   border: 1px solid #f7e612;
   display: inline-block;
   padding: 0.6em 1.2em;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
 }
 
-.work-expreinece-subheading {
-  font-size: 1.2em;
-  color: #f7e612;
-  display: inline-block;
-  padding: 0.6em 1.2em;
+.timeline-content h5:hover {
+  background: rgba(247, 230, 18, 0.1);
+  transform: translateX(5px);
 }
 
-.work-right span.glyphicon {
-  font-size: 1.2em;
-  margin-left: -42px;
-  margin-right: -10px;
-  left: -67px;
-  color: whitesmoke;
-  padding: 1em;
-  background: darkcyan;
-  border-radius: 50%;
+.timeline-content p {
+  color: #aaa;
+  margin: 10px 0;
+  font-weight: 400;
+  transition: all 0.3s ease;
 }
 
-.work-right span.glyphicon:hover {
-  transform: scale(1.2);
+.timeline-content p.institute {
+  font-style: italic;
 }
 
-.work-info h4::before {
-  width: 0;
-  height: 0;
-  position: absolute;
-  content: "";
-  top: 9px;
-  right: -14px;
-  border-style: solid;
-  border-width: 10px 0 10px 16px;
-  border-color: transparent transparent transparent rgb(0, 139, 139);
-}
-
-.work-expreinece-innercontent {
-  color: gray;
+.timeline-content p.grade {
+  color: #ddd;
   font-weight: 500;
 }
 
-.work-info p {
-  color: gray;
-  font-weight: 500;
+.timeline-content:hover p {
+  color: #fff;
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .education-timeline:before {
+    left: 30px;
+  }
+  
+  .education-item {
+    align-items: flex-start;
+    padding-left: 60px;
+  }
+  
+  .timeline-year {
+    width: 100%;
+    text-align: left;
+    padding-right: 0;
+    margin-bottom: 15px;
+  }
+  
+  .timeline-year h4:before {
+    display: none;
+  }
+  
+  .timeline-icon {
+    position: absolute;
+    left: 0;
+    top: 10px;
+  }
+  
+  .timeline-content {
+    width: 100%;
+    padding-left: 0;
+  }
+  
+  #education .headline {
+    font-size: 2rem;
+  }
+}
+
+/* Add a hover effect to entire education item */
+.education-item:hover .timeline-year h4 {
+  background: #00796b;
+}
+
+.education-item:hover .education-icon {
+  background: #00796b;
+}
+
+/* Add a pulse animation to the current education */
+.education-item:first-child .education-icon {
+  /* animation: pulse 2s infinite; */
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 150, 136, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(0, 150, 136, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 150, 136, 0);
+  }
 }

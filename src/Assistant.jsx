@@ -24,7 +24,7 @@ export default function Assistant() {
         "AI App Developer": {
             "RAG": [],
             "Agents": [],
-            "Fine Tuning":[],
+            "Fine Tuning": [],
         },
         "Cloud Engineer": {
             "Devops Tools": [],
@@ -34,8 +34,8 @@ export default function Assistant() {
         "Validation Engineer": {
             "Hardware Testing": [],
             "Equipment Monitoring": [],
-            "Troubleshoot":[],
-            "Developing test protocols":[],
+            "Troubleshoot": [],
+            "Developing test protocols": [],
         },
         "Full-Stack Web Developer": {
             "FrontEnd": ["React"],
@@ -54,19 +54,21 @@ export default function Assistant() {
     
     return (
         <div className={`main ${selected ? 'has-selected' : ''}`}>
-            <div className={selected ? 'graphics selected' : 'graphics'}>
+            <div className={`graphics ${selected ? 'selected' : ''}`}>
                 {Object.keys(skills).map((skill) => (
                     <div 
-                        className={skill === selected ? 'skill-card selected' : 'skill-card'} 
+                        className={`skill-card ${skill === selected ? 'selected' : ''}`} 
                         key={skill}
+                        onClick={() => handleSkillClick(skill)}
                     >
                         <img src={connector} className='connector' alt='connector' />
-                        <h2 onClick={() => handleSkillClick(skill)}>{skill}</h2>
+                        <h2>{skill}</h2>
                     </div>
                 ))}
                 <Facesvg windowWidth={windowWidth} />
             </div>
-            <div className='Content'>
+            
+            <div className={`Content ${selected ? 'visible' : ''}`}>
                 <h1>Skills</h1>
                 <div className='container'>
                     {selected && 

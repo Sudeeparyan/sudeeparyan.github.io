@@ -41,6 +41,7 @@ export default function RootLayout({ children }) {
         <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic" rel="stylesheet" />
         <link href="//fonts.googleapis.com/css?family=Overlock:400,400italic,700,700italic,900,900italic" rel="stylesheet" />
         <link rel="icon" type="image/png" href="./S-cart_icon.png" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></link>
         <link
           rel="stylesheet"
           href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"

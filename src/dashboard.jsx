@@ -39,6 +39,9 @@ import Skills from './components/Skills';
 import Education from './components/Education';
 import Projects from './components/Projects';
 import Certifications from './components/Certifications';
+import Experience from "./components/Experience.jsx";
+import Contact from "./components/Contact.jsx";
+import IntroSlide from "./components/IntroSilde.jsx";
 
 // Component for Education items
 const EducationItem = ({ years, degree, institute, grade }) => (
@@ -53,21 +56,6 @@ const EducationItem = ({ years, degree, institute, grade }) => (
       <p>{grade}</p>
     </div>
   </div>
-);
-
-// Component for Experience items
-const ExperienceItem = ({ image, caption, title, period, description }) => (
-  <article>
-    <figure>
-      <div>
-        <img src={image} alt={`Workplace - ${caption}`} width="100%" />
-        <figcaption>Workplace - {caption}</figcaption>
-      </div>
-    </figure>
-    <h3 className="work-expreinece-subheading">{title}</h3>
-    <div>{period}</div>
-    <p className="work-expreinece-innercontent">{description}</p>
-  </article>
 );
 
 // Component for Project Carousel Items
@@ -270,152 +258,16 @@ export default function Dashboard() {
       <div id="home">
         <Assistant/>
       </div>
-
-      <div id="intro">
-        <div className="container">
-          <div className="row jumbotron" style={{ marginTop: "140px" }}>
-            <div className="col-md-6 bar">
-              <img src={sudeep1} alt="Myphoto" className="img-rounded" id="Myphoto" />
-            </div>
-            <div className="col-md-5 bar">
-              <span style={{ fontSize: "60px", fontFamily: "Papyrus" }}>
-                Hello, I am <span style={{ color: "red" }}>Sudeep Aryan </span>
-                Welcome to my World.
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="aboutme">
-        <div className="container" >
-          <div className="row jumbotron" style={{ marginTop: "140px" }}>
-            <div className="col-md-6 bar">
-              <span style={{ fontSize: "60px", fontFamily: "Papyrus" }}>
-                About me !
-              </span>
-              <p style={{ fontSize: "18px", fontFamily: "Lucida Console" }}>
-                With overall experience of 2 years spanning Machine Learning,
-                Generative AI, DevOps, and full stack development. I am a tech
-                enthusiast who enjoys tackling diverse challenges. My journey
-                involves building Machine Learning models, and optimizing
-                processes through DevOps. My reputation lies in adaptability,
-                creative problem-solving, and an unwavering commitment to
-                staying at the forefront of these ever-evolving domains. I am
-                poised to contribute effectively to dynamic teams and
-                organizations, driven by a passion for continuous innovation.
-              </p>
-            </div>
-            <div className="col-md-6 bar">
-              <img src={sudeep} className="img-rounded" id="Myphoto" alt="Myphoto" border="0" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="Experience">
-        <section className="work-experience container">
-          <h2 className="headline">Work Experience</h2>
-          <div className="jobs">
-            <ExperienceItem 
-              image={soliton}
-              caption="Soliton Technologies"
-              title="Project Engineer (Full-Time Employee)"
-              period="Jun 2023 - Present" 
-              description="Working as Project Engineer in Soliton Technology. Trained on Generative AI, Machine Learning"
-            />
-            <ExperienceItem 
-              image={soliton}
-              caption="Soliton Technologies"
-              title="Internship"
-              period="Jun 2022 - May 2023" 
-              description="Worked as Intern in Soliton Technology. Trained on DevOps, Full-Stack Web Development"
-            />
-            <ExperienceItem 
-              image={edureka}
-              caption="Edureka"
-              title="Full Stack Web Developer (Internship)"
-              period="Jul 2021 - Feb 2022" 
-              description="Eight months Internship on Full-Stack Web Development with React Front-end and NodeJs Backend."
-            />
-            <ExperienceItem 
-              image={vtps}
-              caption="Dr. Narla Tatarao Thermal Power Station"
-              title="Implant Training"
-              period="May 2021 - Jul 2021" 
-              description="Industrial Visits and Familiarization in working of thermal power plant."
-            />
-          </div>
-        </section>
-      </div>
-      
+      <IntroSlide/>
+      <Experience/>
       <Skills skillImages={skillImages} />
       <Education />
       <Projects projects={projects} />
       <Certifications certificates={certificates} />
-
-      <div id="contact">
-        <h1 className="headline">Contact</h1>
-        <div className="container">
-          <div className="row" style={{ marginTop: "10px" }}>
-            <div className="col-md-6">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.96565998386!2d78.45949881466605!3d14.714533589730038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb389efd41ca6ad%3A0xd21e447105818ff3!2sAF%20APARTMENT!5e0!3m2!1sen!2sin!4v1660049458028!5m2!1sen!2sin"
-                width="100%"
-                height="450"
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </div>
-            <div className="col-md-6">                
-              <div className="contactform" style={{ marginTop: "12px" }}>
-                <form>
-                  <input type="text" name="Name" placeholder="Name" required></input>
-                  <input className="email" name="Email" placeholder="Email" required></input>
-                  <input className="phone" name="Phone" placeholder="Phone" required></input>
-                  <textarea className="messages" name="Message" placeholder="Message" required></textarea>
-                  <input type="submit" value="SUBMIT"></input>
-                </form>
-              </div>
-              <div id="socialnetwork" style={{ marginTop: "20px" }}>
-                <a href="https://github.com/Sudeeparyan" target="_blank">
-                  <img src="https://i.postimg.cc/D0jsHk21/Github.png" height="30px" width="30px" alt="Github"/>
-                </a>
-              </div>
-              <div>                  
-                <p>
-                  <span style={{ fontSize: "20px", color: "white" }}>
-                    Mobile : +91 8309135484
-                  </span>
-                  &nbsp;&nbsp;&nbsp;
-                  <span style={{ fontSize: "20px", color: "white" }}>
-                    E-mail :{" "}
-                    <a
-                      href="mailto:sudeeparyang@gmail.com"
-                      style={{
-                        fontFamily: "Roboto Condensed",
-                        fontSize: "20px",
-                        color: "white",
-                      }}
-                    >
-                      sudeeparyang@gmail.com
-                    </a>
-                  </span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div id="chatBot">
         <Chatbot/>          
       </div>
-      
-      <div className="bottom">
-        <h2>&copy; Sudeep Aryan Website</h2>
-      </div>
+      <Contact />
     </div>
   );
 }

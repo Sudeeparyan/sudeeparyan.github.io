@@ -2,15 +2,19 @@ import React from 'react';
 import './Education.css';
 
 const EducationItem = ({ years, degree, institute, grade }) => (
-  <div className="row work-info">
-    <div className="col-md-6 work-left" id="work-left">
+  <div className="education-item">
+    <div className="timeline-year">
       <h4>{years}</h4>
     </div>
-    <div className="col-md-6 work-right" id="work-right">
-      <span className="glyphicon glyphicon-education"></span>
+    <div className="timeline-icon">
+      <span className="education-icon">
+        <i className="fas fa-graduation-cap"></i>
+      </span>
+    </div>
+    <div className="timeline-content">
       <h5>{degree}</h5>
-      <p>Institute : {institute}</p>
-      <p>{grade}</p>
+      <p className="institute">Institute: {institute}</p>
+      <p className="grade">{grade}</p>
     </div>
   </div>
 );
@@ -18,8 +22,10 @@ const EducationItem = ({ years, degree, institute, grade }) => (
 export default function Education() {
   return (
     <div id="education">
-      <h1 className="headline">Education</h1>
-      <div className="container">
+      <div className="heading-container">
+        <h1 className="headline">Education</h1>
+      </div>
+      <div className="education-timeline">
         <EducationItem 
           years="2019 - 2023"
           degree="Bachelor of Technology"
