@@ -22,7 +22,7 @@ export default function Chatbot() {
     // NEVER hardcode your API key in client-side JavaScript like this for production.
     // Anyone can view it in the browser's source code.
     // Use a backend proxy or serverless function to handle API calls securely.
-    const API_KEY = "YOUR_API_KEY_HERE"; // Replace with your actual API key ONLY for testing
+    const API_KEY = "AIzaSyCJfqiVMk6PxcCKx4AbbNxxyZEvbT_MMcw"; // Replace with your actual API key ONLY for testing
     // -----------------------
 
     const [messageInput, setMessageInput] = useState('');
@@ -47,21 +47,17 @@ export default function Chatbot() {
     // Handle the case where API_KEY might be missing (especially if replacing the hardcoded value)
     let genAI, model;
     try {
-        if (!API_KEY || API_KEY === "AIzaSyBJSX_Hv8vBOd4e4FHBBvRAcSNSnwYR_F0") {
-             console.warn("API Key is missing or is a placeholder. Chatbot functionality will be limited.");
-             // Optionally disable input or show a message if the key is missing
-        } else {
             genAI = new GoogleGenerativeAI(API_KEY);
             model = genAI.getGenerativeModel({
                 model: "gemini-1.5-flash", // Using gemini-1.5-flash as gemini-2.5-flash might not be available yet. Adjust if needed.
                 // --- Pass system instruction explicitly ---
                 systemInstruction: {
-                    role: "system", // Role might just need to be 'user' or 'model' depending on SDK/model
+                    role: "user", // Role might just need to be 'user' or 'model' depending on SDK/model
                     parts: [{ text: systemPrompt }],
                 },
             });
         }
-    } catch (error) {
+    catch (error) {
         console.error("Error initializing GoogleGenerativeAI:", error);
         // Handle initialization error (e.g., show an error message to the user)
         setMessages(prev => [...prev, { role: 'assistant', content: "Error initializing the AI model. Please check the configuration." }]);
@@ -86,6 +82,8 @@ export default function Chatbot() {
 
         const newUserMessage = { role: 'user', content: messageInput };
         // Update UI immediately with user's message
+        const _messages = [...messages.slice(1), newUserMessage];
+
         setMessages(prevMessages => [...prevMessages, newUserMessage]);
         const currentInput = messageInput; // Store input before clearing
         setMessageInput('');
@@ -94,19 +92,20 @@ export default function Chatbot() {
         try {
             // --- Prepare history for the API ---
             // Map roles and filter out any potential system messages if they were in state
-            const historyForAPI = messages
+            const historyForAPI = _messages
                 .filter(msg => msg.role === 'user' || msg.role === 'assistant') // Only user/assistant messages
                 .map(msg => ({
                     // Map 'assistant' role to 'model' for the API
                     role: msg.role === 'assistant' ? 'model' : msg.role,
                     parts: [{ text: msg.content }]
                 }));
-
+                console.log(historyForAPI)
             // --- Use startChat for conversation context ---
             const chat = model.startChat({
                 history: historyForAPI,
+                
                 generationConfig: {
-                    maxOutputTokens: 800, // Adjust as needed
+                    maxOutputTokens: 1000, // Adjust as needed
                     temperature: 0.7,   // Adjust creativity vs factualness
                 },
                  safetySettings: [ // Adjust safety settings as needed
@@ -129,7 +128,7 @@ export default function Chatbot() {
 
             // Add assistant's response to messages state
             setMessages(prevMessages => [...prevMessages, { role: 'assistant', content: apiMessageText }]);
-
+            console.log("API_KEY",API_KEY)
         } catch (error) {
             console.error("Error generating response:", error);
             let errorMessage = "I'm sorry, I encountered an error processing your request.";
