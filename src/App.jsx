@@ -56,7 +56,7 @@ export default function Home() {
                 <span className="hamburger-line" />
               </button>
             </div>
-            <ul 
+            <ul  
               id="menu" 
               className={`nav navbar-nav navbar-right ${isMenuActive ? 'active' : ''}`}
               onClick={toggleMobileMenu}
