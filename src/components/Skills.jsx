@@ -25,33 +25,29 @@ export default function Skills({ skillImages }) {
   // Define skill categories and their respective skills
   const skillCategories = [
     {
+      title: "Artificial Intelligence",
+      skills: ["Prompt Engineering","RAG","MCP","A2A", "Lang Chain", "Llama Index", "Fine Tuning", "NLP", "Deep Learning Architectures", "TensorFlow", "PyTorch", "scikit-learn"]
+    },
+    {
       title: "Programming Languages",
-      skills: ["Python", "JavaScript", "C", "C++", "C#"]
-    },
-    {
-      title: "Data Engineering",
-      skills: ["Data Modeling", "Database Design", "Data Visualization (Power BI)"]
-    },
-    {
-      title: "Database Management",
-      skills: ["MongoDB", "SQL Databases"]
-    },
+      skills: ["Python", "JavaScript", "C", "C++"]
+    },    
     {
       title: "Web Technologies",
-      skills: ["React", "Redux Toolkit", "VueJS", "RTKQuery", "Polymer", "HTML", "CSS", "NodeJS", ".NET"]
-    },
-    {
-      title: "Artificial Intelligence",
-      skills: ["Prompt Engineering", "Lang Chain", "Open AI", "Ollama", "Hugging Face", "RAG", "Llama Index", "Fine Tuning", "NLP", "Deep Learning Architectures"]
+      skills: ["React","Next.js", "Redux Toolkit", "VueJS", "RTKQuery", "Polymer", "HTML", "CSS", "NodeJS"]
     },
     {
       title: "Cloud Platforms",
-      skills: ["Microsoft Azure (Azure Databricks, ADLS Gen2, Azure Data Factory)", "AWS (EC2, EKS, S3, etc.)"]
+      skills: ["Microsoft Azure", "Google Cloud Platform"]
     },
     {
       title: "DevOps Tools",
       skills: ["Docker", "Kubernetes", "Git", "Prometheus", "Jenkins", "Ansible"]
-    }
+    },
+    {
+      title: "Tools & Services",
+      skills: ["Microsoft Fabric", "Firebase Studio", "Data Modeling", "Database Design", "Data Visualization (Power BI)"]
+    },
   ];
 
   return (

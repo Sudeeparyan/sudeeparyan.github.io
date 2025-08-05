@@ -34,6 +34,7 @@ import openai from "./Images/skills/openai.png";
 import Assistant from "./Assistant";
 import P5logo from "./p5logo";
 import './globals.css';
+import './styles/certificates.css';  // Add this import for certificate styles
 import Chatbot from './chatbot.jsx';
 import Skills from './components/Skills';
 import Education from './components/Education';
@@ -58,32 +59,33 @@ const EducationItem = ({ years, degree, institute, grade }) => (
   </div>
 );
 
-// Component for Project Carousel Items
-const ProjectItem = ({ isActive, name, objective, tools, outcome, image, children }) => (
-  <div className={`item ${isActive ? 'active' : ''}`} data-interval="false">
-    <div>
-      <p className="projectname">{name}</p>
-      {objective && <p className="projectobjective">{objective}</p>}
-      {tools && <p className="projecttools">{tools}</p>}
-      {outcome && <p className="projectoutcome">{outcome}</p>}
-      {image && (
-        <div className="projectImg">
-          <img alt={name} src={image} className={`${name.includes('Rover') ? 'RoverImg' : 'droneImg'}`} />
-        </div>
-      )}
-      {children}
+// Certificate Link Component
+const CertificateLink = ({ href, title, isNew }) => (
+  <h3 className={`certificate-item ${isNew ? 'new-certificate' : ''}`}>
+    <a href={href} target="_blank" rel="noopener noreferrer">
+      {title}
+      {isNew && <span className="new-badge">New</span>}
+    </a>
+  </h3>
+);
+
+// Certificate Category Component
+const CertificateCategory = ({ title, items, color }) => (
+  <div className="certificate-category" style={{ backgroundColor: color }}>
+    <h2 className="category-title">{title}</h2>
+    <div className="category-items">
+      {items.map((cert, index) => (
+        <CertificateLink 
+          key={index} 
+          href={cert.href} 
+          title={cert.title} 
+          isNew={cert.isNew} 
+        />
+      ))}
     </div>
   </div>
 );
 
-// Certificate Link Component
-const CertificateLink = ({ href, title }) => (
-  <h3>
-    <a href={href} target="_blank" rel="noopener noreferrer">
-      {title}
-    </a>
-  </h3>
-);
 document.addEventListener('DOMContentLoaded', function() {
   // Reveal animations for sections
   const observer = new IntersectionObserver((entries) => {
@@ -158,116 +160,93 @@ export default function Dashboard() {
     { src: git, title: "Git Hub", alt: "git" },
   ];
 
-  // Certificates data
-  const certificates = [
-    { href: "https://learn.microsoft.com/en-us/users/gaddameedisudeeparyan-0368/credentials/ae910c93a6319ac3", title: "Microsoft Azure Cloud Computing" },
+  // Certificates data - split into categories
+  const certificatesData = [
     { href: "https://coursera.org/share/7c18ea3335bf72b4c18c9c3d4f738ce8", title: "Machine Learning" },
     { href: "https://coursera.org/share/fcb4031aa63c0af7e4b748f3048b5cc6", title: "Neural Networks and Deep Learning" },
     { href: "https://www.edureka.co/certificates/mycertificate/3a96f454fcc70b6179e000e39acb12db", title: "Full Stack Web Development" },
     { href: "https://coursera.org/share/7c18ea3335bf72b4c18c9c3d4f738ce8", title: "Data structures and Algorithms" },
     { href: "https://coursera.org/share/6df1859e3ed67b74db0b2fcd49b0e245", title: "Google Professional Workspace Administrator" },
+    { href: "https://learn.microsoft.com/en-us/users/gaddameedisudeeparyan-0368/credentials/ae910c93a6319ac3", title: "Microsoft Azure Cloud Computing" , isNew: true},
+  ];
+
+  const aiCertificatesData = [
     { href: "https://learn.deeplearning.ai/accomplishments/2f77cd4e-0b44-4781-8326-22c620e64886?usp=sharing", title: "Prompt Engineering" },
     { href: "https://learn.deeplearning.ai/accomplishments/2f2020ba-f867-4db9-b564-7ae394d50541?usp=sharing", title: "Large Language Model" },
     { href: "https://learn.deeplearning.ai/accomplishments/6c2f4b32-a3d5-4dad-bd92-2be4aa8f8a7c?usp=sharing", title: "Fine Tuning" },
-    { href: "https://academy.langchain.com/certificates/oax3vhmzud", title: "Agents - Lang Graph Agents" },
-    { href: "https://ieeexplore.ieee.org/document/10404782", title: "IEEE Conference Paper on Deep Learning" },
+    { href: "https://academy.langchain.com/certificates/oax3vhmzud", title: "Agents - Lang Graph Agents", isNew: true },
   ];
 
-  // Projects data
-  const projects = [
-    {
-      name: "S-Cart (A Prototype of E commerce website)",
-      isActive: false,
-      children: (
-        <>
-          <iframe
-            title="project"
-            className="scart"
-            src="https://sudeeparyan.github.io/SudeepCart/"
-            width="1000px"
-            height="370px"
-            allowFullScreen
-          ></iframe>
-          <h4>
-            HTML, CSS, Bootstrap, JavaScript, React, Nodejs, MongoDB,
-            Express, Heroku, Docker, Kubernites, Prometheus are the tools
-            used in the project
-          </h4>
-          <h4>
-            Created an e-commerce web page that incorporates all the
-            concepts and skills I acquired during my internship.
-          </h4>
-          <h3>
-            <a
-              href="https://sudeeparyan.github.io/SudeepCart/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Click here to go to Scart
-            </a>
-          </h3>
-        </>
-      ),
-    },
-    {
-      name: "Device Vision (Soliton) (Jan 2023 - Nov 2023)",
-      objective: "Customer asked to develop Data analyzing and Visualization tool for Validation Enginners.",
-      tools: "Front-End: React(Advanced Redux Tool kit-RTKQuery), Back-End: Python, Machine Learning: Regression, MLOPS and DevOps Tools.",
-      outcome: "Tool that Visualization and Analyzing data which is given by Validation Engineer so that they can easily train any data and Predict the values which is beyond the range of his collected data.",
-      isActive: false,
-      children: (
-        <p>
-          (Due to the confidentiality of company operations, further
-          details cannot be disclosed.)
-        </p>
-      ),
-    },
-    {
-      name: "Texas Instruments - Battery Management System (Soliton) (Nov 2023 - Present)",
-      objective: "Working on Agile Methodology : Connecting with customer & getting the requirements, Backlog refinement, Development, Testing & Release.",
-      tools: "Completed the mandatory Training that should be done before joining the project. Worked on Polymer JS and completed SDLC project",
-      outcome: "Currently Developing a graphical user interface (GUI) and working on Hardware Validation and chips testing given by Texas Instruments",
-      isActive: false,
-      children: (
-        <p>
-          And also working on Generative AI chat bot assistant.(Due to
-          the confidentiality of company operations, further details
-          cannot be disclosed.)
-        </p>
-      ),
-    },
-    {
-      name: "Self-Driving Rover Amrita(Aug 2022-Jun 223)",
-      objective: "Implementation of self driving rover using ML(Reinforcement learning) with Raspberry pi,which is able to detect and avoid obstacles in its path and also able to move in the given lane.",
-      tools: "Raspberry Pi 3b+,NVIDIAs CNN model, Ultra-sonic sensor,Pi camera,Servo motor,DC motors.",
-      image: rover,
-      isActive: true,
-    },
-    {
-      name: "Quadcopter Amrita (May 2019 Jan 2020)",
-      objective: "To build a drone with four wings and complete the given task.",
-      tools: "Arduino UNO,ESC,Bluetooth Module,PDB.",
-      outcome: "Quad copter is capable to fly in air and flips, rotates in its same position.",
-      image: drone,
-      isActive: false,
-    },
+  const publicationsData = [
+    { href: "https://ieeexplore.ieee.org/document/10404782", title: "IEEE Conference Paper on Deep Learning" },
+    { href: "https://ieeexplore.ieee.org/document/11077193", title: "IEEE Conference Paper on Generative AI", isNew: true }
   ];
+
+  // New Awards data
+  const awardsData = [
+    { 
+      href: "https://ieeexplore.ieee.org/document/10404782", 
+      title: "Best Paper Award (2025)", 
+      description: "Awarded Best Paper at the IEEE International AI Conference selected from over 1,000 submissions",
+      isNew: true 
+    },
+    { 
+      href: "https://ieeexplore.ieee.org/document/10404782", 
+      title: "Innovator of the Year – Soliton", 
+      description: "Recognized for introducing cutting‑edge AI techniques, mentoring junior engineers, and leading transformative innovation across projects",
+      isNew: false 
+    }
+  ];
+
+  // Combined data for backwards compatibility with existing components
+  const certificates = [...certificatesData, ...aiCertificatesData, ...publicationsData, ...awardsData];
 
   return (
-    <div className="main-body">      
-      <div id="home">
-        <Assistant/>
-      </div>
+    <div className="main-body">     
+      
       <IntroSlide/>
       <Experience/>
       <Skills skillImages={skillImages} />
+      <Projects />    
+      {/* Updated Certifications Component with Categories */}
+      <div id="certifications" className="certificates-section">
+        <div className="container">
+          <h2 className="tittle">Achievements</h2>
+          <div className="certificate-categories">
+            <CertificateCategory 
+              title="Professional Certifications" 
+              items={certificatesData} 
+              color="rgba(25, 118, 210, 0.1)" 
+            />
+            <CertificateCategory 
+              title="Generative AI Certifications" 
+              items={aiCertificatesData} 
+              color="rgba(156, 39, 176, 0.1)" 
+            />
+            <CertificateCategory 
+              title="Research Publications" 
+              items={publicationsData} 
+              color="rgba(76, 175, 80, 0.1)" 
+            />
+            <CertificateCategory 
+              title="Awards" 
+              items={awardsData} 
+              color="rgba(255, 193, 7, 0.1)" 
+            />
+          </div>
+        </div>
+      </div>
       <Education />
-      <Projects projects={projects} />
-      <Certifications certificates={certificates} />
+      <div id="home">
+        <Assistant/>
+      </div>
       <div id="chatBot">
         <Chatbot/>          
       </div>
       <Contact />
+      
+      {/* Add scroll-to-top button that appears when scrolling */}
+      <div className="scroll-to-top">↑</div>
     </div>
   );
 }

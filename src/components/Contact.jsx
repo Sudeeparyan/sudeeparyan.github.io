@@ -78,7 +78,7 @@ export default function Contact() {
           <div className="col-md-6 fade-in-left">
             <div className="map-container">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.96565998386!2d78.45949881466605!3d14.714533589730038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb389efd41ca6ad%3A0xd21e447105818ff3!2sAF%20APARTMENT!5e0!3m2!1sen!2sin!4v1660049458028!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d305034.63343353005!2d-6.575335129359488!3d53.32386586707275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e80ea27ac2f%3A0xa00c7a9973171a0!2sDublin%2C%20Ireland!5e0!3m2!1sen!2sin!4v1754404521892!5m2!1sen!2sin"
                 width="100%"
                 height="400"
                 allowFullScreen=""
@@ -95,14 +95,11 @@ export default function Contact() {
                 <a href="https://github.com/Sudeeparyan" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="social-icon">
                   <img src="https://i.postimg.cc/D0jsHk21/Github.png" alt="Github"/>
                 </a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-icon">
+                <a href="https://www.linkedin.com/in/sudeep-aryan/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-icon">
                   <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"/>
                 </a>
-                <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="social-icon">
-                  <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"/>
-                </a>
-                <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-icon">
-                  <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"/>
+                <a href="https://wa.me/918309135484" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="social-icon">
+                  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"/>
                 </a>
               </div>
               

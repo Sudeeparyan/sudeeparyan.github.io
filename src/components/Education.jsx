@@ -27,22 +27,28 @@ export default function Education() {
       </div>
       <div className="education-timeline">
         <EducationItem 
+          years="2025 - 2026"
+          degree="Master of Science in Artificial Intelligence"
+          institute="National College of Ireland, Ireland"
+          grade="Grade : "
+        />
+        <EducationItem 
           years="2019 - 2023"
           degree="Bachelor of Technology"
           institute="Amrita Vishwa Vidyapeetham, Coimbatore"
-          grade="CGPA : 7.9/10"
+          grade="Grade : First Class"
         />
         <EducationItem 
           years="2017 - 2019"
           degree="Higher Secondary Education"
           institute="Sri Chaitanya Institutions, Vijayawada"
-          grade="Percentage : 9.44/10"
+          grade="Percentage : 94%"
         />
         <EducationItem 
           years="2016 - 2017"
           degree="Secondary Education"
           institute="Sri Chaitanya High School, Vijayawada"
-          grade="CGPA : 9.3/10"
+          grade="Percentage : 93%"
         />
       </div>
     </div>

@@ -160,7 +160,7 @@ pageTheme=theme;
 
     return (
         <div>
-            <h2>Sudeep</h2>
+            {/* <h2>Sudeep</h2> */}
             <div className="App" ref={p5ContainerRef} />
         </div>
 

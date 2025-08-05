@@ -1,0 +1,250 @@
+/* Certificate Styles */
+.certificates-section {
+  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.certificates-section h2.tittle {
+  position: relative;
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.certificates-section h2.tittle:after {
+  content: "";
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #4dabf7, #3f51b5);
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.certificate-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.certificate-category {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.category-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.category-title:after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  background-color: #ff6b6b;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.category-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.certificate-item {
+  position: relative;
+  padding: 12px 15px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  margin: 0;
+}
+
+.certificate-item:hover {
+  transform: translateX(5px);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.certificate-item a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: block;
+  transition: color 0.2s ease;
+}
+
+.certificate-item a:hover {
+  color: #1976d2;
+}
+
+.new-certificate {
+  border-left: 4px solid #ff6b6b;
+}
+
+.new-badge {
+  background-color: #ff6b6b;
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: 10px;
+  animation: pulse 2s infinite;
+}
+
+/* Animation for new items */
+@keyframes pulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+}
+
+/* Scroll to top button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #3f51b5;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 1000;
+  transform: translateY(20px);
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  background-color: #303f9f;
+}
+
+/* Awards specific styling */
+.awards-category {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 152, 0, 0.05) 0%,
+    rgba(255, 193, 7, 0.1) 100%
+  );
+  border-left: 4px solid #ff9800;
+}
+
+.award-item {
+  position: relative;
+  padding: 16px 20px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  margin: 0 0 15px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.award-item:hover {
+  transform: translateX(5px);
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.award-item h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+}
+
+.award-item a {
+  color: #e65100;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.award-item a:hover {
+  color: #ff6d00;
+  text-decoration: underline;
+}
+
+.award-description {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #666;
+}
+
+.new-award {
+  border-left: 4px solid #ff6b6b;
+  animation: slideFadeIn 0.6s ease-out;
+}
+
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .certificate-categories {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .certificate-category {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .award-item {
+    padding: 12px 15px;
+  }
+
+  .award-description {
+    font-size: 0.9rem;
+  }
+}

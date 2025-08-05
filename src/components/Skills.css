@@ -35,16 +35,30 @@
 }
 
 @keyframes float {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  100% { transform: translate(50px, 50px) rotate(10deg); }
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(50px, 50px) rotate(10deg);
+  }
 }
 
 @keyframes morph {
-  0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-  25% { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; }
-  50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
-  75% { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; }
-  100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  25% {
+    border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+  }
+  50% {
+    border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+  }
+  75% {
+    border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+  }
+  100% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
 }
 
 /* Heading styles */
@@ -56,12 +70,12 @@
 
 #skills .headline {
   width: 50%;
-    margin-left: 25%;
-    font-size: 50px;
-    font-family: "Overlock", sans-serif;
-    color: #008b8b;
-    border-bottom: 4px double;
-    text-align: center;
+  margin-left: 25%;
+  font-size: 50px;
+  font-family: "Overlock", sans-serif;
+  color: #008b8b;
+  border-bottom: 4px double;
+  text-align: center;
 }
 
 .heading-container:after {
@@ -77,8 +91,12 @@
 }
 
 @keyframes expand-heading {
-  0% { width: 0; }
-  100% { width: 80%; }
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 80%;
+  }
 }
 
 /* Skills Carousel */
@@ -88,11 +106,12 @@
   overflow: hidden;
   height: 120px;
   margin-bottom: 40px;
-  background: linear-gradient(90deg, 
-    rgba(255,255,255,0.9) 0%, 
-    rgba(255,255,255,0) 10%, 
-    rgba(255,255,255,0) 90%, 
-    rgba(255,255,255,0.9) 100%
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0) 10%,
+    rgba(255, 255, 255, 0) 90%,
+    rgba(255, 255, 255, 0.9) 100%
   );
   z-index: 1;
 }
@@ -105,8 +124,12 @@
 }
 
 @keyframes carousel {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .skill-image-container {
@@ -119,8 +142,14 @@
 }
 
 @keyframes fade-in {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .skillimage {
@@ -252,14 +281,44 @@
 }
 
 @keyframes tag-pop {
-  0% { opacity: 0; transform: scale(0.8); }
-  100% { opacity: 1; transform: scale(1); }
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .skill-tag:hover {
   background: linear-gradient(135deg, #b2ebf2, #80deea);
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Fix for skill tags visibility on hover */
+.skill-category:hover .skill-tag {
+  /* Remove the animation that might be causing the issue */
+  animation: none;
+  /* Ensure opacity is always 1 on hover */
+  opacity: 1;
+  /* Ensure visibility is visible */
+  visibility: visible;
+  /* Keep transform modest to avoid text moving out of view */
+  transform: scale(1.02);
+}
+
+/* Replace the problematic animation with a subtle pulse that won't hide content */
+@keyframes tag-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    transform: scale(1.05);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  }
 }
 
 /* Animation for skill category appearance */
@@ -269,17 +328,37 @@
   transform: translateY(20px);
 }
 
-.skill-category:nth-child(1) { animation-delay: 0.1s; }
-.skill-category:nth-child(2) { animation-delay: 0.2s; }
-.skill-category:nth-child(3) { animation-delay: 0.3s; }
-.skill-category:nth-child(4) { animation-delay: 0.4s; }
-.skill-category:nth-child(5) { animation-delay: 0.5s; }
-.skill-category:nth-child(6) { animation-delay: 0.6s; }
-.skill-category:nth-child(7) { animation-delay: 0.7s; }
+.skill-category:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.skill-category:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.skill-category:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.skill-category:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.skill-category:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.skill-category:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.skill-category:nth-child(7) {
+  animation-delay: 0.7s;
+}
 
 @keyframes fade-up {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive styles */
@@ -287,51 +366,35 @@
   .skills-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .skills-carousel {
     height: 100px;
   }
-  
+
   .skillimage {
     width: 60px;
     height: 60px;
   }
-  
+
   #skills .headline {
     font-size: 2rem;
   }
-  
+
   .skill-category {
     padding: 15px;
   }
 }
 
-/* Additional animation for skill tags within a category when hovering */
-.skill-category:hover .skill-tag {
-  animation: tag-pulse 1s ease infinite alternate;
-  animation-delay: calc(var(--i, 0) * 0.1s);
-}
-
-.skill-tag:nth-child(1) { --i: 1; }
-.skill-tag:nth-child(2) { --i: 2; }
-.skill-tag:nth-child(3) { --i: 3; }
-.skill-tag:nth-child(4) { --i: 4; }
-.skill-tag:nth-child(5) { --i: 5; }
-.skill-tag:nth-child(6) { --i: 6; }
-.skill-tag:nth-child(7) { --i: 7; }
-.skill-tag:nth-child(8) { --i: 8; }
-.skill-tag:nth-child(9) { --i: 9; }
-.skill-tag:nth-child(10) { --i: 10; }
-
-@keyframes tag-pulse {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.05); }
-}
-
 /* Scroll reveal animation */
 @keyframes reveal {
-  0% { opacity: 0; transform: translateY(50px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Glitch effect animation for heading */
@@ -340,10 +403,22 @@
 }
 
 @keyframes glitch {
-  0% { transform: translate(0); }
-  20% { transform: translate(-2px, 2px); }
-  40% { transform: translate(-2px, -2px); }
-  60% { transform: translate(2px, 2px); }
-  80% { transform: translate(2px, -2px); }
-  100% { transform: translate(0); }
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
 }
