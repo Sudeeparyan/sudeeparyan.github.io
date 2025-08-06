@@ -22,7 +22,7 @@
 
 .about-heading {
   margin-bottom: 20px;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   background: linear-gradient(90deg, #4568dc, #b06ab3);
   -webkit-background-clip: text;
   background-clip: text;
@@ -99,4 +99,165 @@
   border-left: 3px solid #4568dc;
   border-radius: 0 5px 5px 0;
   font-weight: 500;
+}
+
+/* Enhanced responsive styles for AboutMe section */
+@media (max-width: 768px) {
+  .about-heading {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 0 10px;
+  }
+
+  .highlight-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .about-me-content {
+    padding: 0 5px;
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  .about-section {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .about-text {
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .about-list {
+    margin-top: 15px;
+    text-align: left;
+  }
+
+  .about-list li {
+    padding-left: 25px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .call-to-action {
+    padding: 12px 10px;
+    margin: 15px 5px 5px;
+    text-align: center;
+    border-radius: 5px;
+    border-left: none;
+    border: 1px solid rgba(69, 104, 220, 0.3);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-heading {
+    font-size: 2.1rem;
+    margin-bottom: 12px;
+  }
+
+  .highlight-text {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .section-header {
+    font-size: 1rem;
+    margin-top: 12px;
+    margin-bottom: 8px;
+  }
+
+  .about-section {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .about-list {
+    padding-left: 2px;
+    margin-bottom: 10px;
+  }
+
+  .about-list li {
+    padding-left: 22px;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .list-icon {
+    font-size: 0.9rem;
+    top: 1px;
+  }
+
+  .call-to-action {
+    padding: 10px 8px;
+    font-size: 0.85rem;
+    margin-top: 10px;
+  }
+
+  /* Fix gradient text on mobile */
+  .about-heading,
+  .highlight {
+    background: linear-gradient(90deg, #4568dc, #b06ab3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block; /* Ensures the gradient covers only the text */
+  }
+
+  /* Improve emphasis text */
+  .emphasis {
+    color: #4568dc;
+    font-weight: 600;
+    display: inline;
+  }
+
+  /* Improve keyword visibility */
+  .keyword {
+    color: #4568dc;
+    font-weight: 600;
+    font-style: italic;
+    display: inline;
+  }
+}
+
+@media (max-width: 360px) {
+  .about-heading {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .highlight-text {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+
+  .about-text {
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+  }
+
+  .about-list li {
+    padding-left: 20px;
+    margin-bottom: 7px;
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+
+  .section-header {
+    font-size: 0.95rem;
+  }
+
+  /* Fix overflow issues */
+  .about-section {
+    overflow-x: hidden;
+    padding: 0 2px;
+  }
 }

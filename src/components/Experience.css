@@ -1,569 +1,65 @@
-/* Enhanced Work Experience Section */
-#Experience {
-  background: linear-gradient(135deg, #121212 0%, #2a2a2a 100%);
-  padding: 4rem 0;
+/* Experience Component Styling */
+
+.experience {
   position: relative;
-  overflow: hidden;
-}
-
-/* Animated background elements */
-#Experience::before {
-  content: "";
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background: rgba(10, 97, 174, 0.05);
-  top: -100px;
-  left: -100px;
-  animation: float 15s infinite ease-in-out;
-}
-
-#Experience::after {
-  content: "";
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: rgba(255, 218, 75, 0.05);
-  bottom: -50px;
-  right: -50px;
-  animation: float 12s infinite ease-in-out reverse;
-}
-
-@keyframes float {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  50% {
-    transform: translate(30px, 20px) rotate(180deg);
-  }
-  100% {
-    transform: translate(0, 0) rotate(360deg);
-  }
-}
-
-/* Headline styling */
-
-#Experience .headline {
-  text-align: center;
-  font-size: 3.5rem;
-  margin-bottom: 50px;
-  position: relative;
-  color: #00e5e5;
-  text-shadow: 0 0 10px rgba(0, 229, 229, 0.3);
-  animation: glow 3s infinite alternate;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-@keyframes glow {
-  0% {
-    text-shadow: 0 0 5px rgba(0, 229, 229, 0.3);
-  }
-  100% {
-    text-shadow: 0 0 20px rgba(0, 229, 229, 0.7);
-  }
-}
-
-#Experience .headline::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, transparent, #00e5e5, transparent);
-  margin: 15px auto 0;
-  border-radius: 2px;
-  box-shadow: 0 0 10px rgba(0, 229, 229, 0.5);
-  animation: pulse 2s infinite;
-}
-/* Jobs container */
-.work-experience .jobs {
-  display: flex;
-  gap: 30px;
-  padding-bottom: 3rem;
-  perspective: 1000px;
-}
-
-/* Experience cards */
-.work-experience .jobs article {
-  background: rgba(57, 57, 57, 0.8);
-  backdrop-filter: blur(10px);
-  padding: 30px;
-  border-radius: 20px;
-  flex: 1;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transform: translateY(50px);
-  opacity: 0;
-  animation: cardAppear 0.6s forwards;
-  animation-delay: calc(var(--card-index, 0) * 0.2s);
-  position: relative; /* For absolutely positioned elements inside */
-}
-
-.work-experience .jobs article:nth-child(1) {
-  --card-index: 1;
-}
-.work-experience .jobs article:nth-child(2) {
-  --card-index: 2;
-}
-.work-experience .jobs article:nth-child(3) {
-  --card-index: 3;
-}
-.work-experience .jobs article:nth-child(4) {
-  --card-index: 4;
-}
-
-@keyframes cardAppear {
-  0% {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.work-experience .jobs article:hover {
-  transform: translateY(-15px) scale(1.03);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  z-index: 10;
-  border-color: rgba(97, 218, 251, 0.3);
-}
-
-/* Card title */
-.work-experience .jobs article h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #ffffff;
-  transition: color 0.3s ease;
-}
-
-.work-experience .jobs article:hover h3 {
-  color: #61dafb;
-}
-
-/* Time period */
-.work-experience .jobs article div {
-  font-weight: 600;
-  margin-bottom: 12px;
-  font-size: 0.9rem;
-  color: #ffda4b;
-  letter-spacing: 0.5px;
-  position: relative;
-  display: inline-block;
-}
-
-/* Description */
-.work-experience .jobs article p {
-  color: #e0e0e0;
-  line-height: 1.6;
-  font-size: 0.95rem;
-}
-
-/* Image container - REDUCED HEIGHT */
-.work-experience .jobs article figure {
-  width: 100%;
-  height: 150px; /* Reduced from 180px */
-  overflow: hidden;
-  position: relative;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.work-experience .jobs article figure img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  transition: transform 1.5s ease;
-}
-
-.work-experience .jobs article figure figcaption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
   background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(0, 0, 0, 0) 100%
+    135deg,
+    rgba(13, 20, 33, 0.9),
+    rgba(25, 33, 52, 0.95)
   );
-  color: white;
-  text-align: center;
-  padding: 15px 10px 10px;
-  font-weight: 500;
-  transform: translateY(100%);
-  transition: transform 0.3s ease;
-}
-
-.work-experience .jobs article:hover figure figcaption {
-  transform: translateY(0);
-}
-
-.work-experience .jobs article:hover figure img {
-  transform: scale(1.1);
-}
-
-/* Company logos */
-.soliton,
-.edureka,
-.vtps {
   border-radius: 12px;
-  transition: all 0.3s ease;
-  filter: brightness(0.9);
-}
-
-.work-experience .jobs article:hover .soliton,
-.work-experience .jobs article:hover .edureka,
-.work-experience .jobs article:hover .vtps {
-  filter: brightness(1.1);
-}
-
-/* Add subtle hover animation to period text */
-.work-experience .jobs article div::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: #ffda4b;
-  transition: width 0.3s ease;
-}
-
-.work-experience .jobs article:hover div::after {
-  width: 100%;
-}
-
-/* Add animated indicator for current position */
-.work-experience .jobs article:first-child::before {
-  content: "Current";
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: linear-gradient(90deg, #61dafb, #008b8b);
-  color: white;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  box-shadow: 0 2px 10px rgba(97, 218, 251, 0.4);
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(97, 218, 251, 0.6);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(97, 218, 251, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(97, 218, 251, 0);
-  }
-}
-
-/* Experience card */
-.experience-card {
-  position: relative;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3), 0 0 30px rgba(100, 255, 218, 0.1);
+  padding: 25px;
   overflow: hidden;
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  max-height: 550px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.experience-card.expanded {
-  max-height: 1200px;
-}
-
-/* Experience details section */
-.experience-details {
-  margin-top: 20px;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 15px;
-  border-left: 3px solid #61dafb;
-  position: relative;
-  overflow: hidden;
-  animation: fadeIn 0.5s ease forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.detail-item {
-  display: flex;
-  margin-bottom: 12px;
-  position: relative;
-}
-
-.detail-bullet {
-  color: #61dafb;
-  margin-right: 10px;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.detail-item p {
-  flex: 1;
-  margin: 0;
-  color: #e0e0e0;
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
-
-/* Journey button styles */
-.journey-button {
-  position: relative;
-  background: linear-gradient(135deg, #112240 0%, #233554 100%);
-  color: #61dafb;
-  border: none;
-  border-radius: 25px;
-  padding: 8px 20px;
-  margin-top: 15px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(97, 218, 251, 0.2);
-  z-index: 2;
-}
-
-.journey-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(97, 218, 251, 0.4);
-  color: white;
-  background: linear-gradient(135deg, #153054 0%, #2a4174 100%);
-}
-
-.button-glow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(
-    circle at center,
-    rgba(97, 218, 251, 0.8) 0%,
-    rgba(97, 218, 251, 0) 70%
-  );
-  opacity: 0;
-  z-index: -1;
-  transition: opacity 0.3s ease;
-}
-
-.journey-button:hover .button-glow {
-  opacity: 0.2;
-  animation: pulse-glow 2s infinite;
-}
-
-@keyframes pulse-glow {
-  0% {
-    transform: scale(0.95);
-    opacity: 0.2;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.3;
-  }
-  100% {
-    transform: scale(0.95);
-    opacity: 0.2;
-  }
-}
-
-/* Background effect */
 .experience-background-effect {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(
-      circle at 20% 30%,
-      rgba(97, 218, 251, 0.05) 0%,
-      transparent 40%
+  background: linear-gradient(
+      135deg,
+      rgba(16, 24, 40, 0.8) 0%,
+      rgba(23, 32, 52, 0.8) 100%
     ),
-    radial-gradient(
-      circle at 80% 70%,
-      rgba(255, 218, 75, 0.05) 0%,
-      transparent 40%
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 50px,
+      rgba(100, 255, 218, 0.05) 50px,
+      rgba(100, 255, 218, 0.05) 51px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 50px,
+      rgba(100, 255, 218, 0.05) 50px,
+      rgba(100, 255, 218, 0.05) 51px
     );
+  filter: blur(1px);
+  z-index: -1;
   pointer-events: none;
 }
 
-/* Experience period styling */
-.experience-period {
-  position: relative;
-  color: #ffda4b;
-  font-weight: 600;
-  margin-bottom: 12px;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
-  display: inline-block;
+.headline {
+  color: #64ffda;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  letter-spacing: 1px;
 }
 
-/* Enhanced Responsive styling */
-@media (max-width: 1200px) {
-  .work-experience .jobs {
-    gap: 20px;
-  }
-
-  .work-experience .jobs article figure {
-    height: 140px; /* Slightly reduced for large screens */
-  }
-}
-
-@media (max-width: 992px) {
-  .work-experience .jobs {
-    flex-wrap: wrap;
-  }
-
-  .work-experience .jobs article {
-    flex: 0 0 calc(50% - 15px);
-    margin-bottom: 30px;
-  }
-
-  .work-experience .jobs article:hover {
-    transform: translateY(-10px) scale(1.02);
-  }
-
-  .work-experience .jobs article figure {
-    height: 130px; /* Further reduced for medium screens */
-  }
-
-  .experience-card.expanded {
-    max-height: 1500px;
-  }
-}
-
-@media (max-width: 768px) {
-  #Experience {
-    padding: 3rem 1.5rem;
-  }
-
-  #Experience .headline {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .work-experience .jobs {
-    flex-direction: column;
-    gap: 25px;
-  }
-
-  .work-experience .jobs article {
-    width: 100%;
-    flex: none;
-    margin-bottom: 0;
-    padding: 25px;
-  }
-
-  .work-experience .jobs article figure {
-    height: 120px; /* Significantly reduced for tablet/mobile */
-  }
-
-  .work-experience .jobs article h3 {
-    font-size: 1.3rem;
-  }
-
-  /* Always show caption on mobile for better UX */
-  .work-experience .jobs article figure figcaption {
-    transform: translateY(0);
-    padding: 10px 8px;
-    font-size: 0.9rem;
-  }
-
-  .experience-card.expanded {
-    max-height: 1800px;
-  }
-}
-
-@media (max-width: 480px) {
-  #Experience {
-    padding: 2.5rem 1rem;
-  }
-
-  #Experience .headline {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-  }
-
-  #Experience .headline::after {
-    width: 60px;
-    height: 3px;
-  }
-
-  .work-experience .jobs {
-    gap: 20px;
-  }
-
-  .work-experience .jobs article {
-    padding: 20px;
-    border-radius: 15px;
-  }
-
-  .work-experience .jobs article figure {
-    height: 100px; /* Minimized for small mobile devices */
-    margin-bottom: 15px;
-  }
-
-  .work-experience .jobs article h3 {
-    font-size: 1.2rem;
-    margin-top: 15px;
-    margin-bottom: 8px;
-  }
-
-  .work-experience .jobs article div {
-    font-size: 0.85rem;
-  }
-
-  .work-experience .jobs article p {
-    font-size: 0.9rem;
-  }
-
-  .work-experience .jobs article:first-child::before {
-    padding: 4px 10px;
-    font-size: 0.7rem;
-    top: 10px;
-    right: 10px;
-  }
-
-  /* Disable animations on smallest screens for better performance */
-  .work-experience .jobs article:hover {
-    transform: none;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-  }
-
-  .work-experience .jobs article:hover figure img {
-    transform: none;
-  }
-}
-
-/* Split View Layout for Experience */
 .experience-split-view {
   display: flex;
   gap: 30px;
   margin-top: 40px;
 }
 
-/* Left side - Experience cards list */
 .experience-cards-list {
   flex: 0 0 30%;
   display: flex;
@@ -571,7 +67,6 @@
   gap: 20px;
 }
 
-/* Right side - Details panel */
 .experience-details-container {
   flex: 0 0 65%;
   padding: 20px;
@@ -582,7 +77,6 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Compact cards for the list */
 .experience-card-compact {
   position: relative;
   cursor: pointer;
@@ -591,16 +85,20 @@
   background: rgba(255, 255, 255, 0.05);
   transition: all 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1rem;
 }
 
 .experience-card-compact:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-color: rgba(100, 255, 218, 0.3);
 }
 
 .experience-card-compact.selected {
   background: rgba(255, 255, 255, 0.1);
   border-left: 4px solid #64ffda;
+  border-color: #64ffda;
+  box-shadow: 0 0 15px rgba(100, 255, 218, 0.2);
 }
 
 .experience-card-compact figure {
@@ -614,171 +112,79 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: all 0.5s ease;
+  filter: grayscale(40%);
+}
+
+.experience-card-compact:hover img,
+.experience-card-compact.selected img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
 }
 
 .experience-card-compact h3 {
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   margin: 5px 0;
+  color: #ccd6f6;
 }
 
 .experience-card-compact .experience-period {
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   opacity: 0.7;
+  color: #8892b0;
 }
 
-/* Details panel styling */
+.selection-indicator {
+  height: 3px;
+  width: 0;
+  background: #64ffda;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.experience-card-compact.selected .selection-indicator {
+  width: 80%;
+}
+
 .experience-details-panel {
+  background-color: rgba(18, 18, 22, 0.8);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  font-size: 1.1rem;
+  line-height: 1.6;
   height: 100%;
+  transition: all 0.3s ease;
 }
 
-.experience-details-panel .details-header {
+.details-header {
   height: 200px;
   border-radius: 8px;
   overflow: hidden;
   margin-bottom: 20px;
 }
 
-.experience-details-panel .details-header img {
+.details-header img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.experience-details-panel .detail-item {
-  display: flex;
-  margin-bottom: 15px;
+.work-experience-subheading {
+  color: #ccd6f6;
+  font-size: 1.1rem;
+  margin: 12px 0 8px;
 }
 
-.experience-details-panel .detail-bullet {
-  margin-right: 10px;
+.experience-period {
   color: #64ffda;
-}
-
-/* Role selector styles */
-.role-selector {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+  font-size: 1.1rem;
   margin-bottom: 20px;
-  flex-wrap: wrap;
 }
 
-.role-button {
-  background-color: #f0f0f0;
-  border: 1px solid #ddd;
-  border-radius: 20px;
-  padding: 8px 16px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: all 0.3s ease;
-}
-
-.role-button:hover {
-  background-color: #e0e0e0;
-}
-
-.role-button.active {
-  background-color: #007bff;
-  color: white;
-  border-color: #0069d9;
-}
-
-@media (max-width: 768px) {
-  .role-selector {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .role-button {
-    width: 100%;
-    max-width: 250px;
-  }
-}
-
-/* Enhanced styling for experience cards */
-.experience-card-compact {
-  position: relative;
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: rgba(30, 30, 30, 0.6);
-}
-
-.experience-card-compact:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.experience-card-compact.selected {
-  background-color: rgba(65, 105, 225, 0.2);
-  border: 1px solid rgba(65, 105, 225, 0.5);
-  box-shadow: 0 0 15px rgba(65, 105, 225, 0.3);
-}
-
-.experience-card-compact .selection-indicator {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 4px;
-  background: transparent;
-  border-radius: 4px 0 0 4px;
-  transition: background 0.3s ease;
-}
-
-.experience-card-compact.selected .selection-indicator {
-  background: #4169e1; /* Royal Blue */
-}
-
-/* Improved role selector styling */
-.role-selector {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.role-button {
-  padding: 0.5rem 1rem;
-  background-color: rgba(50, 50, 50, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #ddd;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 1.2rem;
-}
-
-.role-button:hover {
-  background-color: rgba(65, 105, 225, 0.3);
-  border-color: rgba(65, 105, 225, 0.5);
-}
-
-.role-button.active {
-  background-color: rgba(65, 105, 225, 0.7);
-  border-color: rgba(65, 105, 225, 0.9);
-  color: white;
-  font-weight: 500;
-  box-shadow: 0 0 10px rgba(65, 105, 225, 0.4);
-}
-
-/* Enhanced detail bullet points */
-.detail-item {
-  display: flex;
-  margin-bottom: 0.8rem;
-  align-items: flex-start;
-}
-
-.detail-bullet {
-  color: #4169e1; /* Royal Blue */
-  margin-right: 0.8rem;
-  font-size: 1rem;
-}
-
-/* New styles for experience roles section */
 .experience-role-section {
   margin-bottom: 28px;
   padding-bottom: 20px;
@@ -790,11 +196,24 @@
 }
 
 .role-title {
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   font-weight: 700;
   color: #64ffda;
   margin-bottom: 16px;
   display: block;
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.role-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 60px;
+  background: linear-gradient(90deg, #64ffda, transparent);
 }
 
 .role-content {
@@ -822,39 +241,99 @@
   line-height: 1.6;
 }
 
-.highlight-text {
-  color: #ffcc66;
-  font-weight: 500;
-}
-
-.highlight-keyword {
-  color: #64ffda;
+.highlight-primary {
+  color: #64ffda !important;
   font-weight: 600;
-}
-
-.experience-details-panel {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-.work-experience-subheading {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-}
-
-.experience-period {
-  font-size: 1.1rem;
-  color: #64ffda;
+  letter-spacing: 0.5px;
+  font-size: 1.6rem;
   margin-bottom: 20px;
+  font-family: "Rajdhani", "Roboto", sans-serif;
+  text-transform: uppercase;
 }
 
-/* Improve role selector buttons */
+.highlight-secondary {
+  color: #ffd700 !important;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  display: inline-flex;
+  align-items: center;
+  margin: 15px 0 12px;
+  padding: 6px 12px;
+  background: linear-gradient(90deg, rgba(255, 215, 0, 0.15), transparent);
+  border-radius: 4px;
+  position: relative;
+  font-family: "Rajdhani", "Roboto", sans-serif;
+  text-transform: uppercase;
+}
+
+.highlight-secondary::before {
+  content: "●";
+  color: #ffd700;
+  margin-right: 10px;
+  font-size: 0.7em;
+}
+
+.highlight-tech {
+  color: #ff7eb6;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.glow-effect {
+  display: inline-block;
+  position: relative;
+}
+
+.glow-effect:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 126, 182, 0.8);
+  transform: translateY(-1px);
+  cursor: default;
+}
+
+.glow-effect::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #ff7eb6, transparent);
+  transition: width 0.4s ease;
+}
+
+.glow-effect:hover::after {
+  width: 100%;
+}
+
+.subsection-title {
+  background: linear-gradient(90deg, rgba(255, 215, 0, 0.1), transparent);
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-left: -10px;
+}
+
+.subsection-description {
+  color: #c8d1e9;
+  line-height: 1.7;
+  font-size: 1.3rem;
+  padding: 8px 0 8px 15px;
+  border-left: 1px dashed rgba(100, 255, 218, 0.4);
+  margin-left: 5px;
+  font-family: "Inter", "Roboto", sans-serif;
+}
+
 .role-selector {
-  margin-bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  justify-content: flex-start;
 }
 
 .role-button {
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   padding: 8px 16px;
   margin-right: 8px;
   margin-bottom: 8px;
@@ -864,6 +343,7 @@
   border: 1px solid #64ffda;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 .role-button:hover {
@@ -873,309 +353,23 @@
 .role-button.active {
   background-color: rgba(100, 255, 218, 0.2);
   color: #ffffff;
+  box-shadow: 0 0 10px rgba(100, 255, 218, 0.4);
 }
 
-/* Enhanced Work Experience Section */
-#Experience {
-  background: linear-gradient(135deg, #121212 0%, #2a2a2a 100%);
-  padding: 4rem 0;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Animated background elements */
-#Experience::before {
-  content: "";
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background: rgba(10, 97, 174, 0.05);
-  top: -100px;
-  left: -100px;
-  animation: float 15s infinite ease-in-out;
-}
-
-#Experience::after {
-  content: "";
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: rgba(255, 218, 75, 0.05);
-  bottom: -50px;
-  right: -50px;
-  animation: float 12s infinite ease-in-out reverse;
-}
-
-@keyframes float {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  50% {
-    transform: translate(30px, 20px) rotate(180deg);
-  }
-  100% {
-    transform: translate(0, 0) rotate(360deg);
-  }
-}
-
-/* Headline styling */
-
-#Experience .headline {
-  text-align: center;
-  font-size: 3.5rem;
-  margin-bottom: 50px;
-  position: relative;
-  color: #00e5e5;
-  text-shadow: 0 0 10px rgba(0, 229, 229, 0.3);
-  animation: glow 3s infinite alternate;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-@keyframes glow {
-  0% {
-    text-shadow: 0 0 5px rgba(0, 229, 229, 0.3);
-  }
-  100% {
-    text-shadow: 0 0 20px rgba(0, 229, 229, 0.7);
-  }
-}
-
-#Experience .headline::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, transparent, #00e5e5, transparent);
-  margin: 15px auto 0;
-  border-radius: 2px;
-  box-shadow: 0 0 10px rgba(0, 229, 229, 0.5);
-  animation: pulse 2s infinite;
-}
-/* Jobs container */
-.work-experience .jobs {
-  display: flex;
-  gap: 30px;
-  padding-bottom: 3rem;
-  perspective: 1000px;
-}
-
-/* Experience cards */
-.work-experience .jobs article {
-  background: rgba(57, 57, 57, 0.8);
-  backdrop-filter: blur(10px);
-  padding: 30px;
-  border-radius: 20px;
-  flex: 1;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transform: translateY(50px);
+/* Animation for fade-in sections */
+.fade-in-section {
   opacity: 0;
-  animation: cardAppear 0.6s forwards;
-  animation-delay: calc(var(--card-index, 0) * 0.2s);
-  position: relative; /* For absolutely positioned elements inside */
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  will-change: opacity, transform;
+  animation: fadeInUp 0.5s forwards;
+  animation-delay: calc(0.1s * var(--animation-order, 1));
 }
 
-.work-experience .jobs article:nth-child(1) {
-  --card-index: 1;
-}
-.work-experience .jobs article:nth-child(2) {
-  --card-index: 2;
-}
-.work-experience .jobs article:nth-child(3) {
-  --card-index: 3;
-}
-.work-experience .jobs article:nth-child(4) {
-  --card-index: 4;
-}
-
-@keyframes cardAppear {
-  0% {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.work-experience .jobs article:hover {
-  transform: translateY(-15px) scale(1.03);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  z-index: 10;
-  border-color: rgba(97, 218, 251, 0.3);
-}
-
-/* Card title */
-.work-experience .jobs article h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #ffffff;
-  transition: color 0.3s ease;
-}
-
-.work-experience .jobs article:hover h3 {
-  color: #61dafb;
-}
-
-/* Time period */
-.work-experience .jobs article div {
-  font-weight: 600;
-  margin-bottom: 12px;
-  font-size: 0.9rem;
-  color: #ffda4b;
-  letter-spacing: 0.5px;
-  position: relative;
-  display: inline-block;
-}
-
-/* Description */
-.work-experience .jobs article p {
-  color: #e0e0e0;
-  line-height: 1.6;
-  font-size: 0.95rem;
-}
-
-/* Image container - REDUCED HEIGHT */
-.work-experience .jobs article figure {
-  width: 100%;
-  height: 150px; /* Reduced from 180px */
-  overflow: hidden;
-  position: relative;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.work-experience .jobs article figure img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  transition: transform 1.5s ease;
-}
-
-.work-experience .jobs article figure figcaption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
-  color: white;
-  text-align: center;
-  padding: 15px 10px 10px;
-  font-weight: 500;
-  transform: translateY(100%);
-  transition: transform 0.3s ease;
-}
-
-.work-experience .jobs article:hover figure figcaption {
-  transform: translateY(0);
-}
-
-.work-experience .jobs article:hover figure img {
-  transform: scale(1.1);
-}
-
-/* Company logos */
-.soliton,
-.edureka,
-.vtps {
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  filter: brightness(0.9);
-}
-
-.work-experience .jobs article:hover .soliton,
-.work-experience .jobs article:hover .edureka,
-.work-experience .jobs article:hover .vtps {
-  filter: brightness(1.1);
-}
-
-/* Add subtle hover animation to period text */
-.work-experience .jobs article div::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: #ffda4b;
-  transition: width 0.3s ease;
-}
-
-.work-experience .jobs article:hover div::after {
-  width: 100%;
-}
-
-/* Add animated indicator for current position */
-.work-experience .jobs article:first-child::before {
-  content: "Current";
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: linear-gradient(90deg, #61dafb, #008b8b);
-  color: white;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  box-shadow: 0 2px 10px rgba(97, 218, 251, 0.4);
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(97, 218, 251, 0.6);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(97, 218, 251, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(97, 218, 251, 0);
-  }
-}
-
-/* Experience card */
-.experience-card {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  max-height: 550px;
-}
-
-.experience-card.expanded {
-  max-height: 1200px;
-}
-
-/* Experience details section */
-.experience-details {
-  margin-top: 20px;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 15px;
-  border-left: 3px solid #61dafb;
-  position: relative;
-  overflow: hidden;
-  animation: fadeIn 0.5s ease forwards;
-}
-
-@keyframes fadeIn {
+@keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -1183,150 +377,19 @@
   }
 }
 
-.detail-item {
-  display: flex;
-  margin-bottom: 12px;
-  position: relative;
-}
-
-.detail-bullet {
-  color: #61dafb;
-  margin-right: 10px;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.detail-item p {
-  flex: 1;
-  margin: 0;
-  color: #e0e0e0;
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
-
-/* Journey button styles */
-.journey-button {
-  position: relative;
-  background: linear-gradient(135deg, #112240 0%, #233554 100%);
-  color: #61dafb;
-  border: none;
-  border-radius: 25px;
-  padding: 8px 20px;
-  margin-top: 15px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(97, 218, 251, 0.2);
-  z-index: 2;
-}
-
-.journey-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(97, 218, 251, 0.4);
-  color: white;
-  background: linear-gradient(135deg, #153054 0%, #2a4174 100%);
-}
-
-.button-glow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(
-    circle at center,
-    rgba(97, 218, 251, 0.8) 0%,
-    rgba(97, 218, 251, 0) 70%
-  );
-  opacity: 0;
-  z-index: -1;
-  transition: opacity 0.3s ease;
-}
-
-.journey-button:hover .button-glow {
-  opacity: 0.2;
-  animation: pulse-glow 2s infinite;
-}
-
-@keyframes pulse-glow {
-  0% {
-    transform: scale(0.95);
-    opacity: 0.2;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.3;
-  }
-  100% {
-    transform: scale(0.95);
-    opacity: 0.2;
-  }
-}
-
-/* Background effect */
-.experience-background-effect {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(
-      circle at 20% 30%,
-      rgba(97, 218, 251, 0.05) 0%,
-      transparent 40%
-    ),
-    radial-gradient(
-      circle at 80% 70%,
-      rgba(255, 218, 75, 0.05) 0%,
-      transparent 40%
-    );
-  pointer-events: none;
-}
-
-/* Experience period styling */
-.experience-period {
-  position: relative;
-  color: #ffda4b;
-  font-weight: 600;
-  margin-bottom: 12px;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
-  display: inline-block;
-}
-
-/* Enhanced Responsive styling */
+/* Responsive adjustments */
 @media (max-width: 1200px) {
-  .work-experience .jobs {
-    gap: 20px;
-  }
-
-  .work-experience .jobs article figure {
-    height: 140px; /* Slightly reduced for large screens */
+  .experience-cards-list {
+    gap: 16px;
   }
 }
 
 @media (max-width: 992px) {
-  .work-experience .jobs {
-    flex-wrap: wrap;
+  .experience-split-view {
+    gap: 18px;
   }
-
-  .work-experience .jobs article {
-    flex: 0 0 calc(50% - 15px);
-    margin-bottom: 30px;
-  }
-
-  .work-experience .jobs article:hover {
-    transform: translateY(-10px) scale(1.02);
-  }
-
-  .work-experience .jobs article figure {
-    height: 130px; /* Further reduced for medium screens */
-  }
-
-  .experience-card.expanded {
-    max-height: 1500px;
+  .experience-cards-list {
+    gap: 12px;
   }
 }
 
@@ -1334,41 +397,60 @@
   #Experience {
     padding: 3rem 1.5rem;
   }
-
-  #Experience .headline {
+  .headline {
     font-size: 2rem;
     margin-bottom: 2rem;
   }
-
-  .work-experience .jobs {
+  .experience-split-view {
     flex-direction: column;
-    gap: 25px;
+    gap: 0;
   }
-
-  .work-experience .jobs article {
+  .experience-cards-list,
+  .experience-details-container {
     width: 100%;
     flex: none;
-    margin-bottom: 0;
-    padding: 25px;
+    padding: 0;
   }
-
-  .work-experience .jobs article figure {
-    height: 120px; /* Significantly reduced for tablet/mobile */
+  .experience-cards-list {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
-
-  .work-experience .jobs article h3 {
-    font-size: 1.3rem;
+  .experience-card-compact {
+    flex: 0 0 250px;
+    scroll-snap-align: start;
   }
-
-  /* Always show caption on mobile for better UX */
-  .work-experience .jobs article figure figcaption {
-    transform: translateY(0);
-    padding: 10px 8px;
-    font-size: 0.9rem;
+  .experience-details-container {
+    margin-top: 24px;
+    padding: 12px;
   }
-
-  .experience-card.expanded {
-    max-height: 1800px;
+  .role-selector {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .role-button {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+  .experience-details-panel {
+    padding: 1rem;
+  }
+  .experience-role-section .role-title {
+    font-size: 1.2rem;
+  }
+  .detail-item {
+    align-items: flex-start;
+  }
+  .detail-bullet {
+    margin-top: 3px;
+  }
+  .detail-item p {
+    margin-top: 0;
   }
 }
 
@@ -1376,378 +458,79 @@
   #Experience {
     padding: 2.5rem 1rem;
   }
-
-  #Experience .headline {
+  .headline {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
   }
-
-  #Experience .headline::after {
-    width: 60px;
-    height: 3px;
+  .experience-cards-list {
+    gap: 12px;
   }
-
-  .work-experience .jobs {
-    gap: 20px;
+  .experience-card-compact {
+    padding: 12px;
+    border-radius: 8px;
+    min-width: 220px;
   }
-
-  .work-experience .jobs article {
-    padding: 20px;
-    border-radius: 15px;
-  }
-
-  .work-experience .jobs article figure {
-    height: 100px; /* Minimized for small mobile devices */
-    margin-bottom: 15px;
-  }
-
-  .work-experience .jobs article h3 {
-    font-size: 1.2rem;
-    margin-top: 15px;
+  .experience-card-compact figure {
+    height: 80px;
     margin-bottom: 8px;
   }
-
-  .work-experience .jobs article div {
-    font-size: 0.85rem;
+  .experience-card-compact h3 {
+    font-size: 1.2rem;
+    margin: 5px 0;
   }
-
-  .work-experience .jobs article p {
-    font-size: 0.9rem;
+  .experience-details-panel {
+    padding: 15px;
+    font-size: 1rem;
   }
-
-  .work-experience .jobs article:first-child::before {
+  .details-header {
+    height: 150px;
+  }
+  .subsection-description {
+    padding-left: 10px;
+  }
+  .highlight-secondary {
+    font-size: 0.9em;
     padding: 4px 10px;
-    font-size: 0.7rem;
-    top: 10px;
-    right: 10px;
   }
-
-  /* Disable animations on smallest screens for better performance */
-  .work-experience .jobs article:hover {
-    transform: none;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-  }
-
-  .work-experience .jobs article:hover figure img {
-    transform: none;
-  }
-}
-
-/* Split View Layout for Experience */
-.experience-split-view {
-  display: flex;
-  gap: 30px;
-  margin-top: 40px;
-}
-
-/* Left side - Experience cards list */
-.experience-cards-list {
-  flex: 0 0 30%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* Right side - Details panel */
-.experience-details-container {
-  flex: 0 0 65%;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Compact cards for the list */
-.experience-card-compact {
-  position: relative;
-  cursor: pointer;
-  padding: 15px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.experience-card-compact:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.experience-card-compact.selected {
-  background: rgba(255, 255, 255, 0.1);
-  border-left: 4px solid #64ffda;
-}
-
-.experience-card-compact figure {
-  height: 100px;
-  overflow: hidden;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-.experience-card-compact figure img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.experience-card-compact h3 {
-  font-size: 0.9rem;
-  margin: 5px 0;
-}
-
-.experience-card-compact .experience-period {
-  font-size: 0.8rem;
-  opacity: 0.7;
-}
-
-/* Details panel styling */
-.experience-details-panel {
-  height: 100%;
-}
-
-.experience-details-panel .details-header {
-  height: 200px;
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
-
-.experience-details-panel .details-header img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.experience-details-panel .detail-item {
-  display: flex;
-  margin-bottom: 15px;
-}
-
-.experience-details-panel .detail-bullet {
-  margin-right: 10px;
-  color: #64ffda;
-}
-
-/* Role selector styles */
-.role-selector {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
-
-.role-button {
-  background-color: #f0f0f0;
-  border: 1px solid #ddd;
-  border-radius: 20px;
-  padding: 8px 16px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: all 0.3s ease;
-}
-
-.role-button:hover {
-  background-color: #e0e0e0;
-}
-
-.role-button.active {
-  background-color: #007bff;
-  color: white;
-  border-color: #0069d9;
-}
-
-@media (max-width: 768px) {
-  .role-selector {
-    flex-direction: column;
-    align-items: center;
-  }
-
+  /* Improve touch targets for mobile */
   .role-button {
-    width: 100%;
-    max-width: 250px;
+    padding: 10px 16px;
+    touch-action: manipulation;
+  }
+  /* Add smooth transitions for touch interactions */
+  .experience-card-compact:active {
+    transform: scale(0.98);
+    transition: transform 0.1s;
   }
 }
 
-/* Enhanced styling for experience cards */
-.experience-card-compact {
-  position: relative;
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: rgba(30, 30, 30, 0.6);
+/* Add this for better touch scrolling */
+@media (hover: none) {
+  .experience-cards-list::-webkit-scrollbar {
+    display: none;
+  }
+  .experience-cards-list {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .role-selector::-webkit-scrollbar {
+    display: none;
+  }
+  .role-selector {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
-.experience-card-compact:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.experience-card-compact.selected {
-  background-color: rgba(65, 105, 225, 0.2);
-  border: 1px solid rgba(65, 105, 225, 0.5);
-  box-shadow: 0 0 15px rgba(65, 105, 225, 0.3);
-}
-
-.experience-card-compact .selection-indicator {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 4px;
-  background: transparent;
-  border-radius: 4px 0 0 4px;
-  transition: background 0.3s ease;
-}
-
-.experience-card-compact.selected .selection-indicator {
-  background: #4169e1; /* Royal Blue */
-}
-
-/* Improved role selector styling */
-.role-selector {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.role-button {
-  padding: 0.5rem 1rem;
-  background-color: rgba(50, 50, 50, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #ddd;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 1.2rem;
-}
-
-.role-button:hover {
-  background-color: rgba(65, 105, 225, 0.3);
-  border-color: rgba(65, 105, 225, 0.5);
-}
-
-.role-button.active {
-  background-color: rgba(65, 105, 225, 0.7);
-  border-color: rgba(65, 105, 225, 0.9);
-  color: white;
-  font-weight: 500;
-  box-shadow: 0 0 10px rgba(65, 105, 225, 0.4);
-}
-
-/* Enhanced detail bullet points */
-.detail-item {
-  display: flex;
-  margin-bottom: 0.8rem;
-  align-items: flex-start;
-}
-
-.detail-bullet {
-  color: #4169e1; /* Royal Blue */
-  margin-right: 0.8rem;
-  font-size: 1rem;
-}
-
-/* New styles for experience roles section */
-.experience-role-section {
-  margin-bottom: 28px;
-  padding-bottom: 20px;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
-}
-
-.experience-role-section:last-child {
-  border-bottom: none;
-}
-
-.role-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #64ffda;
-  margin-bottom: 16px;
-  display: block;
-}
-
-.role-content {
-  padding-left: 10px;
-}
-
-.detail-item {
-  display: flex;
-  margin-bottom: 12px;
-  align-items: flex-start;
-  line-height: 1.6;
-}
-
-.detail-bullet {
-  color: #64ffda;
-  margin-right: 12px;
-  font-size: 18px;
-  flex-shrink: 0;
-}
-
-.detail-item p {
-  font-size: 1rem;
-  margin: 0;
-  color: #e6f1ff;
-  line-height: 1.6;
-}
-
-.highlight-text {
-  color: #ffcc66;
-  font-weight: 500;
-}
-
-.highlight-keyword {
-  color: #64ffda;
-  font-weight: 600;
-}
-
-.experience-details-panel {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-.work-experience-subheading {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-}
-
-.experience-period {
-  font-size: 1.1rem;
-  color: #64ffda;
-  margin-bottom: 20px;
-}
-
-/* Improve role selector buttons */
-.role-selector {
-  margin-bottom: 24px;
-}
-
-.role-button {
-  font-size: 0.9rem;
-  padding: 8px 16px;
-  margin-right: 8px;
-  margin-bottom: 8px;
-  border-radius: 4px;
-  background-color: transparent;
-  color: #ccd6f6;
-  border: 1px solid #64ffda;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.role-button:hover {
-  background-color: rgba(100, 255, 218, 0.1);
-}
-
-.role-button.active {
-  background-color: rgba(100, 255, 218, 0.2);
-  color: #ffffff;
+/* Ensure animations work well on low-powered devices */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-section {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .experience-card-compact:hover,
+  .experience-card-compact.selected {
+    transform: none;
+  }
 }

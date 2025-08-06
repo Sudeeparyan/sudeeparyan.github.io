@@ -21,9 +21,9 @@ export default function IntroSlide() {
     
     // Slide timing configuration (in milliseconds)
     const slideTiming = {
-        intro: 4000,
-        aboutme: 6000,
-        interests: 6000
+        intro: 2000,      // Show intro for 2 seconds
+        aboutme: 5000,    // Show aboutme for 5 seconds
+        interests: 5000   // Show interests for 5 seconds
     };
     
     // Function to transition to the next section
@@ -39,6 +39,10 @@ export default function IntroSlide() {
         // Apply transitions
         if (nextSection === 'aboutme') {
             if (introRef.current && aboutRef.current) {
+                // First clear any existing classes on aboutRef
+                aboutRef.current.classList.remove('page-returning');
+                
+                // Add the visible and turning animation
                 aboutRef.current.classList.add('visible');
                 aboutRef.current.classList.add('page-turning');
                 
@@ -53,34 +57,59 @@ export default function IntroSlide() {
             }
         } else if (nextSection === 'interests') {
             if (aboutRef.current && interestsRef.current) {
-                interestsRef.current.classList.add('visible');
-                interestsRef.current.classList.add('page-turning');
+                // First clear any existing classes on interestsRef
+                interestsRef.current.classList.remove('page-returning');
                 
+                // Hide about section with returning animation
+                aboutRef.current.classList.add('page-returning');
+                
+                // After a small delay, show interests section
                 setTimeout(() => {
-                    if (interestsRef.current) {
+                    aboutRef.current.classList.remove('visible');
+                    aboutRef.current.classList.remove('page-returning');
+                    
+                    // Show interests with proper animation
+                    interestsRef.current.classList.add('visible');
+                    interestsRef.current.classList.add('page-turning');
+                    
+                    setTimeout(() => {
                         interestsRef.current.classList.remove('page-turning');
-                    }
-                    setActiveSection('interests');
-                    setIsTransitioning(false);
-                }, 800);
+                        setActiveSection('interests');
+                        setIsTransitioning(false);
+                    }, 600);
+                }, 400);
             }
         } else {
             // Transition back to intro with a reverse effect
             if (activeSection === 'aboutme') {
+                // First clear any existing classes
+                aboutRef.current.classList.remove('page-turning');
+                
+                // Add returning animation
                 aboutRef.current.classList.add('page-returning');
                 
                 setTimeout(() => {
                     aboutRef.current.classList.remove('visible');
                     aboutRef.current.classList.remove('page-returning');
+                    
+                    // Show intro again
+                    introRef.current.classList.add('visible');
                     setActiveSection('intro');
                     setIsTransitioning(false);
                 }, 800);
             } else if (activeSection === 'interests') {
+                // First clear any existing classes
+                interestsRef.current.classList.remove('page-turning');
+                
+                // Add returning animation
                 interestsRef.current.classList.add('page-returning');
                 
                 setTimeout(() => {
                     interestsRef.current.classList.remove('visible');
                     interestsRef.current.classList.remove('page-returning');
+                    
+                    // Show intro again
+                    introRef.current.classList.add('visible');
                     setActiveSection('intro');
                     setIsTransitioning(false);
                 }, 800);

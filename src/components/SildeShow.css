@@ -150,7 +150,7 @@
 
 /* Headings */
 .heading {
-  font-family: 'Papyrus', fantasy, 'Times New Roman', serif;
+  font-family: "Papyrus", fantasy, "Times New Roman", serif;
   font-size: 2.5rem;
   margin-bottom: 15px;
   position: relative;
@@ -160,7 +160,7 @@
 }
 
 .subheading {
-  font-family: 'Papyrus', fantasy, 'Times New Roman', serif;
+  font-family: "Papyrus", fantasy, "Times New Roman", serif;
   font-size: 1.8rem;
   color: #555;
   margin-bottom: 15px;
@@ -178,17 +178,19 @@
 }
 
 @keyframes glow {
-  0%, 100% {
+  0%,
+  100% {
     text-shadow: 0 0 3px rgba(231, 76, 60, 0.3);
   }
   50% {
-    text-shadow: 0 0 10px rgba(231, 76, 60, 0.6), 0 0 15px rgba(231, 76, 60, 0.4);
+    text-shadow: 0 0 10px rgba(231, 76, 60, 0.6),
+      0 0 15px rgba(231, 76, 60, 0.4);
   }
 }
 
 /* About Text */
 .about-text {
-  font-family: 'Lucida Console', monospace, 'Courier New', Courier;
+  font-family: "Lucida Console", monospace, "Courier New", Courier;
   font-size: 1rem;
   line-height: 1.6;
   margin-top: 15px;
@@ -209,7 +211,7 @@
 
 .scroll-indicator p {
   margin-bottom: 8px;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   color: #555;
   font-size: 0.9rem;
 }
@@ -225,7 +227,11 @@
 }
 
 @keyframes bounceDown {
-  0%, 20%, 50%, 80%, 100% {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: rotate(45deg) translateY(0);
   }
   40% {
@@ -252,7 +258,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 
@@ -286,69 +292,229 @@
 /* Responsive adjustments */
 @media (max-width: 992px) {
   .book-container {
-    height: 550px;
+    height: auto;
+    min-height: 600px;
   }
-  
+
   .heading {
     font-size: 2rem;
   }
-  
+
   .subheading {
     font-size: 1.5rem;
+  }
+
+  .profile-image {
+    max-height: 300px;
   }
 }
 
 @media (max-width: 768px) {
   .book-container {
     height: auto;
-    min-height: 650px;
+    min-height: 750px;
+    padding: 15px 10px;
   }
-  
+
+  .book-page {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px 15px;
+    border-radius: 12px;
+  }
+
   .col-md-6 {
     flex: 0 0 100%;
     max-width: 100%;
+    padding: 10px 5px;
   }
-  
+
   .image-column {
     order: 1;
+    margin-bottom: 10px;
+    max-height: 250px;
   }
-  
+
   .text-column {
     order: 2;
-  }
-  
-  #intro .image-column {
-    order: 2;
-  }
-  
-  #intro .text-column {
-    order: 1;
-  }
-  
-  .heading {
-    font-size: 1.8rem;
+    padding: 15px 10px;
     text-align: center;
   }
-  
+
+  .image-wrapper {
+    max-width: 200px;
+    max-height: 220px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .profile-image {
+    max-height: 220px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Fix animations on mobile */
+  .heading,
   .subheading {
-    font-size: 1.3rem;
+    opacity: 1;
+    transform: translateX(0);
+    animation: none;
+  }
+
+  .about-text {
+    opacity: 1;
+    transform: translateY(0);
+    animation: none;
     text-align: center;
   }
-  
-  .about-text {
-    text-align: center;
+
+  /* Improve page indicator visibility */
+  .page-progress-indicator {
+    right: 10px;
+    top: auto;
+    bottom: 15px;
+    transform: none;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .indicator-dot {
+    width: 12px;
+    height: 12px;
   }
 }
 
 @media (max-width: 480px) {
   .book-container {
-    min-height: 600px;
+    min-height: 800px;
+    padding: 10px 5px;
   }
-  
-  .page-progress-indicator {
-    right: 10px;
+
+  /* Make more vertical space for content */
+  .book-section {
+    padding: 10px 5px;
+    height: auto;
+    min-height: 100%;
+  }
+
+  /* Better text sizing and spacing */
+  .heading {
+    font-size: 1.7rem;
+    margin-bottom: 12px;
+    line-height: 1.3;
+    padding: 0 5px;
+  }
+
+  .subheading {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  /* Improved page transitions for mobile */
+  @keyframes pageFlip {
+    0% {
+      transform: translateX(50%) rotateY(60deg);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0) rotateY(0deg);
+      opacity: 1;
+    }
+  }
+
+  @keyframes pageReturn {
+    0% {
+      transform: translateX(0) rotateY(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(50%) rotateY(60deg);
+      opacity: 0;
+    }
+  }
+
+  /* Adjust animation speed for mobile */
+  #aboutme.page-turning,
+  #aboutme.page-returning,
+  #interests.page-turning,
+  #interests.page-returning {
+    animation-duration: 0.6s;
+  }
+
+  /* Fix overflow issues */
+  .page-content {
+    overflow-x: hidden;
+  }
+
+  /* Better image position */
+  .image-wrapper {
+    max-width: 180px;
+    max-height: 200px;
+    border-radius: 10px;
+  }
+
+  .profile-image {
+    max-height: 200px;
   }
 }
+
+/* Extra small devices - significant improvements */
+@media (max-width: 360px) {
+  .book-container {
+    min-height: 850px;
+    padding: 5px;
+  }
+
+  .book-page {
+    padding: 12px 8px;
+    margin: 0 auto;
+    max-width: 95%;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    padding: 0;
+  }
+
+  .subheading {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .image-wrapper {
+    max-width: 150px;
+    max-height: 170px;
+  }
+
+  .profile-image {
+    max-height: 170px;
+  }
+
+  /* Improve spacing */
+  .col-md-6 {
+    padding: 5px;
+  }
+
+  .text-column {
+    padding: 10px 5px;
+  }
+
+  /* Fix indicators */
+  .page-progress-indicator {
+    bottom: 5px;
+    gap: 12px;
+  }
+
+  .indicator-dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
 /* Add these new animation styles to your SildeShow.css file */
 
 /* Enhanced page turn effects */
@@ -360,6 +526,28 @@
 #aboutme.page-returning {
   animation: pageReturn 0.8s ease-in-out forwards;
   transform-origin: left center;
+}
+
+/* Fix the page turning animations for both sections */
+#aboutme.page-turning,
+#interests.page-turning {
+  animation: pageFlip 0.8s ease-in-out forwards;
+  transform-origin: left center;
+}
+
+#aboutme.page-returning,
+#interests.page-returning {
+  animation: pageReturn 0.8s ease-in-out forwards;
+  transform-origin: left center;
+}
+
+/* Ensure interests section has proper z-index behavior */
+#interests {
+  z-index: 0;
+}
+
+#interests.visible {
+  z-index: 2;
 }
 
 @keyframes pageFlip {
@@ -422,7 +610,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   cursor: pointer;
 }

@@ -29,27 +29,61 @@ const ExperienceDetails = ({ image, caption, title, period, description, details
     const roleMapping = {
       'intern': "Internship",
       'project engineer': "Project Engineer",
-      'senior project engineer': "R&D and Mentorship"
+      'senior project engineer': "Senior Project Engineer"
     };
     
     const rolePrefix = roleMapping[selectedRole.toLowerCase()];
     
     if (rolePrefix) {
       filteredDetails = details.filter(detail => 
-        detail.startsWith(rolePrefix)
+        typeof detail === 'object' ? detail.role === rolePrefix : detail.startsWith(rolePrefix)
       );
     }
   }
 
   return (
-    <div className="experience-details-panel">
-      <h3 className="work-experience-subheading">{title}</h3>
-      <div className="experience-period">{period}</div>
-      <p className="work-experience-innercontent">{description}</p>
-      
+    <div className="experience">
       <div className="experience-details">
         {filteredDetails && filteredDetails.map((detail, idx) => {
-          // Parse the detail string to extract role title and content
+          // Handle structured details object (new format)
+          if (typeof detail === 'object' && detail.role) {
+            return (
+              <div key={idx} className="experience-role-section cyber-panel">
+                {/* <h4 className="role-title highlight-primary">{detail.title || detail.role}</h4> */}
+                <div className="cyber-lines"></div>
+                {detail.sections && detail.sections.map((section, secIdx) => (
+                  <div key={secIdx} className="experience-subsection fade-in-section">
+                    <h5 className="subsection-title highlight-secondary">{section.title}</h5>
+                    <div className="subsection-content">
+                      <p className="subsection-description">
+                        {section.description.split(' ').map((word, wordIdx, arr) => {
+                          // Enhanced regex for technical terms with more tech keywords
+                          const techTermRegex = /^(AI|RAG|CAG|Graph|Neo4j|Vertex|Docker|Kubernetes|MLOps|POC|Firebase|Studio|Bolt\.ai|vision|models|embedding|pipelines|Agent|MCP|multi-agent|systems|protocols|workflows|deployment|stakeholders|architecture)(\W|$)/i;
+                          
+                          if (techTermRegex.test(word)) {
+                            return (
+                              <React.Fragment key={wordIdx}>
+                                <span className="highlight-tech glow-effect">{word}</span>
+                                {wordIdx < arr.length - 1 ? ' ' : ''}
+                              </React.Fragment>
+                            );
+                          }
+                          return (
+                            <React.Fragment key={wordIdx}>
+                              {word}
+                              {wordIdx < arr.length - 1 ? ' ' : ''}
+                            </React.Fragment>
+                          );
+                        })}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            );
+          }
+          
+          // Handle legacy string format
           const titleMatch = detail.match(/^([^:]+):/);
           if (titleMatch) {
             const roleTitle = titleMatch[1];
@@ -83,6 +117,12 @@ const ExperienceDetails = ({ image, caption, title, period, description, details
             );
           }
         })}
+        {/* Show confidentiality note once for Soliton Technologies */}
+        {caption === "Soliton Technologies" && (
+          <p className="confidentiality-note">
+            Note: Specific project names and details are not disclosed due to confidentiality agreements with clients.
+          </p>
+        )}
       </div>
     </div>
   );
@@ -123,13 +163,63 @@ export default function Experience() {
       {
         image: soliton,
         caption: "Soliton Technologies",
-        title: "Career Progression: Intern → Project Engineer → Senior Project Engineer",
+        title: "Senior Project Engineer",
         period: "Jan 2023 - Present",
-        // description: "Comprehensive journey from AI & DevOps Intern (Jan-May 2023) to Project Engineer (Jun 2023-Apr 2025) to Senior Project Engineer (May 2025-Present)",
         details: [
-          "R&D and Mentorship (Current Focus): In my current role within the R&D team, I am focused on pioneering next-generation AI solutions. I lead pilot projects, give demos to prospective clients like Qualcomm and Renesas, and drive internal innovation. A major initiative I took ownership of was creating \"RAG360,\" a centralized knowledge base and training framework that consolidates our team's expertise. I now actively mentor junior engineers, helping to build a skilled, AI-fluent workforce and scale our team's capabilities.",
-          "Project Engineer (Jan 2023 – Present): As a Project Engineer, I took on significant responsibilities, leading the development of AI-powered solutions for industry giants like Texas Instruments. I engineered an AI assistant to interpret complex datasheets and built a VS Code extension to automate C++ test code generation. A key achievement was solving a critical performance bottleneck by designing a multi-region deployment with Docker and Kubernetes, slashing API processing time from 300 seconds to under 10 seconds. This role solidified my expertise in applying Generative AI to solve real-world engineering challenges.",
-          "Internship (Jan-May 2023): I began my journey at Soliton by immersing myself in the foundations of MLOps, cloud infrastructure, and full-stack development. My primary focus was contributing to a high-impact project for Intel, where I helped develop an offline GUI tool for device validation. This foundational experience was my launchpad into building enterprise-grade, data-driven applications and automating complex ML workflows."
+          {
+            role: "Senior Project Engineer",
+            title: "Senior Project Engineer — AI R&D & Mentorship",
+            sections: [
+              {
+                title: "Agent Protocols & Systems Architecture",
+                description: "Implements cutting-edge frameworks such as Model Context Protocol (MCP) and Agent-to-Agent (A2A) communication protocols to build scalable, interoperable multi-agent systems. These architectures enable seamless integration into evolving open-agent ecosystems without disrupting existing enterprise workflows."
+              },
+              {
+                title: "Business Integration & POCs",
+                description: "Collaborates with product leaders and domain experts to identify critical business challenges, design robust AI solutions, and deliver production-ready Proof-of-Concepts (POCs). Combines deep technical experimentation with a strong sense of business feasibility to ensure long-term impact and adoption."
+              },
+              {
+                title: "Mentorship, Knowledge Leadership & Strategic Enablement",
+                description: "Drives Soliton’s AI culture by mentoring junior engineers, leading “Knowledge Café” sessions, and building structured onboarding programs. Actively contributes to research publications and represents the team at conferences and hackathons. Plays a strategic role in aligning R&D with delivery by bridging research insights with real-world implementation—ensuring scalable deployment and long-term team capability growth."
+              }
+            ]
+          },
+          {
+            role: "Project Engineer",
+            title: "Project Engineer — AI Solutions & GenAI Systems",
+            sections: [
+              {
+                title: "AI Solutions for Engineering Workflows",
+                description: "Engineered AI-powered tools tailored for the semiconductor domain, including an advanced chatbot assistant that interprets complex datasheets to surface key information instantly—reducing manual effort and enabling faster decision-making for engineers. Focused on integrating Generative AI into real-world engineering use cases with tangible productivity gains."
+              },
+              {
+                title: "Infrastructure Optimization & Performance Tuning",
+                description: "Solved critical performance bottlenecks by architecting a multi-region deployment using Docker and Kubernetes. Achieved a 30x latency reduction—cutting API processing time from 300 seconds to under 10 seconds—by optimizing model orchestration, caching, and load distribution."
+              },
+              {
+                title: "Generative AI Systems & Advanced Techniques",
+                description: "Hands-on with full-stack GenAI development—from prompt engineering and retrieval pipelines to vector search using tools like LlamaIndex, OpenAI APIs, and Qudrant. Transitioned prototypes to production, applying advanced techniques like context-aware prompting, multi-hop reasoning, and embedding optimization to boost accuracy and system performance."
+              }
+            ]
+          },
+          {
+            role: "Internship",
+            title: "Internship — ML Validation Tool, Cloud Migration & Full-Stack Development",
+            sections: [
+              {
+                title: "Built an Intelligent ML-Powered Validation Tool",
+                description: "Developed a robust offline GUI application using supervised learning (regression) models to analyze test data, predict device behavior, and assist hardware validation engineers. The tool significantly reduced manual effort, domain dependency, and validation time, driving smarter decision-making across engineering teams."
+              },
+              {
+                title: "Led Cloud Migration & Automated MLOps Pipeline",
+                description: "Migrated the entire solution to Microsoft Azure, designing a fully automated MLOps workflow with components like Data Factory, OneLake, and Power BI. Enabled real-time analytics, alerting, and continuous model training—transforming a manual, expert-heavy process into a scalable, data-driven cloud solution."
+              },
+              {
+                title: "Mastered React, Python, and Full-Stack Development",
+                description: "Gained deep, hands-on expertise in React.js, Python (Flask/FastAPI), and backend integrations. Strengthened my understanding of DevOps and cloud architecture, and became proficient in designing production-ready, full-stack ML applications with seamless user interfaces and scalable backend infrastructure."
+              }
+            ]
+          }
         ]
       },
       {
@@ -139,9 +229,24 @@ export default function Experience() {
         period: "Jul 2021 - Feb 2022",
         description: "Eight months Internship on Full-Stack Web Development with React Front-end and NodeJs Backend.",
         details: [
-          "Built a full-stack application using React, Node.js, and Python.",
-          "Focused on backend development and seamless API integration.",
-          "Strengthened understanding of scalable, user-focused web solutions."
+          {
+            role: "Internship",
+            title: "Edureka Internship — Full-Stack Web Development",
+            sections: [
+              {
+                title: "Kickstarted My Software Development Journey During COVID",
+                description: "The pandemic gave me the space to deeply explore computer science and web technologies, sparking my passion for building impactful digital solutions. I began this journey with Edureka, where I took my first steps as a software developer."
+              },
+              {
+                title: "Built a Full-Stack Web Application (React, Node.js, Python)",
+                description: "Developed a full-stack application from the ground up, focusing on backend logic, API integration, and efficient data handling—laying a strong technical foundation in modern web development."
+              },
+              {
+                title: "Gained Expertise in Scalable Web Architecture",
+                description: "Strengthened my understanding of user-centric design, RESTful API development, and scalable backend systems, becoming proficient in React and Python-based full-stack development."
+              }
+            ]
+          }
         ]
       },
       {
@@ -151,8 +256,24 @@ export default function Experience() {
         period: "May 2021 - Jul 2021",
         description: "Industrial Visits and Familiarization in working of thermal power plant.",
         details: [
-          "Attended industrial visits and training sessions to understand thermal power plant operations.",
-          "Gained foundational experience in engineering systems and large-scale infrastructure."
+          {
+            role: "Implant Training",
+            title: "Thermal Power Plant Training — VTPS",
+            sections: [
+              {
+                title: "Explored Complete Thermal Power Generation Workflow",
+                description: "Participated in a structured industrial training program that covered the full thermal power cycle—from coal unloading and pulverization to boiler combustion, steam turbine operation, and power transmission. Understood the operational logic behind each system and how they integrate into a 1,760 MW power plant serving a significant portion of Andhra Pradesh’s energy demand."
+              },
+              {
+                title: "Hands-On Learning in Real Industrial Environment",
+                description: "Observed critical areas like the control room, cooling towers, condenser systems, and generator operations. Gained firsthand exposure to how mechanical, electrical, and control systems come together in a high-efficiency, large-scale infrastructure. Engaged with experienced plant engineers to understand routine operations, maintenance strategies, and safety protocols."
+              },
+              {
+                title: "Strengthened Engineering and System-Level Thinking",
+                description: "The experience deepened my foundational understanding of thermodynamics, fluid systems, and industrial automation. It also introduced me to large-scale process workflows and systems engineering principles—lessons that continue to shape my problem-solving approach in both software and AI-driven projects."
+              }
+            ]
+          }
         ]
       }
     ];

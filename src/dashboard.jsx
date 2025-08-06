@@ -198,8 +198,17 @@ export default function Dashboard() {
     }
   ];
 
+  // Letter of Recommendation data
+  const lorData = [
+    { href: "https://drive.google.com/file/d/1LOR1/view", title: "LOR from Dr. John Smith (Professor, University A)", isNew: true },
+    { href: "https://drive.google.com/file/d/2LOR2/view", title: "LOR from Ms. Jane Doe (Manager, Soliton Technologies)" },
+    { href: "https://drive.google.com/file/d/3LOR3/view", title: "LOR from Dr. Emily White (Research Lead, Edureka)" },
+    { href: "https://drive.google.com/file/d/4LOR4/view", title: "LOR from Mr. Michael Brown (Director, VTPS)" },
+    { href: "https://drive.google.com/file/d/5LOR5/view", title: "LOR from Dr. Alice Green (IEEE Conference Chair)", isNew: true }
+  ];
+
   // Combined data for backwards compatibility with existing components
-  const certificates = [...certificatesData, ...aiCertificatesData, ...publicationsData, ...awardsData];
+  const certificates = [...certificatesData, ...aiCertificatesData, ...publicationsData, ...awardsData, ...lorData];
 
   return (
     <div className="main-body">     
@@ -224,6 +233,11 @@ export default function Dashboard() {
               color="rgba(156, 39, 176, 0.1)" 
             />
             <CertificateCategory 
+              title="Letter of Recommendation" 
+              items={lorData} 
+              color="rgba(33, 150, 243, 0.1)" 
+            />
+            <CertificateCategory 
               title="Research Publications" 
               items={publicationsData} 
               color="rgba(76, 175, 80, 0.1)" 
@@ -233,6 +247,7 @@ export default function Dashboard() {
               items={awardsData} 
               color="rgba(255, 193, 7, 0.1)" 
             />
+            
           </div>
         </div>
       </div>
