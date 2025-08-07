@@ -200,11 +200,11 @@ export default function Dashboard() {
 
   // Letter of Recommendation data
   const lorData = [
-    { href: "https://drive.google.com/file/d/1LOR1/view", title: "LOR from Dr. John Smith (Professor, University A)", isNew: true },
-    { href: "https://drive.google.com/file/d/2LOR2/view", title: "LOR from Ms. Jane Doe (Manager, Soliton Technologies)" },
-    { href: "https://drive.google.com/file/d/3LOR3/view", title: "LOR from Dr. Emily White (Research Lead, Edureka)" },
-    { href: "https://drive.google.com/file/d/4LOR4/view", title: "LOR from Mr. Michael Brown (Director, VTPS)" },
-    { href: "https://drive.google.com/file/d/5LOR5/view", title: "LOR from Dr. Alice Green (IEEE Conference Chair)", isNew: true }
+    { href: "https://drive.google.com/file/d/1LOR1/view", title: "Navin Subramani (Solution Architect,10+ years Experience,Head of AI Team,Soliton Technologies)", isNew: true },
+    { href: "https://drive.google.com/file/d/2LOR2/view", title: "Santhosh Manoharan (Sr. Manager, Soliton Technologies)" },
+    { href: "https://drive.google.com/file/d/3LOR3/view", title: "Dr. Jayabarathi R. (Vice Chairperson, Amrita Vishwa Vidyapeetham)" },
+    { href: "https://drive.google.com/file/d/4LOR4/view", title: "Dr. Sivraj P. (Ph.D in Robotics , Amrita Vishwa Vidyapeetham)" },
+    { href: "https://drive.google.com/file/d/5LOR5/view", title: "Dr. Suyampu Lingam A. (Ph.D in Automotive Electronics, Amrita Vishwa Vidyapeetham)", isNew: true }
   ];
 
   // Combined data for backwards compatibility with existing components
@@ -252,9 +252,9 @@ export default function Dashboard() {
         </div>
       </div>
       <Education />
-      <div id="home">
+      {/* <div id="home">
         <Assistant/>
-      </div>
+      </div> */}
       <div id="chatBot">
         <Chatbot/>          
       </div>

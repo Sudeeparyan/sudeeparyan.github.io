@@ -64,12 +64,14 @@ export default function Home() {
               <li><a href="/#home" style={{ color: "black", fontFamily: "Georgia" }}>Home</a></li>
               <li><a href="/#Experience" style={{ color: "black", fontFamily: "Georgia" }}>Experience</a></li>
               <li><a href="/#skills" style={{ color: "black", fontFamily: "Georgia" }}>Skills</a></li>
-              <li><a href="/#education" style={{ color: "black", fontFamily: "Georgia" }}>Education</a></li>
+              
               <li><a href="/#projects" style={{ color: "black", fontFamily: "Georgia" }}>Projects</a></li>
-              <li><a href="/#certifications" style={{ color: "black", fontFamily: "Georgia" }}>Certifications</a></li>
-              <li><a href="/#contact" style={{ color: "black", fontFamily: "Georgia" }}>Contact</a></li>
+              <li><a href="/#certifications" style={{ color: "black", fontFamily: "Georgia" }}>Achievements</a></li>
+              <li><a href="/#education" style={{ color: "black", fontFamily: "Georgia" }}>Education</a></li>
+              
               <li><a href="/#chatBot" style={{ color: "black", fontFamily: "Georgia" }}>Chat Bot</a></li>
-              <li><a href="https://sudeep-knowledge-base.onrender.com/index.html" style={{ color: "black", fontFamily: "Georgia" }}>Knowledge Base</a></li>
+              <li><a href="/#contact" style={{ color: "black", fontFamily: "Georgia" }}>Contact</a></li>
+              {/* <li><a href="https://sudeep-knowledge-base.onrender.com/index.html" style={{ color: "black", fontFamily: "Georgia" }}>Knowledge Base</a></li> */}
             </ul>
           </div>
         </nav>

@@ -616,7 +616,7 @@
 .detail-section p {
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.6;
-  font-size: 0.95rem;
+  font-size: 1.3rem;
 }
 
 .challenge {
@@ -767,4 +767,34 @@
   .scart {
     height: 250px; /* Smaller height on mobile */
   }
+}
+
+.youtube-link {
+  background: rgba(255, 0, 0, 0.15);
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  position: relative;
+  cursor: not-allowed;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.youtube-link.disabled {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.coming-soon-badge {
+  font-size: 0.7rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2px 6px;
+  border-radius: 10px;
+  position: relative;
+  top: -1px;
+}
+
+.youtube-link:hover {
+  transform: none;
+  box-shadow: none;
 }

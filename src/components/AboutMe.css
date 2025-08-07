@@ -31,12 +31,12 @@
 }
 
 .about-section {
-  font-size: 1rem;
+  font-size: 1.3rem;
   line-height: 1.7;
 }
 
 .highlight-text {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1.8;
 }
 
@@ -241,7 +241,7 @@
 
   .about-text {
     margin-bottom: 10px;
-    font-size: 0.85rem;
+    font-size: 1.2rem;
   }
 
   .about-list li {

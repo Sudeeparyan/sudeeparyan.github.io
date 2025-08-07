@@ -3,6 +3,8 @@ import './SildeShow.css'; // Keep your existing CSS file
 import './AboutMe.css'; // Import the new About Me specific styles
 import sudeep from '../Images/sudeep.jpg';
 import sudeep1 from "../Images/sudeep1.jpg";
+import profile from '../Images/profile.jpg';
+import google from '../Images/google.jpg';
 
 export default function IntroSlide() {
     // State to track current active section
@@ -21,9 +23,9 @@ export default function IntroSlide() {
     
     // Slide timing configuration (in milliseconds)
     const slideTiming = {
-        intro: 2000,      // Show intro for 2 seconds
-        aboutme: 5000,    // Show aboutme for 5 seconds
-        interests: 5000   // Show interests for 5 seconds
+        intro: 20000,      // Show intro for 2 seconds
+        aboutme: 50000,    // Show aboutme for 5 seconds
+        interests: 50000   // Show interests for 5 seconds
     };
     
     // Function to transition to the next section
@@ -241,7 +243,7 @@ export default function IntroSlide() {
                             <div className="row book-page">
                                 <div className="col-md-6 image-column">
                                     <div className="image-wrapper">
-                                        <img src={sudeep1} alt="My profile" className="profile-image" />
+                                        <img src={profile} alt="My profile" className="profile-image" style={{ minHeight: '350px',  }} />
                                         <div className="page-corner"></div>
                                     </div>
                                 </div>
@@ -285,7 +287,7 @@ export default function IntroSlide() {
                                 </div>
                                 <div className="col-md-6 image-column">
                                     <div className="image-wrapper">
-                                        <img src={sudeep} alt="My profile" className="profile-image" />
+                                        <img src={google} alt="My profile" className="profile-image" style={{ minHeight: '350px', }}/>
                                         <div className="page-corner"></div>
                                     </div>
                                 </div>
@@ -323,7 +325,12 @@ export default function IntroSlide() {
                                 </div>
                                 <div className="col-md-6 image-column">
                                     <div className="image-wrapper">
-                                        <img src={sudeep} alt="My profile" className="profile-image" />
+                                        <img 
+                                            src={sudeep1} 
+                                            alt="My profile" 
+                                            className="profile-image" 
+                                            style={{ minHeight: '350px', objectFit: 'cover' }}
+                                        />
                                         <div className="page-corner"></div>
                                     </div>
                                 </div>

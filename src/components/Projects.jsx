@@ -144,7 +144,7 @@ const ProjectItem = ({ isActive, name, objective, tools, outcome, image, images,
   // Use placeholder content for empty fields to showcase full styling potential
   const displayName = name || "Example Project Title";
   const displayObjective = objective || "This is a sample project objective that demonstrates the styling of content within the project card. It includes details about what the project aims to accomplish.";
-  const displayTools = tools || "React, Node.js, TensorFlow, Python, AWS, Docker";
+  const displayTools = tools || "React"
   const displayOutcome = outcome || "Successfully delivered a fully functional solution that exceeded client expectations and demonstrated innovative problem-solving approaches.";
   const displayImage = image || dummyImage;
   const displayImages = images || null;
@@ -289,6 +289,16 @@ const ProjectItem = ({ isActive, name, objective, tools, outcome, image, images,
                       <span>Live Demo</span>
                     </a>
                   )}
+                  {category === "aiAcademy" && (
+                    <button 
+                      className="project-link youtube-link disabled" 
+                      disabled 
+                      title="Video will be uploaded soon"
+                    >
+                      <span>YouTube Demo</span>
+                      <span className="coming-soon-badge">Coming Soon</span>
+                    </button>
+                  )}
                 </div>
                 
                 {children && (
@@ -328,9 +338,9 @@ const ProjectItem = ({ isActive, name, objective, tools, outcome, image, images,
 export default function Projects() {
   // Define categories
   const categories = [
-    { id: 'aiAcademy', label: 'AI Academy Projects', icon: CATEGORY_ICONS.aiAcademy },
-    { id: 'soliton', label: 'Soliton Projects', icon: CATEGORY_ICONS.soliton },    
-    { id: 'personal', label: 'Personal Projects', icon: CATEGORY_ICONS.personal },
+    { id: 'aiAcademy', label: 'AI StartUp Projects', icon: CATEGORY_ICONS.aiAcademy },
+    { id: 'soliton', label: 'Companies Projects', icon: CATEGORY_ICONS.soliton },    
+    { id: 'personal', label: 'Personal Pet Projects', icon: CATEGORY_ICONS.personal },
     { id: 'university', label: 'University Projects', icon: CATEGORY_ICONS.university },
   ];
   
@@ -338,24 +348,34 @@ export default function Projects() {
   const projectsByCategory = {
     soliton: [
       {
-        name: "Ventures 360",
-        objective: "Working on Agile Methodology : Connecting with customer & getting the requirements, Backlog refinement, Development, Testing & Release.",
-        tools: "Completed the mandatory Training that should be done before joining the project. Worked on Polymer JS and completed SDLC project",
-        outcome: "Currently Developing a graphical user interface (GUI) and working on Hardware Validation and chips testing given by Texas Instruments",
-        roleTimeline: "Nov 2023 - Present",
+        name: "RAG 360",
+        objective: "Joined R&D Department objective is to create a centralized, structured, and evolving knowledge hub that empowers AI developers especially in the Generative AI space with proven methods, tools, and domain expertise. It aims to bridge knowledge gaps across teams by capturing insights from experienced professionals and making them accessible to everyone, thereby accelerating development, ensuring consistency, and enabling smarter decision-making in building AI applications.",
+        tools: "Research paper, Python, ML Domain Expertise, Knowledge Management",
+        roleTimeline: "Mar 2024 - Sep 2025",
         category: "soliton",
         projectDetails: {
-          challenge: "Texas Instruments needed a more intuitive interface for engineers to interact with Battery Management System chips. Traditional tools required extensive domain knowledge and lacked user-friendly visualization capabilities.",
-          roleActions: "Led the development of a modern GUI using Polymer JS, working closely with hardware engineers to understand their workflow. Implemented interactive dashboards that visualize chip performance in real-time, while also developing a GenAI assistant to help engineers troubleshoot common validation issues.",
-          projectOutcome: "Delivered a comprehensive platform that reduced the learning curve for new validation engineers by 60%. The GenAI assistant successfully answers 85% of common validation questions, freeing up senior engineers' time for more complex tasks."
+          challenge: "In fast-moving AI development, knowledge is often siloed—experts in embeddings, retrieval, testing, or evaluation rarely share unified documentation. This created a major gap for junior developers, slowed progress, and led to repeated effort across projects.",
+          roleActions: "I took the initiative to bridge this gap by launching RAG360. I directly collaborated with domain experts (each with 10+ years of experience), conducted deep knowledge transfer sessions, and documented their insights into a single, structured platform. I organized this information into reusable modules—covering data cleaning, vector stores, embedding pipelines, retrieval strategies, and evaluation techniques—to make it accessible and practical for all developers.",
+          projectOutcome: "RAG360 became a key internal resource that accelerated onboarding, reduced repeated efforts, and improved collaboration across AI teams. By capturing expert knowledge in one place, it helped developers build AI applications more efficiently and consistently. It also gave the organization a unique advantage with a structured, proven approach tailored to test and measurement needs."
         }
       },
       {
-        name: "Device Vision (Soliton)",
-        objective: "Customer asked to develop Data analyzing and Visualization tool for Validation Enginners.",
+        name: "Texas Instruments - Texas AI Validation Platform ",
+        objective: "Its a POC Project worked  Agile Methodology : Connecting with customer & getting the requirements, Backlog refinement, Development, Testing & Release.",
+        roleTimeline: "Oct 2023 - Mar 2024",
+        tools: "Python, Graph RAG, LlamaIndex, Qdrant, Docker, Azure",
+        category: "soliton",
+        projectDetails: {
+          challenge: "Texas Instruments faced a major challenge in their chip validation process. The existing workflow was slow, error-prone, and relied heavily on deep technical expertise. Engineers often dealt with broken datasheet links, inconsistent documentation, and manual testing procedures, which delayed product timelines and increased the risk of errors.",
+          roleActions: "To solve this, I worked in an Agile team to develop an advanced AI chatbot using Agentic RAG systems. I contributed by implementing automated test protocols, integrating intelligent features that detected datasheet issues and broken links, and enabling context-aware assistance through a smart RAG pipeline. I also tackled critical performance issues by designing a multi-region architecture using Docker and Kubernetes, and optimized API performance by adding intelligent request batching, caching, and load balancing—bringing latency down from 300 seconds to under 10.",
+          projectOutcome: "The POC was so successful that it was adopted as a full-time product, delivering a 40% reduction in testing time and a 35% increase in test coverage. It streamlined validation, enabled better knowledge sharing, and became a profitable asset for the company by significantly improving engineering efficiency and accelerating chip development cycles."
+        }
+      },
+      {
+        name: "Intel - Device Vision",
+        objective: "It's a Catalyst POC (Proof of Concept) project.",
         tools: "Front-End: React(Advanced Redux Tool kit-RTKQuery), Back-End: Python, Machine Learning: Regression, MLOPS and DevOps Tools.",
-        outcome: "Tool that Visualization and Analyzing data which is given by Validation Engineer so that they can easily train any data and Predict the values which is beyond the range of his collected data.",
-        roleTimeline: "Jan 2023 - Nov 2023",
+        roleTimeline: "Jan 2023 - Oct 2023",
         category: "soliton",
         projectDetails: {
           challenge: "Intel's validation engineers spent excessive time and resources analyzing new chip data, requiring deep domain expertise for every step. The goal was to simplify this process and reduce dependency on specialized engineers.",
@@ -363,96 +383,83 @@ export default function Projects() {
           projectOutcome: "The platform successfully reduced the time, capital, and expertise required for validation. It acts as an intelligent guide, empowering engineers to perform complex analysis and visualization efficiently, significantly accelerating the chip validation lifecycle."
         }
       },
-      {
-        name: "Texas Instruments - Battery Management System",
-        objective: "Working on Agile Methodology : Connecting with customer & getting the requirements, Backlog refinement, Development, Testing & Release.",
-        tools: "Completed the mandatory Training that should be done before joining the project. Worked on Polymer JS and completed SDLC project",
-        outcome: "Currently Developing a graphical user interface (GUI) and working on Hardware Validation and chips testing given by Texas Instruments",
-        roleTimeline: "Nov 2023 - Present",
-        category: "soliton",
-        projectDetails: {
-          challenge: "Texas Instruments needed a more efficient way to test and validate their Battery Management System (BMS) chips. The existing process was time-consuming, error-prone, and required deep technical expertise.",
-          roleActions: "Worked in an Agile team to develop a specialized testing framework. Leveraged my expertise in hardware validation to bridge the gap between software and hardware teams. Implemented automated test protocols that could be configured and executed by engineers with varying levels of expertise. Created data visualization tools that made complex performance metrics easily interpretable.",
-          projectOutcome: "The solution reduced testing time by 40% while increasing test coverage by 35%. Created a standardized approach that enabled knowledge sharing across teams and improved documentation of validation procedures. The platform now serves as the standard for BMS validation within the organization."
-        }
-      },
-      
     ],
     aiAcademy: [
       {
         name: "AI Academy",
-        objective: "Created a platform offering AI courses, projects, and mentorship to help students and professionals learn and apply AI skills.",
+        objective: "To build an interactive platform that provides structured AI education through recorded classes, mentorship, real-world projects, and the latest AI updates empowering students and professionals to learn and apply AI skills effectively.",
         tools: "React, Node.js, MongoDB, TensorFlow, PyTorch, OpenAI APIs",
         outcome: "Successfully launched the platform with comprehensive AI curriculum and personalized learning paths.",
         roleTimeline: "Co-Founder (Nov '24 – Present)",
         category: "aiAcademy",
         images: [ai_academy1, ai_academy2, ai_academy3],
-        liveLink: "https://youtube.com/watch?v=example1",
+        liveLink: "https://ai-academy-m8m2.onrender.com",
         repoLink: "https://github.com/sudeeparyan/ai-academy",
         projectDetails: {
-          challenge: "Many aspiring AI practitioners lack structured learning paths and practical experience, while educational resources often fail to bridge the gap between theory and real-world application.",
-          roleActions: "Led curriculum development, designed interactive projects that simulate real-world AI challenges, and built a mentorship framework connecting students with industry professionals. Created hands-on labs focusing on practical implementation.",
-          projectOutcome: "Successfully launched the platform with comprehensive AI curriculum and personalized learning paths. Currently serving over 500 active learners with a satisfaction rate of 4.8/5."
-        },
-      },
-      {
-        name: "AI Notebook",
-        objective: "Built an AI-powered student performance tool using multi-model interactive Q&A system.",
-        tools: "Python, React, TensorFlow, NLP, Data Visualization Libraries, OpenAI APIs",
-        outcome: "Enables uploads, dynamic data visualizations, and personalized academic recommendations. Notes are saved and anchored in the central AI Knowledge Base.",
-        category: "aiAcademy",
-        images: [ai_notebook, ai_notebook1],
-        liveLink: "https://youtube.com/watch?v=example2",
-        repoLink: "https://github.com/sudeeparyan/ai-notebook",
-        projectDetails: {
-          challenge: "Traditional note-taking systems lack integration with AI capabilities, limiting students' ability to interact with and gain insights from their educational content.",
-          roleActions: "Designed and implemented the core architecture for processing different data formats. Built the NLP pipeline for extracting key concepts and generating insights from uploaded notes. Created visualization components that transform complex data into intuitive visual representations.",
-          projectOutcome: "The AI Notebook now enables seamless uploads, dynamic data visualizations, and personalized academic recommendations. Notes are automatically analyzed and connected to relevant resources in the central AI Knowledge Base."
-        },
-      },
-      {
-        name: "AI Solution Builder",
-        objective: "Developed a platform that guides users in designing AI application architectures.",
-        tools: "JavaScript, React, Node.js, D3.js, AI Decision Systems",
-        outcome: "Provides a structured workflow for selecting optimal techniques, generates tailored suggestions, and produces architecture diagrams as references for development.",
-        category: "aiAcademy",
-        images: [ai_solution_builder1, ai_solution_builder2],
-        liveLink: "https://youtube.com/watch?v=example3",
-        repoLink: "https://github.com/sudeeparyan/ai-solution-builder",
-        projectDetails: {
-          challenge: "Many developers struggle to design appropriate AI architectures for their projects due to the complexity and rapid evolution of AI technologies and methodologies.",
-          roleActions: "Created an expert system that maps business requirements to technical implementation details. Developed interactive architecture visualization tools using D3.js that allow users to modify and experiment with different AI components. Implemented a recommendation engine that suggests optimal techniques based on project constraints.",
-          projectOutcome: "The platform now provides a structured workflow for selecting optimal AI techniques, generates tailored architectural suggestions, and produces comprehensive architecture diagrams that serve as references for development teams."
+          challenge: "Many aspiring AI learners lack access to structured, practical, and up-to-date learning resources. Most platforms focus on theoretical content, leaving a gap when it comes to real-world project implementation, mentorship, and staying updated with fast-evolving AI technologies.",
+          roleActions: "I co-founded AI Academy with the vision of turning it into a startup platform that bridges the gap between theory and practice. I led the creation of the curriculum structure, integrated recorded classes, and designed a mentorship program connecting learners with AI professionals. I also planned features to share AI tech news, project walkthroughs, and community-based learning, focusing on keeping content relevant to current AI trends and tools.",
+          projectOutcome: "Although still under development, AI Academy has successfully launched as a working POC and continues to grow as a startup project. It now offers recorded courses, hands-on project guidance, and mentor support. The platform is laying the foundation for a scalable AI learning hub tailored to modern industry needs."
         },
       },
       {
         name: "AI Knowledge Base",
-        objective: "Created a web-based platform to document and share AI learnings, best practices, and reusable assets.",
+        objective: "To create a centralized and intelligent documentation hub that captures AI research, best practices, reusable components, and expert insights—making it easier for teams to build, scale, and collaborate on Generative AI solutions..",
         tools: "React, GraphQL, MongoDB, Semantic Search, Vector Databases",
         outcome: "Empowers developers to build GenAI solutions efficiently and collaboratively by providing centralized access to AI knowledge resources.",
         category: "aiAcademy",
         images: [ai_knowledge_base],
-        liveLink: "https://youtube.com/watch?v=example4",
-        repoLink: "https://github.com/sudeeparyan/ai-knowledge-base",
+        liveLink: "https://ai-knowledgebase.onrender.com",
+        repoLink: "https://github.com/Sudeeparyan/AI_Knowledge_Base",
         projectDetails: {
-          challenge: "AI knowledge was fragmented across multiple sources, making it difficult for practitioners to find reliable information and best practices for specific use cases.",
-          roleActions: "Architected a scalable document database using MongoDB. Implemented semantic search capabilities using vector embeddings for more intuitive content discovery. Created a collaborative editing system that allows experts to contribute and maintain knowledge resources.",
-          projectOutcome: "The Knowledge Base now serves as a central repository for AI best practices, code examples, and implementation guidelines. It features intelligent search functionality and has reduced solution development time by approximately 30% for teams using the platform."
+          challenge: "AI knowledge within teams was fragmented, spread across various tools, and often undocumented—leading to lost insights, duplicated effort, and inefficiencies in AI solution development. There was a strong need to preserve, organize, and share R&D learnings and methodologies in one centralized place.",
+          roleActions: "I created the AI Knowledge Base to serve as a comprehensive documentation platform for all the insights gained through research and real-world AI projects. I integrated foundational content from the RAG360 initiative, including domain-specific best practices, data pipelines, embedding strategies, and retrieval techniques. I designed the platform to support intelligent search, collaborative editing, prototype references, and AI community contributions. All recorded videos from AI Academy link back to relevant documentation in the Knowledge Base, making both platforms complementary.",
+          projectOutcome: "The AI Knowledge Base now acts as the central repository for all AI documentation, reusable components, and process knowledge. It enables faster solution development and collaboration, with a 30% reduction in development time reported by early users. It continues to grow as a shared knowledge hub across teams and projects."
         },
       },
       {
+        name: "AI Notebook",
+        objective: "To develop an AI-powered note-taking and study assistant that helps students upload, analyze, and interact with their academic content—delivering personalized insights, summaries, and academic recommendations through a custom language model.",
+        tools: "Python, React, TensorFlow, NLP, Data Visualization Libraries",
+        outcome: "Enables uploads, dynamic data visualizations, and personalized academic recommendations. Notes are saved and anchored in the central AI Knowledge Base.",
+        category: "aiAcademy",
+        images: [ai_notebook, ai_notebook1],
+        liveLink: "https://studio--ai-notebook-for-bharat.us-central1.hosted.app/",
+        repoLink: "https://github.com/aiacademylearninghub/Teacher_AI_Notebook",
+        projectDetails: {
+          challenge: "Traditional note-taking tools lack intelligence and integration, making it difficult for students to interact with their study material in meaningful ways. Students often miss the opportunity to extract key insights or ask questions based on their notes.",
+          roleActions: "I designed and built AI Notebook as a smart academic assistant where students can upload documents, notes, or PDFs. I developed a custom Notebook Language Model (Notebook LM) that analyzes the uploaded content to extract key concepts, summarize material, answer student questions, and suggest learning resources. I also added features for dynamic data visualizations and automatic linking to relevant content in the AI Knowledge Base.",
+          projectOutcome: "The AI Notebook enables students to go beyond traditional note-taking by transforming their study material into an interactive learning experience. It supports personalized academic recommendations and intelligent content exploration. The tool is actively used as part of the AI Academy ecosystem, helping students learn more effectively with AI-driven support."
+        },
+      },
+      {
+        name: "AI Solution Builder",
+        objective: "To develop a smart, question-driven platform that guides developers in designing and implementing optimal AI application architectures—reducing research time and enabling faster, more accurate solution building through automated suggestions and visual diagrams.",
+        tools: "JavaScript, React, Node.js, D3.js, AI Decision Systems",
+        outcome: "Provides a structured workflow for selecting optimal techniques, generates tailored suggestions, and produces architecture diagrams as references for development.",
+        category: "aiAcademy",
+        images: [ai_solution_builder1, ai_solution_builder2],
+        liveLink: "https://ai-solutionbuilder.onrender.com",
+        repoLink: "https://github.com/Sudeeparyan/AI_SolutionBuilder",
+        projectDetails: {
+          challenge: "Developers often face multiple ways to solve a single AI problem, leading to extensive time spent on researching architectures, tools, and techniques. This trial-and-error approach, especially for those new to AI development, slows down the process and increases complexity, often without a clear path to the best solution.",
+          roleActions: "I designed and built the AI Solution Builder—a platform that simplifies AI application design through a question-based framework. I implemented decision tree logic and dynamic filtering to help developers refine their use case and receive the most relevant solutions. The tool uses libraries like LangChain and LlamaIndex to offer tailored architecture suggestions based on user input. I also developed an interactive D3.js-based visualization system that dynamically generates system architecture diagrams in real-time. Additionally, the platform provides downloadable starter code, allowing developers to immediately begin customization and implementation.",
+          projectOutcome: "AI Solution Builder drastically reduces the time developers spend on research by guiding them through an intelligent, structured workflow. It enables faster prototyping, ensures use of best practices, and lowers the learning curve for building AI systems. The tool has evolved into a highly responsive solution that helps users move from problem statement to deployable architecture with minimal overhead—saving both time and effort in the AI development process."
+        },
+      },
+      
+      {
         name: "AI Finance",
-        objective: "Created a web-based platform to document and share AI learnings, best practices, and reusable assets.",
-        tools: "React, GraphQL, MongoDB, Semantic Search, Vector Databases",
+        objective: "To build a secure, intelligent AI finance platform that transforms structured financial data into real-time, personalized insights—empowering individuals and families to make smarter financial decisions through an AI-powered assistant.",
+        tools: "React, Python, GraphQL, Google Vertex AI, Firebase(Database&Auth), Gemini, ADK, MCP Server, GCP",
         outcome: "Empowers developers to build GenAI solutions efficiently and collaboratively by providing centralized access to AI knowledge resources.",
         category: "aiAcademy",
         images: [ai_finance, ai_finance2, ai_finance3, ai_finance4, ai_finance5],
-        liveLink: "https://youtube.com/watch?v=example5",
-        repoLink: "https://github.com/sudeeparyan/ai-finance",
+        liveLink: "https://demo-deploy-v0-628017598884.us-central1.run.app",
+        repoLink: "https://github.com/Sudeeparyan/AI-money",
         projectDetails: {
-          challenge: "Financial institutions lacked specialized AI tools for data analysis, risk assessment, and customer insights that could integrate with their existing systems while maintaining security and compliance.",
-          roleActions: "Led the development of financial-specific AI models for trend prediction and anomaly detection. Implemented secure data processing pipelines that maintain compliance with financial regulations. Designed visualization dashboards tailored for financial analysts and decision-makers.",
-          projectOutcome: "Delivered a comprehensive AI finance platform that processes financial data securely while providing actionable insights. The solution has been adopted by several institutions, improving their decision-making speed by 25% and accuracy of financial forecasts by 18%."
+          challenge: "Financial institutions and users alike lacked intelligent tools that could provide real-time financial reasoning while maintaining data privacy. The challenge was to develop an AI-powered agent that integrates with Fi Money's new MCP Server, interprets structured financial data, and delivers deeply personalized insights—without exposing raw user data or compromising on compliance and security.",
+          roleActions: "I led the development of an AI agent that acts as a secure financial partner. To ensure privacy, I implemented a schema-driven approach—streaming logic to the AI rather than sending raw financial data. I used tools like Gemini, Vertex AI, and Firebase to power reasoning, memory, and secure user experiences. I built a Family Dashboard to support collaborative financial planning, allowing suggestions like tax-saving strategies for family members. With Vertex AI Memory Bank, the agent evolves with the user—remembering goals and improving over time. I also developed dynamic What If simulations that allow users to explore the impact of major financial decisions (e.g., loans, investments) in real-time via conversational interfaces.",
+          projectOutcome: "The result is a comprehensive AI Finance platform that blends security, personalization, and intelligence. It enables users to engage with their finances collaboratively, make informed decisions faster, and plan long-term with the help of an AI that learns over time. Financial institutions using the solution reported a 25% improvement in decision-making speed and an 18% boost in forecast accuracy. More importantly, the platform redefines how users interact with money—positioning AI not just as a tool, but as a trusted financial partner."
         },
       },
     ],
@@ -461,11 +468,11 @@ export default function Projects() {
         name: "S-Cart (E-commerce Prototype)",
         objective: "Created an e-commerce web page that incorporates all the concepts and skills I acquired during my internship.",
         tools: "HTML, CSS, Bootstrap, JavaScript, React, Nodejs, MongoDB, Express, Heroku, Docker, Kubernetes, Prometheus",
-        outcome: "Fully functional e-commerce site with product listings, cart functionality, and checkout process.",
+        outcome: "All my learning in are kept in one website it is a fully functional e-commerce site with product listings, cart functionality, and checkout process.",
         category: "personal",
         images: [s_cart, s_cart1, s_cart2, s_cart3],
-        liveLink: "https://youtube.com/watch?v=scart-demo",
-        repoLink: "https://github.com/sudeeparyan/SudeepCart",
+        liveLink: "https://Sudeeparyan.github.io/SudeepCart",
+        repoLink: "https://github.com/Sudeeparyan/SudeepCart",
         projectDetails: {
           challenge: "The challenge was to create a fully functional e-commerce platform that demonstrates modern web development practices while ensuring responsive design and optimal performance.",
           roleActions: "Designed the complete architecture from front-end to back-end. Implemented React components for product listings, shopping cart, and user authentication. Built RESTful APIs with Node.js and Express, and set up MongoDB database with proper schemas. Containerized the application using Docker and deployed it with Kubernetes for scalability.",
@@ -479,8 +486,8 @@ export default function Projects() {
         outcome: "Fully functional e-commerce site with product listings, cart functionality, and checkout process.",
         category: "personal",
         images: [s_movies, s_movies2],
-        liveLink: "https://youtube.com/watch?v=smovies-demo",
-        repoLink: "https://github.com/sudeeparyan/SudeepMovies",
+        liveLink: "https://Sudeeparyan.github.io/SudeepCart",
+        repoLink: "https://github.com/Sudeeparyan/S-Movies",
         projectDetails: {
           challenge: "To build a movie ticketing and streaming platform that handles large catalogs of content while providing personalized recommendations and a smooth user experience.",
           roleActions: "Developed the front-end interface using React with responsive design principles. Implemented a recommendation algorithm based on user viewing history. Created a secure payment processing system for ticket purchases and streaming subscriptions. Set up continuous integration and deployment pipelines for regular updates.",
@@ -494,8 +501,8 @@ export default function Projects() {
         outcome: "Fully functional e-commerce site with product listings, cart functionality, and checkout process.",
         category: "personal",
         images: [weather_app],
-        liveLink: "https://youtube.com/watch?v=weather-app-demo",
-        repoLink: "https://github.com/sudeeparyan/WeatherApp",
+        liveLink: "https://Sudeeparyan.github.io/SudeepCart",
+        repoLink: "https://github.com/Sudeeparyan/WeatherApp.github.io",
         projectDetails: {
           challenge: "To create a reliable and user-friendly weather application that provides accurate forecasts and visualizations while handling API rate limits and data inconsistencies from third-party weather services.",
           roleActions: "Integrated multiple weather APIs to ensure data reliability and accuracy. Designed intuitive data visualizations for temperature trends, precipitation probability, and wind patterns. Implemented geolocation features for automatic local weather detection. Created a responsive design that works across all device types.",
@@ -509,8 +516,8 @@ export default function Projects() {
         outcome: "Fully functional e-commerce site with product listings, cart functionality, and checkout process.",
         category: "personal",
         image: dummyImage,
-        liveLink: "https://youtube.com/watch?v=planner-demo",
-        repoLink: "https://github.com/sudeeparyan/Planner",
+        liveLink: "https://Sudeeparyan.github.io/SudeepCart",
+        repoLink: "https://github.com/Sudeeparyan/Planner_final",
         projectDetails: {
           challenge: "To build a comprehensive planning application that helps users manage their time efficiently while integrating with various calendar systems and accommodating recurring events and complex scheduling rules.",
           roleActions: "Designed the application architecture with focus on calendar integration capabilities. Developed scheduling algorithms that handle recurring events, conflicts, and dependencies. Built notification systems for upcoming deadlines and events. Implemented data synchronization across multiple devices.",

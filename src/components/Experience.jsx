@@ -57,8 +57,8 @@ const ExperienceDetails = ({ image, caption, title, period, description, details
                     <div className="subsection-content">
                       <p className="subsection-description">
                         {section.description.split(' ').map((word, wordIdx, arr) => {
-                          // Enhanced regex for technical terms with more tech keywords
-                          const techTermRegex = /^(AI|RAG|CAG|Graph|Neo4j|Vertex|Docker|Kubernetes|MLOps|POC|Firebase|Studio|Bolt\.ai|vision|models|embedding|pipelines|Agent|MCP|multi-agent|systems|protocols|workflows|deployment|stakeholders|architecture)(\W|$)/i;
+                          // Enhanced regex for technical terms with more tech keywords including requested terms
+                          const techTermRegex = /^(AI|RAG|CAG|Graph|Neo4j|Vertex|Docker|Kubernetes|MLOps|POC|Firebase|Studio|Bolt\.ai|vision|models|embedding|pipelines|Agent|ADK|multi-agent|systems|protocols|workflows|deployment|stakeholders|architecture|langchain|R&D|department|training|mentorship|Model\sContext\sProtocol|MCP|A2A|Proof-of-Concepts|business\schallenges)(\W|$)/i;
                           
                           if (techTermRegex.test(word)) {
                             return (
@@ -163,7 +163,7 @@ export default function Experience() {
       {
         image: soliton,
         caption: "Soliton Technologies",
-        title: "Senior Project Engineer",
+        title: "Senior Project Engineer (R&D Department)",
         period: "Jan 2023 - Present",
         details: [
           {
@@ -172,16 +172,16 @@ export default function Experience() {
             sections: [
               {
                 title: "Agent Protocols & Systems Architecture",
-                description: "Implements cutting-edge frameworks such as Model Context Protocol (MCP) and Agent-to-Agent (A2A) communication protocols to build scalable, interoperable multi-agent systems. These architectures enable seamless integration into evolving open-agent ecosystems without disrupting existing enterprise workflows."
+                description: "Implemented cutting-edge frameworks such as Agent Development Kit (ADK), langchain and with advanced communication protocols like Model Context Protocol (MCP) and Agent-to-Agent (A2A) to build scalable, interoperable multi-agent systems. These architectures enable seamless integration into evolving open-agent ecosystems without disrupting existing enterprise workflows."
               },
               {
-                title: "Business Integration & POCs",
+                title: "AI R&D Leadership & Team Enablement",
+                description: "Led AI innovation in the R&D department by researching cutting-edge techniques and integrating them into real-world solutions. Designed and launched an internal AI curriculum, upskilling junior engineers through structured training and mentorship. Fostered a strong learning culture by leading Knowledge Café sessions and aligning research with scalable delivery."
+              },
+              {
+                title: "Business Integration & Proof-of-Concepts",
                 description: "Collaborates with product leaders and domain experts to identify critical business challenges, design robust AI solutions, and deliver production-ready Proof-of-Concepts (POCs). Combines deep technical experimentation with a strong sense of business feasibility to ensure long-term impact and adoption."
-              },
-              {
-                title: "Mentorship, Knowledge Leadership & Strategic Enablement",
-                description: "Drives Soliton’s AI culture by mentoring junior engineers, leading “Knowledge Café” sessions, and building structured onboarding programs. Actively contributes to research publications and represents the team at conferences and hackathons. Plays a strategic role in aligning R&D with delivery by bridging research insights with real-world implementation—ensuring scalable deployment and long-term team capability growth."
-              }
+              }              
             ]
           },
           {
@@ -190,16 +190,16 @@ export default function Experience() {
             sections: [
               {
                 title: "AI Solutions for Engineering Workflows",
-                description: "Engineered AI-powered tools tailored for the semiconductor domain, including an advanced chatbot assistant that interprets complex datasheets to surface key information instantly—reducing manual effort and enabling faster decision-making for engineers. Focused on integrating Generative AI into real-world engineering use cases with tangible productivity gains."
-              },
-              {
-                title: "Infrastructure Optimization & Performance Tuning",
-                description: "Solved critical performance bottlenecks by architecting a multi-region deployment using Docker and Kubernetes. Achieved a 30x latency reduction—cutting API processing time from 300 seconds to under 10 seconds—by optimizing model orchestration, caching, and load distribution."
+                description: "Engineered AI-powered tools tailored for the semiconductor domain, including an advanced chatbot assistant that interprets complex datasheets to surface key information instantly reducing manual effort and enabling faster decision-making for engineers. Focused on integrating Generative AI into real-world engineering use cases with tangible productivity gains."
               },
               {
                 title: "Generative AI Systems & Advanced Techniques",
-                description: "Hands-on with full-stack GenAI development—from prompt engineering and retrieval pipelines to vector search using tools like LlamaIndex, OpenAI APIs, and Qudrant. Transitioned prototypes to production, applying advanced techniques like context-aware prompting, multi-hop reasoning, and embedding optimization to boost accuracy and system performance."
-              }
+                description: "Hands-on with full-stack GenAI development from prompt engineering and retrieval pipelines to vector search using tools like LlamaIndex, OpenAI APIs, and Qdrant. Transitioned prototypes to production, applying advanced techniques like context-aware prompting, multi-hop reasoning, and embedding optimization to boost accuracy and system performance."
+              },
+              {
+                title: "AI Infrastructure Scaling & Latency Reduction",
+                description: "Solved critical performance bottlenecks by architecting a multi-region deployment using Docker and Kubernetes. Resolved OpenAI rate limit errors by implementing intelligent request batching, caching, and adaptive load balancing strategies. Achieved a 30× reduction in latency bringing API processing time down from 300 seconds to under 10 seconds through optimized model orchestration and distributed workload handling."
+              }              
             ]
           },
           {
@@ -216,7 +216,7 @@ export default function Experience() {
               },
               {
                 title: "Mastered React, Python, and Full-Stack Development",
-                description: "Gained deep, hands-on expertise in React.js, Python (Flask/FastAPI), and backend integrations. Strengthened my understanding of DevOps and cloud architecture, and became proficient in designing production-ready, full-stack ML applications with seamless user interfaces and scalable backend infrastructure."
+                description: "Gained deep, hands-on expertise in React.js, Python (FastAPI), and backend integrations. Strengthened my understanding of DevOps and cloud architecture, and became proficient in designing production-ready, full-stack ML applications with seamless user interfaces and scalable backend infrastructure."
               }
             ]
           }

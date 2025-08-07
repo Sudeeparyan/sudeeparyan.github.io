@@ -26,7 +26,7 @@ export default function Skills({ skillImages }) {
   const skillCategories = [
     {
       title: "Artificial Intelligence",
-      skills: ["Prompt Engineering","RAG","MCP","A2A", "Lang Chain", "Llama Index", "Fine Tuning", "NLP", "Deep Learning Architectures", "TensorFlow", "PyTorch", "scikit-learn"]
+      skills: ["Prompt Engineering","RAG","MCP","A2A", "Agent Development Kit", "Lang Chain", "Llama Index", "Fine Tuning", "NLP", "Deep Learning Architectures", "TensorFlow", "PyTorch", "scikit-learn"]
     },
     {
       title: "Programming Languages",
