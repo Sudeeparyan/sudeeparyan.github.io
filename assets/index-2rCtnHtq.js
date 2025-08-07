@@ -1993,7 +1993,7 @@ I continuously fuel my curiosity by:
 *   **Full Stack Web Development:** [Edureka](https://www.edureka.co/certificates/mycertificate/3a96f454fcc70b6179e000e39acb12db)
 *   **AWS Cloud Practitioner Essentials:** [Certificate](https://drive.google.com/drive/folders/1_AvFOXMA3nCj6sC-qifi5zF_boVKCL3q)
 *   **Google Professional Workspace Administrator:** [Coursera](https://coursera.org/share/6df1859e3ed67b74db0b2fcd49b0e245)
-
+ 
 ### Personal Details
 *   **Languages:** Proficient in English, Telugu, Hindi, and Tamil.
 *   **Hobbies:** Reading nonfiction books, playing kabaddi and volleyball, and going to the gym.
