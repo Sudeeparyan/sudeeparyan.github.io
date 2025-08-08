@@ -13,6 +13,8 @@ export default function Home() {
 
   const toggleMobileMenu = () => {
     setIsMenuActive(!isMenuActive);
+    // Toggle body class to prevent scrolling when menu is open
+    document.body.classList.toggle('menu-open', !isMenuActive);
   };
 
   const submitForm = async (e) => {
@@ -31,6 +33,11 @@ export default function Home() {
   return (
     <div>
       <Router>
+        {/* Backdrop for menu overlay */}
+        <div 
+          className={`menu-backdrop ${isMenuActive ? 'active' : ''}`} 
+          onClick={toggleMobileMenu}
+        />
         
         <nav className="navbar navbar-fixed-top" style={{ backgroundColor: "rgb(0, 153, 153)" }}>
           <div className="container-fluid">
@@ -59,26 +66,26 @@ export default function Home() {
             <ul  
               id="menu" 
               className={`nav navbar-nav navbar-right ${isMenuActive ? 'active' : ''}`}
-              onClick={toggleMobileMenu}
             >
-              <li><a href="/#home" style={{ color: "black", fontFamily: "Georgia" }}>Home</a></li>
-              <li><a href="/#Experience" style={{ color: "black", fontFamily: "Georgia" }}>Experience</a></li>
-              <li><a href="/#skills" style={{ color: "black", fontFamily: "Georgia" }}>Skills</a></li>
-              
-              <li><a href="/#projects" style={{ color: "black", fontFamily: "Georgia" }}>Projects</a></li>
-              <li><a href="/#certifications" style={{ color: "black", fontFamily: "Georgia" }}>Achievements</a></li>
-              <li><a href="/#education" style={{ color: "black", fontFamily: "Georgia" }}>Education</a></li>
-              
-              <li><a href="/#chatBot" style={{ color: "black", fontFamily: "Georgia" }}>Chat Bot</a></li>
-              <li><a href="/#contact" style={{ color: "black", fontFamily: "Georgia" }}>Contact</a></li>
+              <li><a href="/#home" style={{ color: "black", fontFamily: "Georgia" }} onClick={toggleMobileMenu}>Home</a></li>
+              <li><a href="/#Experience" style={{ color: "black", fontFamily: "Georgia" }} onClick={toggleMobileMenu}>Experience</a></li>
+              <li><a href="/#skills" style={{ color: "black", fontFamily: "Georgia" }} onClick={toggleMobileMenu}>Skills</a></li>
+              <li><a href="/#projects" style={{ color: "black", fontFamily: "Georgia" }} onClick={toggleMobileMenu}>Projects</a></li>
+              <li><a href="/#certifications" style={{ color: "black", fontFamily: "Georgia" }} onClick={toggleMobileMenu}>Achievements</a></li>
+              <li><a href="/#education" style={{ color: "black", fontFamily: "Georgia" }} onClick={toggleMobileMenu}>Education</a></li>
+              <li><a href="/#chatBot" style={{ color: "black", fontFamily: "Georgia" }} onClick={toggleMobileMenu}>Chat Bot</a></li>
+              <li><a href="/#contact" style={{ color: "black", fontFamily: "Georgia" }} onClick={toggleMobileMenu}>Contact</a></li>
               {/* <li><a href="https://sudeep-knowledge-base.onrender.com/index.html" style={{ color: "black", fontFamily: "Georgia" }}>Knowledge Base</a></li> */}
             </ul>
           </div>
         </nav>
-        <Routes>
-          <Route path="/logo" element={<P5logo />} />
-          <Route path='/' element={<Dashboard/>} />          
-        </Routes>
+        
+        <div className="content-wrapper">
+          <Routes>
+            <Route path="/logo" element={<P5logo />} />
+            <Route path='/' element={<Dashboard/>} />          
+          </Routes>
+        </div>
       </Router>
     </div>
   );
