@@ -101,6 +101,53 @@
   font-weight: 500;
 }
 
+/* Responsive image styling */
+.responsive-image {
+  width: 100%;
+  height: 350px; /* Fixed height for desktop */
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Image wrapper to maintain consistent proportions */
+.image-wrapper {
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+}
+
+/* Media queries for mobile devices */
+@media (max-width: 768px) {
+  .responsive-image {
+    height: 250px; /* Smaller height on tablets */
+  }
+
+  .image-wrapper {
+    height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .responsive-image {
+    height: 200px; /* Even smaller on phones */
+  }
+
+  .image-wrapper {
+    height: 200px;
+  }
+
+  .book-page {
+    flex-direction: column-reverse;
+  }
+
+  .text-column,
+  .image-column {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
 /* Enhanced responsive styles for AboutMe section */
 @media (max-width: 768px) {
   .about-heading {

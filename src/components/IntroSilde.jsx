@@ -23,9 +23,9 @@ export default function IntroSlide() {
     
     // Slide timing configuration (in milliseconds)
     const slideTiming = {
-        intro: 20000,      // Show intro for 2 seconds
-        aboutme: 50000,    // Show aboutme for 5 seconds
-        interests: 50000   // Show interests for 5 seconds
+        intro: 2000,      // Show intro for 2 seconds
+        aboutme: 5000,    // Show aboutme for 5 seconds
+        interests: 5000   // Show interests for 5 secondsss
     };
     
     // Function to transition to the next section
@@ -243,7 +243,7 @@ export default function IntroSlide() {
                             <div className="row book-page">
                                 <div className="col-md-6 image-column">
                                     <div className="image-wrapper">
-                                        <img src={profile} alt="My profile" className="profile-image" style={{ minHeight: '350px',  }} />
+                                        <img src={profile} alt="My profile" className="profile-image responsive-image" />
                                         <div className="page-corner"></div>
                                     </div>
                                 </div>
@@ -287,7 +287,7 @@ export default function IntroSlide() {
                                 </div>
                                 <div className="col-md-6 image-column">
                                     <div className="image-wrapper">
-                                        <img src={google} alt="My profile" className="profile-image" style={{ minHeight: '350px', }}/>
+                                        <img src={google} alt="My profile" className="profile-image responsive-image" />
                                         <div className="page-corner"></div>
                                     </div>
                                 </div>
@@ -328,8 +328,7 @@ export default function IntroSlide() {
                                         <img 
                                             src={sudeep1} 
                                             alt="My profile" 
-                                            className="profile-image" 
-                                            style={{ minHeight: '350px', objectFit: 'cover' }}
+                                            className="profile-image responsive-image"
                                         />
                                         <div className="page-corner"></div>
                                     </div>
@@ -341,18 +340,20 @@ export default function IntroSlide() {
                 
                 {/* Page indicator - subtle dots on the right */}
                 <div className="page-progress-indicator">
-                    <span 
-                        className={`indicator-dot ${activeSection === 'intro' ? 'active' : ''}`}
-                        onClick={() => handleSectionClick('intro')}
-                    ></span>
-                    <span 
-                        className={`indicator-dot ${activeSection === 'aboutme' ? 'active' : ''}`}
-                        onClick={() => handleSectionClick('aboutme')}
-                    ></span>
-                    <span 
-                        className={`indicator-dot ${activeSection === 'interests' ? 'active' : ''}`}
-                        onClick={() => handleSectionClick('interests')}
-                    ></span>
+                    <div className="dots-container">
+                        <span 
+                            className={`indicator-dot ${activeSection === 'intro' ? 'active' : ''}`}
+                            onClick={() => handleSectionClick('intro')}
+                        ></span>
+                        <span 
+                            className={`indicator-dot ${activeSection === 'aboutme' ? 'active' : ''}`}
+                            onClick={() => handleSectionClick('aboutme')}
+                        ></span>
+                        <span 
+                            className={`indicator-dot ${activeSection === 'interests' ? 'active' : ''}`}
+                            onClick={() => handleSectionClick('interests')}
+                        ></span>
+                    </div>
                 </div>
             </div>
         </div>

@@ -605,22 +605,89 @@
   z-index: 1;
 }
 
-/* Make indicator dots interactive */
+/* Page indicators styling */
+.page-progress-indicator {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 100;
+}
+
+.dots-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .indicator-dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.3);
   cursor: pointer;
-}
-
-.indicator-dot:hover {
-  background-color: rgba(231, 76, 60, 0.7);
+  transition: all 0.3s ease;
 }
 
 .indicator-dot.active {
-  background-color: #e74c3c;
-  transform: scale(1.3);
-  box-shadow: 0 0 8px rgba(231, 76, 60, 0.7);
+  background-color: #333;
+  transform: scale(1.2);
+}
+
+/* Mobile responsive styles for indicators */
+@media (max-width: 768px) {
+  .page-progress-indicator {
+    right: auto;
+    top: auto;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .dots-container {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .indicator-dot {
+    width: 15px;
+    height: 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .indicator-dot.active {
+    background-color: #000;
+    transform: scale(1.3);
+  }
+
+  .indicator-dot:active {
+    transform: scale(0.9);
+  }
+}
+
+@media (max-width: 576px) {
+  .page-progress-indicator {
+    right: 10px;
+    gap: 18px; /* Even more spacing for easier tapping */
+  }
+
+  .indicator-dot {
+    width: 15px; /* Much larger dots for mobile */
+    height: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  }
+
+  .indicator-dot:active {
+    transform: scale(0.9); /* Tactile feedback when tapped */
+  }
+
+  .indicator-dot.active {
+    transform: scale(1.4);
+    background-color: #000;
+  }
 }

@@ -24,7 +24,7 @@ const ExperienceDetails = ({ image, caption, title, period, description, details
   // Determine which details to show based on the selected role
   let filteredDetails = details;
   
-  if (caption === "Soliton Technologies" && selectedRole !== "") {
+  if (caption === "Soliton Technologies") {
     // For specific roles, filter details based on the role prefix
     const roleMapping = {
       'intern': "Internship",
@@ -32,7 +32,9 @@ const ExperienceDetails = ({ image, caption, title, period, description, details
       'senior project engineer': "Senior Project Engineer"
     };
     
-    const rolePrefix = roleMapping[selectedRole.toLowerCase()];
+    // Default to 'senior project engineer' if selectedRole is empty
+    const effectiveRole = selectedRole || 'senior project engineer';
+    const rolePrefix = roleMapping[effectiveRole.toLowerCase()];
     
     if (rolePrefix) {
       filteredDetails = details.filter(detail => 
@@ -280,6 +282,18 @@ export default function Experience() {
 
     // Only show role selector when Soliton experience is selected
     const showRoleSelector = selectedExperience === 0;
+    
+    // Handle experience selection with proper role management
+    const handleExperienceSelect = (index) => {
+      setSelectedExperience(index);
+      // When switching to Soliton, set default role to senior project engineer
+      // For other companies, we don't need a role
+      if (index === 0) {
+        setSelectedRole('senior project engineer');
+      } else {
+        setSelectedRole('');
+      }
+    };
 
     return (
       <div id="Experience">
@@ -297,10 +311,7 @@ export default function Experience() {
                   title={exp.title}
                   period={exp.period}
                   isSelected={selectedExperience === index}
-                  onClick={() => {
-                    setSelectedExperience(index);
-                    setSelectedRole(''); // Reset role filter when changing companies
-                  }}
+                  onClick={() => handleExperienceSelect(index)}
                 />
               ))}
             </div>
