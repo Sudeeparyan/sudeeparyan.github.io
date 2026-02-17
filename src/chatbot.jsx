@@ -214,7 +214,7 @@ export default function Chatbot() {
     try {
             genAI = new GoogleGenerativeAI(API_KEY);
             model = genAI.getGenerativeModel({
-                model: "gemini-1.5-flash", // Using gemini-1.5-flash as gemini-2.5-flash might not be available yet. Adjust if needed.
+                model: "gemini-2.0-flash",
                 // --- Pass system instruction explicitly ---
                 systemInstruction: {
                     role: "user", // Role might just need to be 'user' or 'model' depending on SDK/model
