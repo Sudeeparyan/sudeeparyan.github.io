@@ -298,7 +298,9 @@ export default function Chatbot() {
             console.error("Error generating response:", error);
             let errorMessage = "I'm sorry, I encountered an error processing your request.";
             // Try to get more specific error info if available
-             if (error?.response?.promptFeedback?.blockReason) {
+             if (error?.message?.includes('429')) {
+               errorMessage = "I'm getting a lot of questions right now! Please wait a minute and try again.";
+             } else if (error?.response?.promptFeedback?.blockReason) {
                errorMessage += ` (Content blocked: ${error.response.promptFeedback.blockReason})`;
              } else if (error instanceof Error) {
                errorMessage += ` (Details: ${error.message})`;

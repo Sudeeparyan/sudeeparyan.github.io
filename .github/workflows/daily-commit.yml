@@ -2,8 +2,12 @@ name: Daily Auto Commit
 
 on:
   schedule:
-    # Runs every day at 12:00 UTC (adjust to your timezone if needed)
-    - cron: '0 12 * * *'
+    # 5 runs spread across the day (UTC) — random skip gives 3-5 commits
+    - cron: '20 4 * * *'
+    - cron: '45 8 * * *'
+    - cron: '10 12 * * *'
+    - cron: '35 16 * * *'
+    - cron: '50 20 * * *'
   workflow_dispatch: # Allows manual trigger from GitHub Actions tab
 
 jobs:
@@ -17,14 +21,29 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Maybe skip this run (randomness for 3-5 commits/day)
+        id: decide
+        run: |
+          RAND=$((RANDOM % 100))
+          echo "Random value: $RAND"
+          # ~30% chance to skip — on average 3-4 out of 5 will commit
+          if [ "$RAND" -lt 30 ] && [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "Skipping this run."
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            echo "Proceeding with commit."
+          fi
+
       - name: Make daily commit
+        if: steps.decide.outputs.skip == 'false'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          
+
           # Update a timestamp file
           echo "Last auto-commit: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" > LAST_UPDATED.md
-          
+
           git add LAST_UPDATED.md
-          git commit -m "chore: daily auto-commit $(date -u '+%Y-%m-%d')" || echo "No changes to commit"
+          git commit -m "chore: daily auto-commit $(date -u '+%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
           git push
