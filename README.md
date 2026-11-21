@@ -1,8 +1,40 @@
-# React + Vite
+# Sudeep Aryan — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The personal portfolio of **G. Sudeep Aryan**, covering Generative AI, machine learning, DevOps, and full-stack web development.
 
-Currently, two official plugins are available:
+**Live site:** [sudeeparyan.github.io](https://sudeeparyan.github.io)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Built with
+
+- React 18 and Vite 5
+- Material UI and Tailwind CSS
+- React Router
+
+## Run locally
+
+Install a current Node.js LTS release, then run:
+
+```bash
+npm ci
+npm run dev
+```
+
+Open the local URL printed by Vite.
+
+## Check and build
+
+```bash
+npm run lint
+npm run build
+npm run preview
+```
+
+`npm run build` writes the production site to `dist/`.
+
+## Deploy
+
+```bash
+npm run deploy
+```
+
+The deployment script builds the site and publishes `dist/` to the `gh-pages` branch.
